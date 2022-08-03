@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://zhulinyv.github.io</id>
+    <title>(๑•小丫头片子•๑)</title>
+    <updated>2022-08-03T14:33:43.193Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://zhulinyv.github.io"/>
+    <link rel="self" href="https://zhulinyv.github.io/atom.xml"/>
+    <subtitle>可爱的小丫头片子酱的肥宅快乐水妹汁加工厂股份无限公司：这里，我们不止生产妹汁；众多软件中总有一款适合你！</subtitle>
+    <logo>https://zhulinyv.github.io/images/avatar.png</logo>
+    <icon>https://zhulinyv.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, (๑•小丫头片子•๑)</rights>
+    <entry>
+        <title type="html"><![CDATA[公告]]></title>
+        <id>https://zhulinyv.github.io/eRQK_qMIa/</id>
+        <link href="https://zhulinyv.github.io/eRQK_qMIa/">
+        </link>
+        <updated>2022-08-03T12:43:07.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>学业繁忙，不定期更新（基本停更了）。</strong></p>
+<p>这是我利用Git Page搭建的<a href="https://zhulinyv.github.io/">个人网站</a>🙂#主要用来佳软推荐<br>
+👨‍💻 博主是谁：<br>
+@可爱的小丫头片子酱（zhulinyv2005@outlook.com）😀#很帅气哦<br>
+⛹ 兴趣爱好：<br>
+好多好多呀🙃#嘻嘻嘻<br>
+📬 联系我呀！<br>
+QQ：1797213784<br>
+WeChat：1797213784<br>
+Email：zhulinyv2005@outlook.com；xiaoming0805@hotmail.com<br>
+Telephone：要不试试发伊妹儿？<br>
+这么多联系方式，不会丢叭？😶<br>
+声明：本网站推荐的任何应用软件都与作者无关，因此不承担任何法律责任。<br>
+<img src="https://zhulinyv.github.io/post-images/1659534345235.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[脑积水使用手册]]></title>
+        <id>https://zhulinyv.github.io/NWKaJM2xk/</id>
+        <link href="https://zhulinyv.github.io/NWKaJM2xk/">
+        </link>
+        <updated>2022-06-12T23:19:27.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="oo">o(〃＾▽＾〃)o</h1>
+<p>目前使用的插件有这些……</p>
+<p>为了能更好的 <strong><s>透（啊不是）</s></strong> <strong>使用</strong>脑积水，请务必看完！！</p>
+<h2 id="o-nonebot_plugin_petpet">[o] nonebot_plugin_petpet</h2>
+<p>介绍：表情包<br>
+指令：（该插件指令较多请耐心翻阅或直接浏览下文）<br>
+<img src="https://camo.githubusercontent.com/0b1e6f9b18ee3f475809c161881b69acf5bf69663ad6087f4e591e27bd2f255d/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30372f32322f76436c624753674442646b345a59632e6a7067" alt="" loading="lazy"></p>
+<h2 id="o-setu">[o] setu</h2>
+<p>介绍：<s>色色</s>哒咩<br>
+指令：</p>
+<pre><code>命令头: setu|色图|涩图|想色色|来份色色|来份色图|想涩涩|多来点|来点色图|来张setu|来张色图|来点色色|色色|涩涩  (任意一个)
+
+张数: 1 2 3 4 ... 张|个|份  (可不填, 默认1)
+
+r18: 不填则不会出现r18图片, 填了会根据r18模式管理中的数据判断是否可返回r18图片
+
+关键词: 任意 (可不填)
+
+参考 (空格可去掉):   
+
+    setu 10张 r18 白丝
+    
+    setu 10张 白丝
+    
+    setu r18 白丝
+    
+    setu 白丝
+    
+    setu
+</code></pre>
+<pre><code>白名单管理：
+setu_wl add  添加会话至白名单
+setu_wl del  移出会话自白名单
+
+黑名单管理：
+setu_ban add  添加会话至黑名单
+setu_ban del  移出会话自黑名单
+
+r18模式管理：
+setu_r18 on  开启会话的r18模式
+setu_r18 off 关闭会话的r18模式
+
+cd时间更新:
+setu_cd xxx  更新会话的冷却时间, xxx 为 int 类型的参数
+
+撤回时间更新:
+setu_wd xxx  撤回前等待的时间, xxx 为 int 类型的参数
+
+最大张数更新:
+setu_mn xxx  单次发送的最大图片数, xxx 为 int 类型的参数
+</code></pre>
+<h2 id="o-get_wife">[o] get_wife</h2>
+<p>介绍：抽老婆<br>
+指令：抽老婆</p>
+<h2 id="o-nonebot_plugin_fortune">[o] nonebot_plugin_fortune</h2>
+<p>介绍：运势<br>
+指令：<br>
+1.一般抽签：今日运势、抽签、运势；<br>
+2.指定签底并抽签：指定[xxx]签，在./resource/fortune_setting.json内手动配置；<br>
+3.[群管或群主或超管] 配置抽签主题：<br>
+4.设置[原神/pcr/东方/vtb/xxx]签：设置群抽签主题；<br>
+5.重置抽签：设置群抽签主题为随机；<br>
+6.抽签设置：查看当前群抽签主题的配置；<br>
+7.[超管] 刷新抽签：即刻刷新抽签，防止过0点未刷新的意外；<br>
+8.今日运势帮助：显示插件帮助文案；<br>
+9.主题列表：显示当前已启用主题；</p>
+<h3 id="o-jrrp与上个插件类似">[o] jrrp（与上个插件类似）</h3>
+<p>介绍：今日人品<br>
+指令：jrrp</p>
+<h2 id="o-nonebot_plugin_tarot">[o] nonebot_plugin_tarot</h2>
+<p>介绍：塔罗牌<br>
+指令：<br>
+◯占卜：[占卜]；<br>
+◯得到单张塔罗牌回应：[塔罗牌]；#12<br>
+◯[超管] 开启/关闭群聊转发模式：[开启|启用|关闭|禁用] 群聊转发，可降低风控风险。</p>
+<h2 id="olittlepaimon">[o]LittlePaimon</h2>
+<p>介绍：小派蒙工具箱（内含一大堆工具）<br>
+指令：<br>
+阿巴阿巴......<br>
+太多了自己康（Github仓库，图片加载较慢，请耐心等待或先浏览下文），也可以发送“<strong>help</strong>”获取帮助。<br>
+<img src="https://zhulinyv.github.io/post-images/1656153286770.jpg" alt="" loading="lazy"><br>
+<strong><a href="https://blog.cherishmoon.fun/posts/nonebot2funclist.html">小派蒙NoneBot2版功能展示</a></strong></p>
+<h2 id="o-nonebot-plugin-covid19-news">[o] nonebot-plugin-covid19-news</h2>
+<p>介绍：国内新冠消息查询<br>
+指令：<br>
+<strong>查询地方疫情信息（风险等级 新增 目前确诊）：</strong><br>
+指令: 城市名 + 疫情<br>
+事例: 天津疫情<br>
+<strong>查询地方出入政策：</strong><br>
+指令: 城市名 + 疫情政策<br>
+事例: 广州疫情政策<br>
+<strong>查询城市风险地区：</strong><br>
+只限查询大陆地级市或直辖市<br>
+指令: 城市名 + 风险地区<br>
+<strong>疫情信息更新推送：</strong><br>
+指令: 关注疫情 + 城市名<br>
+事例: 关注疫情 北京<br>
+<strong>取消推送：</strong><br>
+指令: 取消疫情 + 城市名 / 取消关注疫情 + 城市名 / 取消推送疫情 + 城市名<br>
+<strong>其他功能：</strong><br>
+异常新增警告<br>
+对国内新增异常的地区进行推送提醒<br>
+需要修改配置文件.env.dev<br>
+COVID19 = {&quot;notice&quot;:&quot;True&quot;, &quot;red-line&quot;: 1000, &quot;filter&quot;:[],&quot;group&quot;:[]}<br>
+// 字段说明<br>
+// notice: str              仅为 True 时开启功能<br>
+// red-line: int            新增达到该数值会, 发送疫情信息<br>
+// filter: List             过滤城市/地区 （默认过滤 香港 台湾）<br>
+// group: List[int] | str   发送到群; 为 all 时发送到所有群</p>
+<h2 id="o-games">[o] games</h2>
+<p>介绍：无聊小游戏<br>
+指令：俄罗斯转盘</p>
+<h2 id="o-daily_epilepsy">[o] Daily_epilepsy</h2>
+<p>介绍：每日发癫<br>
+指令：发癫+名字</p>
+<h2 id="o-homonumber">[o] homoNumber</h2>
+<p>介绍：114514<br>
+指令：homonumber + 数字</p>
+<h2 id="o-whatanime">[o] WhatAnime</h2>
+<p>介绍：以图搜番<br>
+指令：WhatAnime</p>
+<h2 id="o-haruka_bot">[o] haruka_bot</h2>
+<p>介绍：B站相关<br>
+指令：帮助<br>
+备注：需要@脑积水</p>
+<p><s>[o]nonebot_plugin_arktools<br>
+介绍：方舟工具箱<br>
+指令：<br>
+方舟今日资源       -&gt;    查看今天开放的资源关卡<br>
+更新方舟今日资源    -&gt;    手动更新今天开放的资源关卡<br>
+方舟最新活动    -&gt;    查看最新的活动相关信息<br>
+公开招募 [标签1 标签2, ...]    -&gt;    查询推荐的公招标签</s><br>
+<strong>已删除</strong>，但抽卡模块（<strong>[o]nonebot_plugin_gamedraw</strong>）<strong>仍然可用</strong></p>
+<h2 id="ononebot_plugin_bittorrent">[o]nonebot_plugin_BitTorrent</h2>
+<p>介绍：功能: 磁力搜索, 通过机器人帮你寻找 电影 或者 <strong><s>学习资料</s></strong><br>
+指令：磁力搜索 xxx   (xxx为关键词)</p>
+<h2 id="ononebot-plugin-remake">[o]nonebot-plugin-remake</h2>
+<p>介绍：人生重开模拟器<br>
+指令：@脑积水 remake/liferestart/人生重开/人生重来</p>
+<h2 id="o-nonebot_plugin_answersbook">[o] nonebot_plugin_answersbook</h2>
+<p>介绍：答案之书<br>
+指令：<br>
+翻看答案+问题<br>
+问题+翻看答案</p>
+<h2 id="o-nonebot_plugin_simplemusic">[o] nonebot_plugin_simplemusic</h2>
+<p>介绍：点歌<br>
+指令：点歌/qq点歌/网易点歌/酷我点歌/酷狗点歌/咪咕点歌/b站点歌+关键词</p>
+<h2 id="o-nonebot_plugin_weather_lite">[o] nonebot_plugin_weather_lite</h2>
+<p>介绍：天气<br>
+指令：<br>
+◯天气 城市名(可选，如不给出机器人会提示获取)<br>
+◯天气 城市名_format=v2<br>
+◯天气 城市名_format=v3<br>
+◯天气 城市名_lang=语言<br>
+（语言可选am ar af be bn ca da de el et fr fa hi hu ia id it lt mg nb nl oc pl pt-br ro ru ta tr th uk vi zh-cn zh-tw）<br>
+◯天气 北京_lang=ru<br>
+◯天气 Moon</p>
+<h2 id="o-nonebot_plugin_code">[o] nonebot_plugin_code</h2>
+<p>介绍：在线运行代码<br>
+指令：<br>
+code [语言] [-i] [inputText]<br>
+[代码]<br>
+-i：可选 输入 后跟输入内容<br>
+运行代码示例(python)(无输入)：<br>
+code py<br>
+print(&quot;Hello World&quot;)<br>
+运行代码示例(python)(有输入)：<br>
+code py -i Hello World<br>
+print(input())</p>
+<h2 id="o-nonebot_plugin_emojimix">[o] nonebot_plugin_emojimix</h2>
+<p>介绍： emoji 合成器<br>
+指令：[emoji]+[emoji]<br>
+示例：😚+🤤</p>
+<h2 id="o-echo">[o] echo</h2>
+<p>介绍：echo<br>
+指令：/echo+（任意内容）<br>
+示例：/echo HelloWorld<br>
+备注：注意空格；仅私聊可用</p>
+<h2 id="o-face_beauty">[o] face_beauty</h2>
+<p>介绍：颜值评分<br>
+指令：颜值评分</p>
+<h2 id="o-nonebot_plugin_abbrreply">[o] nonebot_plugin_abbrreply</h2>
+<p>介绍：查看缩写<br>
+指令：<br>
+sx +（拼音首字母）<br>
+缩写 +（拼音首字母）<br>
+示例：<br>
+缩写 lsp<br>
+sx lsp<br>
+备注：注意空格</p>
+<h2 id="o-nonebot_plugin_epicfree">[o] nonebot_plugin_epicfree</h2>
+<p>介绍：Epic<br>
+指令：<br>
+发送「喜加一」查找游戏，群组内发送「喜加一订阅」订阅限免游戏资讯。<br>
+基于正则匹配，所以，甚至「EpIc喜+1」这样的指令都可用！</p>
+<h2 id="o-nonebot_plugin_hitokoto">[o] nonebot_plugin_hitokoto</h2>
+<p>介绍：一言<br>
+指令：一言</p>
+<h2 id="o-nonebot_plugin_leetcode2">[o] nonebot_plugin_leetcode2</h2>
+<p>介绍：每日一题<br>
+指令：lc；leetcode</p>
+<h2 id="o-nonebot_plugin_randomtkk">[o] nonebot_plugin_randomtkk</h2>
+<p>介绍：随机唐可可<br>
+指令：<br>
+1.开始游戏：[随机唐可可/鲤鱼/鲤鱼王/Liyuu/liyuu]+[简单/普通/困难/地狱/自定义数量]，不指定难度默认普通，开始游戏后会限时挑战；<br>
+2.输入答案：[答案是][行][空格][列]，行列为具体数字，例如：答案是114 514；<br>
+3.答案正确则结束此次游戏；不正确则直至倒计时结束，Bot公布答案并结束游戏；<br>
+4.提前结束游戏：[找不到唐可可/唐可可人呢/呼叫鲤鱼姐]，仅游戏发起者可提前结束游戏；<br>
+备注：各群聊互不影响，每个群聊仅能同时开启一局游戏。</p>
+<h2 id="o-nonebot_plugin_reboot">[o] nonebot_plugin_reboot</h2>
+<p>介绍：重启脑积水<br>
+指令： 重启；reboot；restart<br>
+备注：仅超管私聊脑积水可用</p>
+<h2 id="o-nonebot_plugin_repeater">[o] nonebot_plugin_repeater</h2>
+<p>介绍：复读姬<br>
+指令：（自动触发）</p>
+<h2 id="o-nonebot_plugin_status">[o] nonebot_plugin_status</h2>
+<p>介绍：查看服务器状态：<br>
+指令：状态；向脑积水发送戳一戳表情；双击脑积水头像戳一戳；</p>
+<h2 id="o-nonebot_plugin_who_at_me">[o] nonebot_plugin_who_at_me</h2>
+<p>介绍：查看谁艾特我<br>
+指令：<br>
+/谁艾特我	查看到底是谁艾特了你<br>
+/clear_db	清理当前用户的消息记录<br>
+/clear_all	  清理全部消息记录</p>
+<h2 id="o-nonebot_plugin_withdraw">[o] nonebot_plugin_withdraw</h2>
+<p>介绍：撤回信息<br>
+指令：<br>
+@机器人 撤回           # 撤回倒数第一条消息<br>
+@机器人 撤回 1        # 撤回倒数第二条消息<br>
+@机器人 撤回 0-3     # 撤回倒数三条消息</p>
+<h2 id="o-poke__reply">[o] poke__reply</h2>
+<p>介绍：戳一戳随机简单回复+色图<br>
+指令：双击脑积水头像戳一戳</p>
+<h2 id="ononebot_plugin_read_60s">[o]nonebot_plugin_read_60s</h2>
+<p>介绍：60s读世界<br>
+指令：（计划任务）</p>
+<h2 id="ononebot-plugin-today-in-history">[o]nonebot-plugin-today-in-history</h2>
+<p>介绍：历史上的今天<br>
+指令：（计划任务）</p>
+<h2 id="ononebot_plugin_gamedraw">[o]nonebot_plugin_gamedraw</h2>
+<p>介绍：抽卡<br>
+指令：</p>
+<pre><code>1.原神（当武器和角色无UP池时，所有抽卡命令都指向 '常驻池'）
+
+原神N抽 （常驻池）
+原神角色N抽 （角色UP池）
+原神武器N抽 （武器UP池）
+2.赛马娘
+
+赛马娘N抽 （抽马）
+赛马娘卡N抽 （抽卡）
+3.坎公骑冠剑
+
+坎公骑冠剑N抽 （抽角色）
+坎公骑冠剑武器N抽 （抽武器）
+4.碧蓝航线
+
+碧蓝轻型N抽 （轻型池）
+碧蓝重型N抽 （重型池）
+碧蓝特型N抽 （特型池）
+碧蓝活动N抽 （活动池）
+其他命令
+'重置原神抽卡'（重置保底）
+'重载原神卡池'
+'重载方舟卡池'
+'重载赛马娘卡池'
+'重载坎公骑冠剑卡池'
+
+更新命令
+'更新明日方舟信息'
+'更新原神信息'
+'更新赛马娘信息'
+'更新坎公骑冠剑信息'
+'更新pcr信息'
+'更新碧蓝航线信息'
+'更新fgo信息'
+'更新阴阳师信息'
+</code></pre>
+<h2 id="ononebot_plugin_abstract">[o]nonebot_plugin_abstract</h2>
+<p>介绍：语句抽象话<br>
+指令：抽象 +（文字）</p>
+<h2 id="ononebot_plugin_word_bank2">[o]nonebot_plugin_word_bank2</h2>
+<p>介绍：问答（关键词回复）<br>
+指令：（本插件指令较多，请耐心翻阅或先浏览下文）</p>
+<h4 dir="auto"><a id="user-content-开始使用" class="anchor" aria-hidden="true" href="#开始使用"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>开始使用</h4>
+<h5 dir="auto"><a id="user-content-问答教学" class="anchor" aria-hidden="true" href="#问答教学"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>问答教学</h5>
+<ul dir="auto">
+<li>
+<p dir="auto">设置词条命令由<code>问句</code>和<code>答句</code>组成。设置之后, 收到<code>消息</code>时触发。并非所有人都可以设置词条, 详见<a href="#permission">权限</a></p>
+</li>
+<li>
+<p dir="auto">格式<code>[模糊|全局|正则|@]问...答...</code></p>
+<ul dir="auto">
+<li><code>模糊|正则</code> 匹配模式中可任性一个或<code>不选</code>, <code>不选</code> 表示 <code>全匹配</code></li>
+<li><code>全局</code>, <code>@</code> 可与以上匹配模式组合使用</li>
+</ul>
+</li>
+<li>
+<p dir="auto">教学中可以使用换行</p>
+<ul dir="auto">
+<li>例如
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="问
+123
+答
+456"><pre class="notranslate"><code>问
+123
+答
+456
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p dir="auto">问答句中的首首尾空白字符会被自动忽略</p>
+</li>
+<li>
+<p dir="auto">私聊好友个人也可以建立属于自己的词库, 可以实现类似备忘录的功能</p>
+</li>
+</ul>
+<h5 dir="auto"><a id="user-content-问句选项" class="anchor" aria-hidden="true" href="#问句选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>问句选项</h5>
+<ul dir="auto">
+<li>
+<p dir="auto"><code>问...答...</code> 全匹配模式, 必须全等才能触发答</p>
+</li>
+<li>
+<p dir="auto"><code>模糊问...答...</code> 当<code>问句</code>出现在<code>消息</code>里时则会触发</p>
+</li>
+<li>
+<p dir="auto"><code>正则问...答...</code>, 当<code>问句</code>被<code>消息</code>正则捕获时则会匹配</p>
+</li>
+<li>
+<p dir="auto">例如: 正则问[他你]不理答你被屏蔽了</p>
+<table>
+<thead>
+<tr>
+<th>消息</th>
+<th>回复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>他不理</td>
+<td>你被屏蔽了</td>
+</tr>
+<tr>
+<td>他不理我</td>
+<td>你被屏蔽了</td>
+</tr>
+<tr>
+<td>你不理我</td>
+<td>你被屏蔽了</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p dir="auto"><code>全局问...答...</code>, 在所有群聊和私聊中都可以触发, 可以和以上几种组合使用</p>
+<ul dir="auto">
+<li>例如: <code>全局模糊问 晚安 答 不准睡</code></li>
+</ul>
+</li>
+<li>
+<p dir="auto"><code>@问...答...</code>, 只有 <code>event.tome</code> 时才会触发，如被@、被回复时或在私聊中，可以和以上几种组合使用</p>
+<ul dir="auto">
+<li>例如: <code>全局模糊@问 晚安 答 不准睡</code></li>
+</ul>
+</li>
+<li>
+<p dir="auto">问句可包含<code>at</code> 即在 QQ 聊天中手动 at 群友</p>
+<ul dir="auto">
+<li>建议只在<code>问...答...</code>中使用</li>
+<li>例如: <code>问 @这是群名称 答 老婆!</code></li>
+</ul>
+</li>
+</ul>
+<h5 dir="auto"><a id="user-content-答句选项" class="anchor" aria-hidden="true" href="#答句选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>答句选项</h5>
+<ul dir="auto">
+<li>
+<p dir="auto"><code>/at</code> + <code>qq号</code>, 当答句中包含<code>/at</code> + <code>qq号</code>时将会被替换为@某人</p>
+<ul dir="auto">
+<li>例如: <code>问 群主在吗 答 /at 123456789在吗</code></li>
+</ul>
+</li>
+<li>
+<p dir="auto"><code>/self</code>, 当答句中包含<code>/self</code>时将会被替换为发送者的群昵称</p>
+<ul dir="auto">
+<li>例如: <code>问 我是谁 答 你是/self</code> (群昵称为: 我老婆)</li>
+</ul>
+</li>
+<li>
+<p dir="auto"><code>/atself</code>, 当答句中包含<code>/atself</code>时将会被替换为@发送者</p>
+<ul dir="auto">
+<li>例如: <code>问 谁是牛头人 答 @这是群昵称</code></li>
+</ul>
+</li>
+</ul>
+<h5 dir="auto"><a id="user-content-删除词条" class="anchor" aria-hidden="true" href="#删除词条"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>删除词条</h5>
+<ul dir="auto">
+<li>
+<p dir="auto"><code>删除[模糊|全局|正则|@]词条</code> + 需要删除的<code>问句</code></p>
+<ul dir="auto">
+<li>例如: <code>删除全局模糊@词条 你好</code></li>
+</ul>
+</li>
+<li>
+<p dir="auto">以下指令需要结合自己的<code>COMMAND_START</code> 这里为 <code>/</code></p>
+</li>
+<li>
+<p dir="auto">删除词库: 删除当前群聊/私聊词库</p>
+<ul dir="auto">
+<li>例如: <code>/删除词库</code></li>
+</ul>
+</li>
+<li>
+<p dir="auto">删除全局词库</p>
+<ul dir="auto">
+<li>例如: <code>/删除全局词库</code></li>
+</ul>
+</li>
+<li>
+<p dir="auto">删除全部词库</p>
+<ul dir="auto">
+<li>例如: <code>/删除全部词库</code></li>
+</ul>
+</li>
+</ul>
+<h5 dir="auto"><a id="user-content-查询词条" class="anchor" aria-hidden="true" href="#查询词条"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>查询词条</h5>
+<ul dir="auto">
+<li>
+<p dir="auto">超管查询指定词库</p>
+<ul dir="auto">
+<li><code>查询[群|用户]{id}[全局][模糊|正则]词库</code></li>
+<li>例如：<code>查询群123模糊词库</code> <code>查询用户114514词库</code> <code>查询全局词库</code></li>
+</ul>
+</li>
+<li>
+<p dir="auto">查询指定词库</p>
+<ul dir="auto">
+<li><code>查询[模糊|正则]词库</code></li>
+<li>例如 <code>查询词库</code></li>
+</ul>
+</li>
+<li>
+<p dir="auto"><span id="user-content-permission">权限</span></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>群主</th>
+<th>群管理</th>
+<th>私聊好友</th>
+<th>超级用户</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>增删词条</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+</tr>
+<tr>
+<td>增删全局词条</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr>
+<td>删除词库</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+</tr>
+<tr>
+<td>删除全局词库</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr>
+<td>删除全部词库</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>O</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ononebot_plugin_hikarisearch">[o]nonebot_plugin_hikarisearch</h2>
+<p>介绍：搜图<br>
+指令：<br>
+搜图/saucenao搜图/iqdb搜图/ascii2d搜图/ehentai搜图/tracemoe搜图 + 图片<br>
+或 回复包含图片的消息，回复搜图<br>
+或 搜图上一张，搜索上一次出现的图<br>
+备注：默认为 saucenao搜图</p>
+<h2 id="ononebot_plugin_giyf">[o]nonebot_plugin_giyf</h2>
+<p>介绍：搜索<br>
+指令：<br>
+查询： ？前缀 关键词<br>
+添加（全局）搜索引擎： search.add search.add.global<br>
+快速添加： search.add(.global) [预置的搜索引擎名称] [自定义前缀（可选）]<br>
+删除（全局）搜索引擎： search.delete search.delete.global<br>
+查看搜索引擎列表： search.list search.list.global<br>
+备注：其中所有非全局指令均需要在目标群中进行，所有全局指令均只有Bot管理员能执行</p>
+<h2 id="ononebot-plugin-namelist">[o]nonebot-plugin-namelist</h2>
+<p>介绍：<br>
+简易黑白用户名单管理插件，可在黑名单与白名单模式中互相切换。<br>
+黑名单模式下，机器人不会响应来自黑名单用户的消息。<br>
+白名单模式下，机器人不会响应白名单用户之外的消息。<br>
+超级用户不受黑白名单影响。<br>
+指令：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">指令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">切换名单</td>
+<td style="text-align:center">切换黑白名单模式</td>
+</tr>
+<tr>
+<td style="text-align:center">添加黑名单+@用户</td>
+<td style="text-align:center">将被艾特的用户加入<strong>黑名单</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">删除黑名单+@用户</td>
+<td style="text-align:center">将被艾特的用户从<strong>黑名单</strong>删除</td>
+</tr>
+<tr>
+<td style="text-align:center">查看黑名单+@用户</td>
+<td style="text-align:center">查看<strong>黑名单</strong>中的用户</td>
+</tr>
+<tr>
+<td style="text-align:center">添加白名单+@用户</td>
+<td style="text-align:center">将被艾特的用户加入<strong>白名单</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">删除白名单+@用户</td>
+<td style="text-align:center">将被艾特的用户从白名单删除</td>
+</tr>
+<tr>
+<td style="text-align:center">查看白名单+@用户</td>
+<td style="text-align:center">查看白名单中的用户</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[波点音乐（喜欢听歌的小伙伴来康！）]]></title>
+        <id>https://zhulinyv.github.io/hJ3SYVOoW/</id>
+        <link href="https://zhulinyv.github.io/hJ3SYVOoW/">
+        </link>
+        <updated>2022-02-09T12:39:47.000Z</updated>
+        <content type="html"><![CDATA[<p>一款简洁的手机音乐应用，界面简洁，曲库多且全，重要的是基本免费，无论是在线听歌还是下载，都是可以白嫖的！<br>
+特色也十分鲜明，用动态海报的形式取代了传统的播放列表。<br>
+简洁的同时保留了排行榜和分类，使您可以更便捷的找到想要听的歌曲！<br>
+同时，根据还会您所听的歌曲进行个性化推荐！<br>
+支持从外部导入歌单，包括QQ音乐，网易云，酷我音乐，酷狗音乐……<br>
+大家可以在各大应用商店下载体验！<br>
+<img src="http://nimg.ws.126.net/?url=http://dingyue.ws.126.net/2021/0413/3d3e4663j00qrgkm7001cc000hs00hsg.jpg&amp;thumbnail=650x2147483647&amp;quality=80&amp;type=jpg" alt="" loading="lazy"><br>
+<img src="https://n.sinaimg.cn/sinakd20210930ac/691/w1080h411/20210930/352a-0321bf8df71593b5572a05f08e7ae3dd.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[安卓unlocked应用！]]></title>
+        <id>https://zhulinyv.github.io/l_e5JXci8/</id>
+        <link href="https://zhulinyv.github.io/l_e5JXci8/">
+        </link>
+        <updated>2021-11-20T12:38:51.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="httpsapkmodyio"><a href="https://apkmody.io/">https://apkmody.io/</a></h2>
+<p><img src="https://img2020.cnblogs.com/blog/2264145/202111/2264145-20211120074626385-44858179.png" alt="" loading="lazy"><br>
+这里提供了很多安卓<strong>unlocked</strong>应用，大家可以自行下载！！！<br>
+<strong>注意：.xapk格式安装需先下载XAPKS INSTALLer再用其进行安装！</strong></p>
+<h2 id="httpsmoddroidco"><a href="https://moddroid.co/">https://moddroid.co/</a></h2>
+<figure data-type="image" tabindex="1"><img src="https://img2022.cnblogs.com/blog/2264145/202202/2264145-20220211134622827-1593895820.png" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Windows11正式版发布！]]></title>
+        <id>https://zhulinyv.github.io/Px1VpQz5m/</id>
+        <link href="https://zhulinyv.github.io/Px1VpQz5m/">
+        </link>
+        <updated>2021-10-05T03:35:54.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="windows11正式版发布">Windows11正式版发布！</h2>
+<p>2021/10/5，经过一段时间的预览版测试，微软发布了<strong>Windows11正式版</strong>，其较Windows10还是有较大变化的。</p>
+<h3 id="1界面">1.界面</h3>
+<p>全新的操作界面：默认主题背景已不再是四格窗户了，主题色依然是默认蓝色，但还是给人焕然一新的感觉。默认任务栏图标居中，开始菜单取消了磁贴。资源管理器重写，多窗口协同有了更多选择。图标全部换新，增加了一个类似负一屏的侧边栏，通知区域整改，整个界面都应用了圆角（部分，一些第三方应用依然不支持）和亚力克半透明效果。右键菜单也换了样式，同时powershell和cmd支持并在同一窗口。设置界面以及ms store界面也比以前强太多（有点Mac to Win的感觉）<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005105521942-250055995.jpg" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005105531112-510875967.jpg" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005105631170-369806008.jpg" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005105641150-405923098.jpg" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005105603164-206783220.jpg" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005105715668-262481202.jpg" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005105739886-621211683.jpg" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005105803103-977874841.jpg" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005105825149-1509248133.jpg" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005110355698-1891040008.png" alt="" loading="lazy"></p>
+<h3 id="2性能">2.性能</h3>
+<p>系统外存以及内存占用比Windows10都要小不少，多开应用之后依然非常流畅，优化了游戏体验，同时办公更加丝滑，笔记本续航方面应该也会有所提升。支持的辅助功能以及智能设备更多更广泛，使用体验远远高于Windows10。即将推出的office2021和microsoft365也会应用全新的界面和更强劲的办公性能。<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005105847121-77268586.jpg" alt="" loading="lazy"></p>
+<h3 id="3升级准备">3.升级准备</h3>
+<p>本次升级要求很高，据说是Windows史上第二次硬件革命（第一次XP升级vista），单一个tmp2.0就会淘汰大部分设备，同时还要求8代及以上处理器等，这些刁钻的条件必然会是一大批设备。大体配置要求如第14图，如果自己判断不清楚，打开设置更新界面看有没有提示或者使用whynotwin11和微软自家的健康状况检查都可以检查电脑硬件是否支持。如果配置不支持可不可以安装呢？答案是肯定的！通过修改注册表（正式版未经测试）以及使用PE系统安装（通常手段）都是可以的，这样就绕开了硬件限制。<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005105948869-1977892767.png" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005110035810-5028079.png" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005105912296-1637048593.jpg" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005110126655-554311919.png" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005110141846-946825893.jpg" alt="" loading="lazy"></p>
+<h3 id="4升级步骤">4.升级步骤</h3>
+<p>如果你比较懒同时设备满足配置要求，可以定期到设置系统更新中看有没有可选系统更新进行更新。如果你比较急，可以直接到微软官网下载升级工具，镜像制作工具或者镜像进行升级。这次官网提供了三种方式，交Windows10多了一个镜像下载。如果你已经是Windows预览体验计划的成员并已经安装了beta或者dev渠道的系统那么如果想要使用正式版需要重新安装系统而不能选择升级。如果你的设备不满足配置要求，则需要使用PE重装系统。<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202110/2264145-20211005110201595-822229698.png" alt="" loading="lazy"></p>
+<p>欢迎补充纠正！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[用16进制账号登录QQ！]]></title>
+        <id>https://zhulinyv.github.io/8WdsCTnjo/</id>
+        <link href="https://zhulinyv.github.io/8WdsCTnjo/">
+        </link>
+        <updated>2021-08-14T12:37:58.000Z</updated>
+        <content type="html"><![CDATA[<p>平时我们登录电脑QQ时，用的都是10进制的纯数字，其实用16进制的账号也是可以登录的！！</p>
+<p>1.把自己的账号转换成16进制</p>
+<p>2.在账号前加上<strong>0x</strong></p>
+<p>3.输入密码，就可以登录了！</p>
+<figure data-type="image" tabindex="1"><img src="https://img2020.cnblogs.com/blog/2264145/202108/2264145-20210814153125899-1904952684.png" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[联想不行？您真的发挥联想潜力了嘛？盘点联想那些强势功能！]]></title>
+        <id>https://zhulinyv.github.io/WKWlorRcc/</id>
+        <link href="https://zhulinyv.github.io/WKWlorRcc/">
+        </link>
+        <updated>2021-08-01T12:36:56.000Z</updated>
+        <content type="html"><![CDATA[<p>很多人都说联想的电脑有点垮，比不上其它的品牌，而手机更是鲜有听闻。那么您真的发挥联想潜力了嘛？</p>
+<p>盘点联想那些强势而又实用的功能！</p>
+<h2 id="top-1">TOP 1</h2>
+<p>性价比高，质量很好！<br>
+不同系列，各有各的特色！</p>
+<p>小新：超薄便携，高性能，颜值高！<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202108/2264145-20210801144605407-1150637959.png" alt="" loading="lazy"></p>
+<p>Think：辅助功能很多，小红点，指纹，触摸屏……办公优越，甚至还有5G！<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202108/2264145-20210801144719527-1249125878.png" alt="" loading="lazy"></p>
+<p>拯救者：为战而生，超高性能，也不输颜值与便携！<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202108/2264145-20210801144804114-883374226.png" alt="" loading="lazy"></p>
+<p>不要以为电竞本就很笨重！看联想即将发布的新品！<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202108/2264145-20210801144459779-155870623.png" alt="" loading="lazy"></p>
+<p>除了电脑，手机同样出色！<br>
+目前在用的拯救者2pro体验还是非常好的，性能优越，中置散热系统，也是将骁龙888的性能发挥到了极致！双涡轮风扇+密闭全铜风道+大面积 VC 液冷均热板，完全不再需要外设散热装置！首发90W双路充电，充满电仅需40分钟！性能出色，拍摄同样不输！后置6400万AI摄像头+1600万广角，前置4400万伸缩摄像头！后置的大logo灯更是别有一番风味！<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202108/2264145-20210801150613110-1559751522.jpg" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202108/2264145-20210801150740336-1167014254.png" alt="" loading="lazy"></p>
+<h2 id="top-2">TOP 2</h2>
+<p>联想电脑管家<br>
+体积小，功能多，最棒的是无广告和弹窗！并且不同版本的机型有不同版本的管家贴心呵护！<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202108/2264145-20210801145719630-231007185.png" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202108/2264145-20210801145730674-1757891680.png" alt="" loading="lazy"><br>
+对于Y系列适配的管家游戏模式是真的香！</p>
+<h2 id="top-3">TOP 3</h2>
+<p>不断研发更新的高质量应用！<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202108/2264145-20210801145846526-702140772.png" alt="" loading="lazy"><br>
+不仅有桌面应用程序，应用商店的UWP应用更是让人眼前为之一亮！<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202108/2264145-20210801150213665-1181201029.png" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202108/2264145-20210801150424325-133996229.png" alt="" loading="lazy"></p>
+<h2 id="top-4">TOP 4</h2>
+<p>联想周边更是个性突出！<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202108/2264145-20210801150917629-380790112.png" alt="" loading="lazy"></p>
+<h2 id="top-5">TOP 5</h2>
+<p>怎么样，现在还认为联想技不如人嘛？！<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202108/2264145-20210801151133836-855769927.bmp" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Windows11预览版评测]]></title>
+        <id>https://zhulinyv.github.io/RlOiKZDn-/</id>
+        <link href="https://zhulinyv.github.io/RlOiKZDn-/">
+        </link>
+        <updated>2021-07-02T12:36:06.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="安装过程"><strong>安装过程：</strong></h2>
+<h3 id="虚拟机vm体验">虚拟机（VM）体验：</h3>
+<p>1.下载Windows11的预览版镜像，目前最新22000.51<br>
+大家可以从<a href="https://uup.rg-adguard.net/">https://uup.rg-adguard.net/</a>自行下载ISO制作的批处理文件。<br>
+2.打开虚拟机，选择新建<br>
+3.勾选典型，然后下一步<br>
+4.在接下来的页面中浏览并选择刚刚下载好的镜像，下一步<br>
+5.选择操作系统Microsoft Windows，版本选择 <strong>Windows10 x64</strong><br>
+6.创建虚拟磁盘，默认60G就行，选择存储为单个文件<br>
+<strong>由于不同版本的VM出现选择网络模式，内存大小和处理器核心数的先后顺序不同，所以不放在上述步骤内。内存建议不小于4GB，处理器不少于4个核心（可在虚拟机设置中选择虚拟化CPU以来提升性能）</strong><br>
+7.打开虚拟机设置，选择选项，高级，选择UEFI，勾选安全启动（该步骤是为了符合Windows11硬件要求以获得更好体验）<br>
+8.打开虚拟机，当出现**Press any key to boot from CD or DVD ...**时，按任意键继续安装<br>
+9.接下来就是Windows安装程序的安装过程了，比较简单，在此不在啰嗦<br>
+10.安装时选择我没有产品密钥，安装完后利用激活工具激活就可以</p>
+<h3 id="windows11预览版评测">Windows11预览版评测</h3>
+<p>1.开机logo更新，安装界面焕然一新，令人眼前为之一亮<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202107/2264145-20210701193710604-1606238231.png" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202107/2264145-20210701193738182-1887913398.png" alt="" loading="lazy"></p>
+<p>2.全新的开始菜单<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202107/2264145-20210701194205296-354545688.png" alt="" loading="lazy"><br>
+不喜欢？退回到以前的开始菜单：</p>
+<pre><code>HKEY_CURRENT_USER\Software\Microsoft\ Windows\CurrentVersion\Explorer\Advanced
+(DWORD)Start_ShowClassicMode
+0 = 默认
+1 = 旧版
+</code></pre>
+<p>按以上路径找到该注册表，修改值。（如果找不到该注册表，自己动手新建一个叭！）</p>
+<p>3.小工具<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202107/2264145-20210701194243818-2081102034.png" alt="" loading="lazy"></p>
+<p>4.设置，资源管理器，ms store等的界面都有显著的变化且都支持了圆角</p>
+<p>5.微软称Windows11将会支持apk应用，将会在后续版本中发布<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202107/2264145-20210702080554137-1069415380.jpg" alt="" loading="lazy"></p>
+<p>6.**总结：**功能多，BUG多，所以现在是不建议主力机安装的，毕竟Windows11刚刚发布预览版，除Windows功能不全面硬件配置要求高以外，目前微软已经承认了23个BUG，并且在22000.51版本中，Windows汉化还是不全面。如果想尝鲜的话，可以先用虚拟机安试一试。如果真的想安装的话，上面的泄露版镜像就不要用了，建议加入预览体验计划更新。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Windows11下载，功能介绍]]></title>
+        <id>https://zhulinyv.github.io/EEaWDJ83Z/</id>
+        <link href="https://zhulinyv.github.io/EEaWDJ83Z/">
+        </link>
+        <updated>2021-06-18T12:35:11.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="介绍">介绍：</h2>
+<p>内容来自：<strong>微创WEC评测</strong><br>
+Windows11将于 6 月 24 号发布，不过今天预览版的镜像已经泄露，各种菜单、图标都变成了圆角，其他功能上的特性还得等官方公布。<br>
+<img src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F0616%2Fb4e90769j00qusczg001jd200u000gyg00hz00a5.jpg&amp;thumbnail=650x2147483647&amp;quality=80&amp;type=jpg" alt="" loading="lazy"><br>
+从视觉上看，最大的变化在任务栏上，微软将应用图标放在了任务栏的中心位置，清理了托盘区域，并采用了一个新的开始按钮和菜单，这个设计怎么有点像Mac OS的Dock栏呢？<br>
+<img src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F0616%2F6e85c1d5j00qusczg001ad200u000gvg00it00ak.jpg&amp;thumbnail=650x2147483647&amp;quality=80&amp;type=jpg" alt="" loading="lazy"><br>
+<img src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F0616%2F1bb71bdfj00qusczg001dd200u000gwg00it00al.jpg&amp;thumbnail=650x2147483647&amp;quality=80&amp;type=jpg" alt="" loading="lazy"></p>
+<p><strong>以下内容来自：<a href="https://www.cnblogs.com/xytpz/">可爱的小丫头片子酱</a></strong></p>
+<h2 id="说明">说明：</h2>
+<p>Windows11还没发布就已泄露？会不会很期待呢？<br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202106/2264145-20210618080020227-145119136.jpg" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202106/2264145-20210618080051765-2121999385.jpg" alt="" loading="lazy"><br>
+<img src="https://img2020.cnblogs.com/blog/2264145/202106/2264145-20210618080115962-159506889.png" alt="" loading="lazy"><br>
+微软抄作业，这个比喻太形象！</p>
+<h2 id="下载">下载：</h2>
+<p><strong>为大家整理的下载链接：</strong><br>
+天翼云 <a href="https://cloud.189.cn/web/share?code=InQ3637BvEbu">https://cloud.189.cn/web/share?code=InQ3637BvEbu</a><br>
+百度网盘 <a href="https://pan.baidu.com/s/12rp63ewc99W1vGBK8CmeYg">https://pan.baidu.com/s/12rp63ewc99W1vGBK8CmeYg</a> 提取码 2wmz<br>
+<a href="https://www.cnblogs.com/xytpz/p/14239815.html">相关文章:度盘限速？不存在的！！</a><br>
+MEGA 网盘 <a href="https://mega.nz/file/wXxi0aYK#URAP1qSJ-HM2A5qNQTZeyqVTEMopn-3qQycX136HW94">https://mega.nz/file/wXxi0aYK#URAP1qSJ-HM2A5qNQTZeyqVTEMopn-3qQycX136HW94</a><br>
+磁力链接</p>
+<pre><code>magnet:?xt=urn:btih:7101c26a2ba10ab2374dcc171f92a443bdc986c5&amp;dn=21996.1.210529-1541.co_release_CLIENT_CONSUMER_x64FRE_en-us.iso
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[所有定制系统的下载链接]]></title>
+        <id>https://zhulinyv.github.io/UY2xEhk4z/</id>
+        <link href="https://zhulinyv.github.io/UY2xEhk4z/">
+        </link>
+        <updated>2021-06-14T12:34:06.000Z</updated>
+        <content type="html"><![CDATA[<p>以下信息来自<a href="https://www.drblack-system.com/"><strong>Dr_Black</strong></a></p>
+<p>2019年后发布的定制系统可去高速下载通道下载</p>
+<p>点我进入高速下载通道（求赞助！！！完全自费！！）</p>
+<p>既然你都用了高速通道了不如顺便在这个网站上注册一下吧23333</p>
+<p>PS：请使用IDM配合此高速通道，已经全面接入CDN</p>
+<p><s>接受其他作者托管自己的系统到高速通道（有偿）</s></p>
+<p>（没钱了）</p>
+<p><s>如果进不去代表被墙，大概在1-2天内会处理恢复</s></p>
+<p>（不可能被墙的）</p>
+<p>如果下载速度慢的可以尝试使用下面的OfB镜像站。<br>
+·······································································<br>
+<s>以下信息来自Shizuku</s></p>
+<p><s>嗨，这里是Shizuku。</s></p>
+<p><s>本人在闲到爆的一天完成了Onedrive for Business微软国际版镜像站点的制作<a href="Link%EF%BC%9Ahttps://drblack-mirror-us.herokuapp.com">https://drblack-mirror-us.herokuapp.com/</a>，后端使用OfB国际版，不是世纪互联版，下载速度取决于阁下当地网络性能。</s></p>
+<p><s>日后本人也会加把劲提供Google 云端硬盘版本的镜像。</s></p>
+<p><s>有问题请发信到sakata.reji@gmail.com，那么多谢指教啦。</s></p>
+<p><strong>所有系统都不要点镜像内Setup安装！！！</strong></p>
+<p>提示：2019年之前的镜像均为GHO镜像<br>
+以下为百度云&amp;微云&amp;天翼网盘下载点</p>
+<h2 id="和泉纱雾os2010太差不放了">和泉纱雾OS2.0（1.0太差不放了）</h2>
+<p><a href="http://pan.baidu.com/s/1i5sW6qx">点击我来下载</a> 密码anpf</p>
+<h2 id="哔哩哔哩定制系统">哔哩哔哩定制系统</h2>
+<h3 id="30版本new">3.0版本！（NEW）！！！</h3>
+<p>新年快乐哇</p>
+<p><a href="https://cloud.189.cn/t/MRJjUjbYbeIf">点击我来下载（天翼网盘）</a>（推荐）(访问码:5rzp)</p>
+<p><a href="https://pan.baidu.com/s/1iPjI_CNdcoHj4PG88YW6VQ">点击我来下载（百度网盘）(访问码:jljp)</a></p>
+<p>....................................................................</p>
+<h3 id="20版本iso">2.0版本！iso</h3>
+<p><a href="https://pan.baidu.com/s/1xv5RZDfURGYVslyjm-d4_Q">点击我来下载</a></p>
+<p>提取码mgup</p>
+<h3 id="10版本iso镜像">1.0版本（iso镜像）</h3>
+<p><a href="https://pan.baidu.com/s/14oqM0wyqrAajRbG8I1vtDw">点击我来下载（百度云）</a></p>
+<p><a href="https://share.weiyun.com/5IjKsOr">点击我来下载（微云）</a></p>
+<p>密码2233</p>
+<h2 id="天选-x-rog-定制系统">天选 x ROG 定制系统</h2>
+<p>（推荐 - 天翼网盘链接 IDM满速）</p>
+<p><a href="https://cloud.189.cn/t/FJJVNzUNb22i">点击我来下载</a> 密码 9adv</p>
+<p>（不推荐 - 百度网盘链接）</p>
+<p><a href="https://pan.baidu.com/s/1UJVcsx0FSgiJWiwJove-FA">点击我来下载</a></p>
+<p>密码 w9wr</p>
+<p>iso镜像</p>
+<p>这个是天选，下面是ROG，别搞混了</p>
+<p>介个系统是爆肝做出来的！！2333还是很阔以的！华硕玩家首选</p>
+<p>嘛...后面看会不会扩充</p>
+<h2 id="rog-限定定制系统">ROG 限定定制系统</h2>
+<p>（推荐 - 天翼网盘链接 IDM满速）</p>
+<p><a href="https://cloud.189.cn/t/iqmYj2zMFv2u">点击我来下载</a> 密码 iek8</p>
+<p>（不推荐 - 百度网盘链接）</p>
+<p><a href="https://pan.baidu.com/s/154VT4Um1eFA4-LQyoj1hFw">点击我来下载</a></p>
+<p>密码 a0n2</p>
+<p>iso镜像</p>
+<p>介个系统超帅的！！！ROG玩家首选</p>
+<p>目前大概是最好看和最帅的定制系统？</p>
+<p>这个系统的高速通道不知道什么时候会有，目前高速通道服务器满了...</p>
+<p>嘛...后面看会不会扩充</p>
+<h2 id="mikuos系列-new">MikuOS系列 (New)</h2>
+<p>Windows版本</p>
+<h3 id="mikuos-ver10版本">MikuOS Ver1.0版本</h3>
+<p>超级好看！！！！</p>
+<p>（此系统含有高速通道链接，如有需要可直接在本页面置顶的地方进入高速通道）</p>
+<p><a href="https://pan.baidu.com/s/1xGo7p8YfOW5UZsDTKeaLrQ">百度云下载点我 (提取码:miik)</a></p>
+<p><a href="https://cloud.189.cn/t/3YfUfqjyyEZf">天翼云下载点我 (访问码:e9ok) （推荐）</a></p>
+<h3 id="mikuos全新版本">MikuOS全新版本！！！</h3>
+<p>Linux版本</p>
+<p>制作ing...</p>
+<p>7/24 - 目前进度已做出MikuOS Manjaro VM预览测试</p>
+<p>Arcaea定制系统</p>
+<h3 id="10版本iso镜像-2">1.0版本（iso镜像）</h3>
+<p><a href="https://cloud.189.cn/t/VjIbuaqe22Ez">天翼云下载点我（推荐）</a>（提取码3cck）</p>
+<p><a href="https://pan.baidu.com/s/1tY1t7ETSf5WlaetAwowqYQ">百度云下载点我</a>（提取码gzhe）</p>
+<h2 id="辉夜大小姐の定制系统">辉夜大小姐の定制系统</h2>
+<p>1.0版本（iso镜像）</p>
+<p><a href="https://share.weiyun.com/5pCKEGk">点击我来下载</a> 密码huiyea</p>
+<h2 id="轻音少女-k-on-定制系统">轻音少女 K-ON 定制系统</h2>
+<p>Kyoani FIGHT！！！！！！！！！！！！！！</p>
+<p>感谢京阿尼为我们创造的那么多快乐</p>
+<p>以此系统致敬轻音少女这部经典的作品</p>
+<p>1.0版本（iso镜像）</p>
+<p><a href="https://pan.baidu.com/s/15T5MaflpDDFLATw-EOzYpA">点击我来下载</a> 密码1qsq</p>
+<h2 id="原神定制系统">原神定制系统</h2>
+<p>（已修复动态壁纸问题）</p>
+<p><a href="https://pan.baidu.com/s/1Ntudd715-InwnbDqRUb9fQ">百度云下载点我</a> (访问码:gens)</p>
+<p><a href="https://cloud.189.cn/t/IruuQfBBvUbq">天翼云下载点我</a> (访问码:jrh7)</p>
+<p>愿旅行者们一路顺风~！</p>
+<p>超级好看！</p>
+<h2 id="洛天依定制系统">洛天依定制系统</h2>
+<p><a href="https://pan.baidu.com/s/1qDi80vgPpcSoSRP1enV-3g">百度云下载点我</a>  (访问码:lty2) (已补链)</p>
+<p><a href="https://cloud.189.cn/t/zUvMRfzqYfEf">天翼云下载点我</a> (访问码:ktl5) (推荐)</p>
+<p>吃货殿下敲好看！</p>
+<h2 id="明日方舟-arknights-system">明日方舟 Arknights System</h2>
+<p>2.0版本（iso镜像）（NEW）</p>
+<p>唔姆！更新2.0啦！！！</p>
+<p><a href="https://cloud.189.cn/t/ZnQrme2iq2Qj">天翼云下载点我</a>（访问码vt7b）（推荐）</p>
+<p><a href="https://pan.baidu.com/s/1zeGVBobV-4QPGEK-gowd6w">百度云下载点我</a>（访问码kra2）</p>
+<p>（此系统含有高速通道链接，如有需要可直接在本页面置顶的地方进入高速通道）</p>
+<h2 id="少女前线-girlsfrontline-os">少女前线 GirlsFrontline OS</h2>
+<p>（此系统含有高速通道链接，如有需要可直接在本页面置顶的地方进入高速通道）</p>
+<p>1.0版本（iso镜像）</p>
+<p><a href="https://pan.baidu.com/s/17O2lVyEJ1acSVOYWkbU56g">点击我来下载</a> 密码prpr</p>
+<h2 id="minecraft系列os">Minecraft系列OS</h2>
+<p>iso镜像 百度云链接 后续可能更新2.0</p>
+<h3 id="10版本">1.0版本</h3>
+<p><a href="https://pan.baidu.com/s/1mRugPi4joizm9HdRQgFi1A">点击我来下载</a> 密码mcnb</p>
+<p>Up主の定制系统</p>
+<h3 id="30全新版本">3.0全新版本！</h3>
+<p>天翼网盘：</p>
+<p><a href="https://cloud.189.cn/t/bQRBFvAjeUNr">ESD版 - 点我来下载</a></p>
+<p>提取码：2qww</p>
+<p><a href="">WIM版 - 点我来下载</a>(https://cloud.189.cn/t/iquQ3auu63my)</p>
+<p>提取码：i7ls</p>
+<p>百度云：</p>
+<p><a href="https://pan.baidu.com/s/11CgGVQpn7BpfcN5qIHdXkQ">ESD版 - 点我来下载</a></p>
+<p>提取码：kgse</p>
+<p><a href="https://pan.baidu.com/s/1ulpOG0etAUR4cGxe9_XLVQ">WIM版 - 点我来下载</a></p>
+<p>提取码：4zyf</p>
+<h3 id="20版本iso格式">2.0版本（iso格式）</h3>
+<p>大小14.7GB</p>
+<p><a href="https://pan.baidu.com/s/1LG2FG301onlFZF3eew0aaw">点击我来下载</a> 提取码: up23</p>
+<p>*以下为旧版本1.0版本（gho格式，软件少，不推荐下载。）</p>
+<p>该系统集成了一大堆新人Up主必备的软件</p>
+<p>大小14GB</p>
+<p><a href="https://pan.baidu.com/s/1iSKg8BPqeVEh7N6mk09s9w">点击我来下载</a> 密码egwe</p>
+<p>妄想症系列</p>
+<h3 id="beta1版本-点击我来下载-密码m38m">Beta1版本 <a href="https://pan.baidu.com/s/1-AokS_Fkmn2lB0FGsG1I3g">点击我来下载</a> 密码m38m</h3>
+<p>1.0正式版本 ...... 请去Steam商城购买Deliver:Me游戏，截图发QQ后领取。</p>
+<p><a href="https://store.steampowered.com/app/779640/Deliver_Me/">点击我跳转到Steam商城</a></p>
+<h2 id="碧蓝航线定制os">碧蓝航线定制OS</h2>
+<p>1.0（iso镜像）</p>
+<p><a href="https://share.weiyun.com/5qQYtr1">点击我来下载</a></p>
+<h2 id="saberの定制os">Saberの定制OS</h2>
+<p><a href="https://pan.baidu.com/s/1j8oBYSqH55QDD9bWm_renA">点击我来下载</a> 密码hnpv</p>
+<h2 id="崩坏3系列os">崩坏3系列OS</h2>
+<p>崩坏3定制系统（iso镜像）</p>
+<p><a href="https://share.weiyun.com/5ieLD80">点击我来下载（微云）密码honkai</a></p>
+<p><a href="https://pan.baidu.com/s/11cvvTkw_qIwVZN0tC3IXXQ">点击我来下载（百度云）密码4s0g</a></p>
+<h2 id="欢迎大家补充">欢迎大家补充！！</h2>
+<hr>
+<p><strong>以上内容来自：</strong><br>
+<strong><a href="https://www.drblack-system.com/">DrBlackの锦里 ————「その手を離すのでしょう 優しい笑みできっと」</a></strong><br>
+<strong><a href="https://www.drblack-system.com/">https://www.drblack-system.com/</a></strong></p>
+]]></content>
+    </entry>
+</feed>
