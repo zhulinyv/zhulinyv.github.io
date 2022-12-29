@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://timelineapp.pointstone.org/coreball/game.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>CoreBall</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="keywords" content="core ball,core,ball,HTML5,见缝插针">
+    <script async="" src="http://www.google-analytics.com/analytics.js"></script><script>
+        // window.location.href = "http://thirdapp.pointstone.org/lfd/";
+    </script>
+    <link href="./CoreBall_files/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./CoreBall_files/style.css">
+    <style type="text/css">
+    body {
+        background-color: #c8c8c8;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        -webkit-touch-callout:none;
+        -webkit-user-select:none;
+        font-family: Lato;
+    }
+    .center-box {
+        text-align: center;
+        position: absolute;
+        width: 300px;
+        height: 400px;
+        margin: -200px 0 0 -150px;
+        left: 50%;
+        top: 50%;
+    }
+    .center-box-copy {
+        text-align: center;
+        position: absolute;
+        width: 300px;
+        margin: -200px 0 0 -150px;
+        left: 50%;
+    }
+
+    .title {
+        font-size: 50px;
+    }
+    .button {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        left: 50%;
+        top: 50%;
+        margin: -100px 0 0 -50px;
+        border: 2px solid #666;
+        color: #666;
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+        border-radius: 15px;
+        font-size: 55px;
+    }
+    .button .text {
+        font-size: 10px;
+        padding: 0 10px;
+        width: 80px
+    }
+    .op {
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        left: 50%;
+        top: 70%;
+        margin: -50px 0 0 -100px;
+    }
+    #btnFW {
+        color: #666;
+        text-decoration: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="tips" class="">在微信中打开可开启云端存关</div>
+    <canvas style="display:none;" id="stage" width="1920" height="939"></canvas>
+    <div id="begin" style="width: 1920px; height: 939px; background-color: rgb(200, 200, 200);">
+        <section class="center-box">
+            <span class="title">C<span style="color: red;">o</span>re Ball</span>
+            <div class="button">
+                <div id="txtAr" style="margin-top: 5px;">▶</div>
+                <div class="text" style="margin-top: -0px;">level 2</div>
+                <div style="width:80px;margin:0px auto;margin-top:3px;">
+                    <div style="width:80px;height:2px;background-color:#999;">
+                        <div id="levelProgressBar" style="width: 1.77778px; height: 2px; background-color: rgb(102, 102, 102);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="op">
+                <a id="btnFW" href="javascript:;">
+                    <!-- <img data-capture="1" src="image/btn_fw.png" /> -->
+                </a>
+                <span id="btnReset"></span>
+                <span id="btnJump" style="display:inline-block;margin-left: 10px;color:#666">跳关</span>
+                <div id="tipJump" style="font-size:14px;color:#555;margin-top: 15px;display:none;">正在载入微信支付……</div>
+                <div id="payBtn" style="font-size:14px;color:#555;border:2px solid #555;margin-top: 15px;display:none;"></div>
+            </div>
+        </section>
+        <div id="footer">
+            <span id="chooseLevel" style="display:inline-block;margin-left: 10px;color:#666">选择关卡</span>
+            <span id="loadLevel" style="display:inline-block;margin-left: 10px;color:#666">云端同步</span>
+            <br>
+            <div style="">pointstone</div>
+        </div>
+        <section id="chooseBlockWindow" style="display: none;">
+            <h2>关卡列表</h2>
+            <div id="chooseBlock"><div class="page page_1 show"><div class="row"><div data-level="1" class="block lv_1 passed">1</div><div data-level="2" class="block lv_2 passed">2</div><div data-level="3" class="block lv_3">3</div><div data-level="4" class="block lv_4">4</div><div data-level="5" class="block lv_5">5</div></div><div class="row"><div data-level="6" class="block lv_6">6</div><div data-level="7" class="block lv_7">7</div><div data-level="8" class="block lv_8">8</div><div data-level="9" class="block lv_9">9</div><div data-level="10" class="block lv_10">10</div></div><div class="row"><div data-level="11" class="block lv_11">11</div><div data-level="12" class="block lv_12">12</div><div data-level="13" class="block lv_13">13</div><div data-level="14" class="block lv_14">14</div><div data-level="15" class="block lv_15">15</div></div><div class="row"><div data-level="16" class="block lv_16">16</div><div data-level="17" class="block lv_17">17</div><div data-level="18" class="block lv_18">18</div><div data-level="19" class="block lv_19">19</div><div data-level="20" class="block lv_20">20</div></div><div class="row"><div data-level="21" class="block lv_21">21</div><div data-level="22" class="block lv_22">22</div><div data-level="23" class="block lv_23">23</div><div data-level="24" class="block lv_24">24</div><div data-level="25" class="block lv_25">25</div></div><div class="row"><div data-level="26" class="block lv_26">26</div><div data-level="27" class="block lv_27">27</div><div data-level="28" class="block lv_28">28</div><div data-level="29" class="block lv_29">29</div><div data-level="30" class="block lv_30">30</div></div></div><div class="page page_2"><div class="row"><div data-level="31" class="block lv_31">31</div><div data-level="32" class="block lv_32">32</div><div data-level="33" class="block lv_33">33</div><div data-level="34" class="block lv_34">34</div><div data-level="35" class="block lv_35">35</div></div><div class="row"><div data-level="36" class="block lv_36">36</div><div data-level="37" class="block lv_37">37</div><div data-level="38" class="block lv_38">38</div><div data-level="39" class="block lv_39">39</div><div data-level="40" class="block lv_40">40</div></div><div class="row"><div data-level="41" class="block lv_41">41</div><div data-level="42" class="block lv_42">42</div><div data-level="43" class="block lv_43">43</div><div data-level="44" class="block lv_44">44</div><div data-level="45" class="block lv_45">45</div></div><div class="row"><div data-level="46" class="block lv_46">46</div><div data-level="47" class="block lv_47">47</div><div data-level="48" class="block lv_48">48</div><div data-level="49" class="block lv_49">49</div><div data-level="50" class="block lv_50">50</div></div><div class="row"><div data-level="51" class="block lv_51">51</div><div data-level="52" class="block lv_52">52</div><div data-level="53" class="block lv_53">53</div><div data-level="54" class="block lv_54">54</div><div data-level="55" class="block lv_55">55</div></div><div class="row"><div data-level="56" class="block lv_56">56</div><div data-level="57" class="block lv_57">57</div><div data-level="58" class="block lv_58">58</div><div data-level="59" class="block lv_59">59</div><div data-level="60" class="block lv_60">60</div></div></div><div class="page page_3"><div class="row"><div data-level="61" class="block lv_61">61</div><div data-level="62" class="block lv_62">62</div><div data-level="63" class="block lv_63">63</div><div data-level="64" class="block lv_64">64</div><div data-level="65" class="block lv_65">65</div></div><div class="row"><div data-level="66" class="block lv_66">66</div><div data-level="67" class="block lv_67">67</div><div data-level="68" class="block lv_68">68</div><div data-level="69" class="block lv_69">69</div><div data-level="70" class="block lv_70">70</div></div><div class="row"><div data-level="71" class="block lv_71">71</div><div data-level="72" class="block lv_72">72</div><div data-level="73" class="block lv_73">73</div><div data-level="74" class="block lv_74">74</div><div data-level="75" class="block lv_75">75</div></div><div class="row"><div data-level="76" class="block lv_76">76</div><div data-level="77" class="block lv_77">77</div><div data-level="78" class="block lv_78">78</div><div data-level="79" class="block lv_79">79</div><div data-level="80" class="block lv_80">80</div></div><div class="row"><div data-level="81" class="block lv_81">81</div><div data-level="82" class="block lv_82">82</div><div data-level="83" class="block lv_83">83</div><div data-level="84" class="block lv_84">84</div><div data-level="85" class="block lv_85">85</div></div><div class="row"><div data-level="86" class="block lv_86">86</div><div data-level="87" class="block lv_87">87</div><div data-level="88" class="block lv_88">88</div><div data-level="89" class="block lv_89">89</div><div data-level="90" class="block lv_90">90</div></div></div></div>
+            <div id="pre" class="btn fll" style="display: none;">上一页</div>
+            <div id="next" class="btn flr">下一页</div>
+            <div id="back" class="btn center">返回</div>
+        </section>
+    </div>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-59628863-4', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    <script src="./CoreBall_files/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="./CoreBall_files/index.min.js"></script>
+
+
+
+
+<iframe id="tmp_downloadhelper_iframe" style="display: none;"></iframe></body></html>

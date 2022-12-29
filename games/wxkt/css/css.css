@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+    pointer-events: none;
+}
+
+
+
+#minutes0 {
+    padding-left: 79.89583%;
+    padding-top: 4.373%;
+    position: fixed;
+    width: 3.90625%;
+}
+
+#minutes1 {
+    padding-left: 76.3541666%;
+    padding-top: 4.16666667%;
+    position: fixed;
+    width: 4.21875%;
+}
+
+#hours0 {
+    padding-left: 71.3020833%;
+    padding-top: 3.697916667%;
+    position: fixed;
+    width: 4.2708333%;
+}
+
+#hours1 {
+    padding-left: 67.2916667%;
+    padding-top: 3.697916667%;
+    position: fixed;
+    width: 4.53125%;
+}
+
+#video {
+    width: 100%;
+
+}

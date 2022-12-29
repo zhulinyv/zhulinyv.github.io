@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>深渊凝视着你</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <script src="inky-list.js"></script>
+</head>
+<body>
+<div class="card" style="min-height: 100%">
+    <div class="card-header">
+        <h1>深渊凝视着你</h1>
+    </div>
+    <div class="card-body">
+        <div class="form-inline">
+            <label class="sr-only" for="search-text">检索</label>
+            <input class="form-control" type="text" id="search-text" placeholder="查询测试" style="width: 100%;">
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>测试</th>
+                    <th>最后更新日期</th>
+                    <th>预计耗时</th>
+                    <th>状态</th>
+                    <th>内容作者</th>
+                    <th>程序作者</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div style="margin: auto;padding:auto;width: 100%">
+            <ul class="pagination">
+                <li class="disabled"><span>«</span></li>
+                <li class="active"><span>1</span></li>
+                <li><a href="#!">»</a></li>
+            </ul>
+        </div>
+        <p style="color: #33cabb;">* 单击测试名称跳转到测试</p>
+    </div>
+</div>
+<div class="card" style="min-height: 400px">
+    <div class="card-header">
+        <h4>统计</h4>
+    </div>
+    <div class="card-body">
+        <div class="col-xs-12">
+            <canvas id="chart-online" style="position: absolute;left: calc(50% - 140px) ;display: inline; height: 280px; width: 280px;"></canvas>
+        </div>
+    </div>
+</div>
+<div id="gitalk-container" class="container"></div>
+</body>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="js/Chart.js"></script>
+
+<script>
+
+    var thisPage = 1;
+
+    updateTable();
+    updateChart();
+    $("#search-text").on("input propertychange",function(){
+       updateTable($("#search-text").val(),thisPage)
+    });
+
+    function updateChart() {
+        //测试在线情况
+        let onlineNum = 0;
+        let inlTestNum = 0;
+        let testNum = 0;
+        let offLineNum = 0;
+        let unknownNum = 0;
+
+        for(let i = 0 ; i < InkyList["inky-text-list"].length; i++) {
+            switch (InkyList["inky-text-list"][i]["status"]) {
+                case "OK":
+                    onlineNum ++;break;
+                case "IN-TEST":
+                    inlTestNum++;break;
+                case "TEST":
+                    testNum++;break;
+                case "DWON":
+                    offLineNum++;break;
+                default:
+                    unknownNum++;
+            }
+        }
+
+        new Chart($("#chart-online"), {
+            type: 'doughnut',
+            data: {
+                labels: ["正常","内部测试","测试", "停止服务", "未知"],
+                datasets: [{
+                    data: [onlineNum,inlTestNum,testNum, offLineNum, unknownNum],
+                    backgroundColor: ['#5cb85c','#f0ad4e' ,'#f96197', '#d9534f', '#465161']
+                }]
+            },
+            options: {
+                responsive: false
+            }
+        });
+
+    }
+
+    function updateTable(keyword,page) {
+        let table = '';
+        if (page === undefined || page === null || page === '') page = 1;
+        let maxIndex = page*10;
+        let minIndex = page*10-9;
+        let j = 0;
+        for(let i = 0 ; i < InkyList["inky-text-list"].length; i++) {
+            if (keyword !== undefined && keyword !== null && keyword !== ""){
+                keyword = keyword.replace(/(^\s*)|(\s*$)/g,"");
+                if (InkyList["inky-text-list"][i]["name"].indexOf(keyword) === -1)
+                    continue;
+            }
+            j++;
+            if (j < minIndex || j > maxIndex){
+                continue;
+            }
+
+            table += '<tr><td>'+InkyList["inky-text-list"][i]["id"]+'</td>';
+            if (
+                InkyList["inky-text-list"][i]["status"] === "DOWN" ||
+                InkyList["inky-text-list"][i]["status"] === "IN-TEST"
+            ) {
+                table +='<td>'+InkyList["inky-text-list"][i]["name"]+'</td>\n';
+            }else {
+                table += '<td><a href="'+InkyList["inky-text-list"][i]["url"]+'">'+InkyList["inky-text-list"][i]["name"]+'</a></td>\n';
+            }
+            table += '<td>'+InkyList["inky-text-list"][i]["update"]+'</td>\n';
+            table += '<td><div class="progress progress-striped progress-sm">\n' +
+                '<div class="progress-bar progress-bar-info" style="width: '+InkyList["inky-text-list"][i]["time"]+'%;"></div>\n' +
+                '</div></td>';
+            switch (InkyList["inky-text-list"][i]["status"]) {
+                case "OK":
+                    table += '<td><span class="label label-success">正常</span></td>';break;
+                case "IN-TEST":
+                    table += '<td><span class="label label-warning">内部测试</span></td>';break;
+                case "TEST":
+                    table += '<td><span class="label label-pink">公开测试</span></td>';break;
+                case "DWON":
+                    table += '<td><span class="label label-danger">停止服务</span></td>';break;
+                default:
+                    table += '<td><span class="label label-dark">未知</span></td>';
+            }
+            let authorSize = 0;
+            table += "<td>";
+            let authorColorList = ['label-warning','label-danger','label-success','label-info'];
+            for(let j = 0 ; j < InkyList["inky-text-list"][i]["author"].length; j++) {
+                authorSize ++;
+                let url = InkyList["inky-text-list"][i]["author"][j]["url"];
+                let authorColor = authorColorList[InkyList["inky-text-list"][i]["author"][j]["name"].charCodeAt(0)%authorColorList.length];
+                if (url === null || url === undefined) {
+                    table += '<span class="label '+authorColor+'">' + InkyList["inky-text-list"][i]["author"][j]["name"] +"</span>&nbsp;";
+                }else {
+                    table += '<span class="label '+authorColor+'"><a href="'+url+'" style="color: white" >' + InkyList["inky-text-list"][i]["author"][j]["name"] +"</a></span>&nbsp;";
+                }
+            }
+
+            if (authorSize === 0) {
+                table += '<span class="label label-dark">未知</span></td>';
+            }
+            table += '</td><td>';
+            authorSize = 0;
+            for(let j = 0 ; j < InkyList["inky-text-list"][i]["program-author"].length; j++) {
+                authorSize ++;
+                let url = InkyList["inky-text-list"][i]["program-author"][j]["url"];
+                let authorColor = authorColorList[InkyList["inky-text-list"][i]["program-author"][j]["name"].charCodeAt(0)%authorColorList.length];
+                if (url === null || url === undefined) {
+                    table += '<span class="label '+ authorColor +'">' + InkyList["inky-text-list"][i]["program-author"][j]["name"] +"</span>&nbsp;";
+                }else {
+                    table += '<span class="label '+ authorColor +'"><a href="'+url+'" style="color: white" >' + InkyList["inky-text-list"][i]["program-author"][j]["name"] +"</a></span>&nbsp;";
+                }
+            }
+            if (authorSize === 0) {
+                table += '<span class="label label-dark">未知</span></td>';
+            }
+            table += '</td>';
+            table += "</tr>";
+        }
+        $('tbody').html(table);
+
+        let pagination;
+
+        if (page === 1){
+            pagination = '<li class="disabled"><span>«</span></li>';
+        }else {
+            pagination = '<li onclick="addPage(-1)"><span>«</span></li>';
+        }
+        for(let k = 1 ; k <= parseInt(j/10+1) ; k++){
+            if (k === page){
+                pagination += '<li class="active" onclick="changePage('+k+')"><span>'+k+'</span></li>';
+            }else {
+                pagination += '<li onclick="changePage('+k+')"><span>'+k+'</span></li>';
+            }
+        }
+        if (page === parseInt(j/10+1)){
+            pagination += '<li class="disabled"><span>»</span></li>';
+        }else {
+            pagination += '<li onclick="addPage(1)"><span>»</span></li>';
+        }
+        $('.pagination').html(pagination);
+    }
+
+    function addPage(page) {
+        page = parseInt(page);
+        thisPage = thisPage + page;
+        updateTable($("#search-text").val(),thisPage);
+    }
+
+    function changePage(page) {
+        if (parseInt(page) < 0) return;
+        thisPage = page;
+        updateTable($("#search-text").val(),page);
+    }
+
+    var gitalk = new Gitalk({
+        clientID: '2c454f6a4439d8fdc27e',
+        clientSecret: '33b652e7cedde1146ba0073218808118ecaf0cbc',
+        repo: 'xpcheck',
+        owner: 'StarInitial',
+        admin: ['StarInitial'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: true  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container')
+</script>
+</html>

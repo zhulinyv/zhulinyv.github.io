@@ -1,0 +1,21 @@
+{
+	"description" : "一款无聊时玩的小游戏，我尝试的把他搬到这款桌面应用里。如果有任何侵权行为，我会删除。",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"title" : "coreball",
+	"type" : "web",
+	"visibility" : "public"
+}

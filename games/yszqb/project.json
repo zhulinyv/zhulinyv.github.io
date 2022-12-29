@@ -1,0 +1,22 @@
+{
+	"description" : "3D Periodic table \ncode by http://gnipbao.github.io/css3-test/src/3D-demo/periodic-table/index.html \ntransplant by me \nself-adaption \n4 display modes \nenjoy!",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"tags" : [ "Technology" ],
+	"title" : "3D Periodic table",
+	"type" : "web",
+	"visibility" : "public"
+}

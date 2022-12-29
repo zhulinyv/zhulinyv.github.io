@@ -1,0 +1,22 @@
+{
+	"description" : "1080p",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0.9647058823529412 0.3686274509803922 1"
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"tags" : [ "Anime" ],
+	"title" : "Rem And Ram with Clock That Moves With Mouse",
+	"type" : "web",
+	"visibility" : "public"
+}
