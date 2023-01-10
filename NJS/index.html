@@ -60,7 +60,7 @@
           <img src="https://zhulinyv.github.io/post-images/NJS.png" alt="脑积水食用手册（用爱发电）" class="block w-full mb-8">
         
         <div class="mb-8 flex flex-wrap">
-          <div class="text-gray-400 text-sm mr-4">2023-01-07 · 31 min read</div>
+          <div class="text-gray-400 text-sm mr-4">2023-01-10 · 31 min read</div>
           
             <a href="https://zhulinyv.github.io/klgX5GkOi/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
               <i class="ri-hashtag"></i>
@@ -169,13 +169,13 @@ setu_mn xxx  单次发送的最大图片数, xxx 为 int 类型的参数
 <details>
 <summary><b>指令：</summary></b>
 <pre><p>
-◉绘画/画画/画图/作图/绘图/约稿
+◉old+ 绘画/画画/画图/作图/绘图/约稿
 （说明：使用描述性文本生成图画, 可用参数见文本生成参数, 管理参数见绘图管理参数）
-◉以图绘图/以图生图/以图制图
+◉old+ 以图绘图/以图生图/以图制图
 （说明：在基准图像上使用描述性文本生成图画, 支持回复图片消息使用, 可用参数见图像生成参数）
-◉个人标签排行/我的标签排行
+◉old+ 个人标签排行/我的标签排行
 （说明：查看我的所有使用过的标签的排行）
-◉群标签排行/本群标签排行
+◉old+ 群标签排行/本群标签排行
 （说明：查看本期所有使用过的标签的排行）
 </pre></p>
 <p><b>其它参数：</b></p>
@@ -514,7 +514,7 @@ code [语言] [-i] [inputText]
 由于 api 较多，可以通过 "查看api" 来查看当前使用的接口。
 </p></pre>
 <pre><p>
-超管指令：
+超管指令：以下指令均需要艾特
 rm_qq + QQ号
 切换小爱同学|青云客|ChatGPTapi模式1/模式2
 切换图片api
@@ -1342,7 +1342,61 @@ httpcat + HTTP状态码
 <li>获取图片的TAG</li>
 <li>如果你不想用.tagget，可以用 <strong>鉴赏</strong> 或 <strong>查书</strong> 代替。</li>
 </ul>
-
+</details>
+<h2 id="79对对联-nonebot-plugin-couplets">79.对对联 <a href="https://github.com/CMHopeSunshine/nonebot-plugin-couplets">nonebot-plugin-couplets</a></h2>
+<details>
+<summary><b>指令：</summary></b>
+<pre><p>
+对联 <上联内容> (数量)
+· 数量可选，默认为1
+</p></pre>
+</details>
+<h2 id="80整点报时-nonebot-plugin-nowtime">80.整点报时 <a href="https://github.com/Cvandia/nonebot_plugin_nowtime">nonebot-plugin-nowtime</a></h2>
+<details>
+<summary><b>指令：</summary></b>
+<table>
+<thead>
+<tr>
+<th align="center">指令</th>
+<th align="center">需要@</th>
+<th align="center">范围</th>
+<th align="center">说明</th>
+<th align="center">权限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">北京时间</td>
+<td align="center">否</td>
+<td align="center">私聊、群聊</td>
+<td align="center">查看现在时间</td>
+<td align="center">任何</td>
+</tr>
+<tr>
+<td align="center">开启、关闭整点报时</td>
+<td align="center">否</td>
+<td align="center">群聊</td>
+<td align="center">开启或关闭群聊的整点报时</td>
+<td align="center">群主，超管，管理员</td>
+</tr>
+<tr>
+<td align="center">查看整点报时列表</td>
+<td align="center">否</td>
+<td align="center">群聊</td>
+<td align="center">查看已开启整点报时的群聊</td>
+<td align="center">群主，超管，管理员</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="星座查询-nonebot_plugin_xingzuo">星座查询 <a href="https://github.com/mengxinyuan638/xingzuo_luck">nonebot_plugin_xingzuo</a></h2>
+<details>
+<summary><b>指令：</summary></b>
+<pre><p>
+#星座 + 想要查询的星座
+</p></pre>
+</details>
+<hr>
         </div>
         <!-- Share to Twitter, Weibo, Telegram -->
         <div class="flex items-center">
@@ -1811,6 +1865,9 @@ Powered by <a target="_blank" href="https://zhulinyv.github.io/">(๑•小丫�
 <li><a href="#76%E6%96%87%E5%AD%97%E8%A1%A8%E6%83%85%E5%8C%85%E5%88%B6%E4%BD%9C-nonebot-plugin-memes">76.文字表情包制作 nonebot-plugin-memes</a></li>
 <li><a href="#77%E5%85%BD%E8%AF%AD%E8%AF%91%E8%80%85-nonebot_plugin_animalvoice">77.兽语译者 nonebot_plugin_animalVoice</a></li>
 <li><a href="#78ai%E7%94%BB%E5%9B%BE%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0sdwebui-nonebot-plugin-novelai">78.AI画图(使用本地SDWebUI) nonebot-plugin-novelai</a></li>
+<li><a href="#79%E5%AF%B9%E5%AF%B9%E8%81%94-nonebot-plugin-couplets">79.对对联 nonebot-plugin-couplets</a></li>
+<li><a href="#80%E6%95%B4%E7%82%B9%E6%8A%A5%E6%97%B6-nonebot-plugin-nowtime">80.整点报时 nonebot-plugin-nowtime</a></li>
+<li><a href="#%E6%98%9F%E5%BA%A7%E6%9F%A5%E8%AF%A2-nonebot_plugin_xingzuo">星座查询 nonebot_plugin_xingzuo</a></li>
 </ul>
 </li>
 </ul>
