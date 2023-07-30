@@ -1823,9 +1823,146 @@ Duckduckgo: https://duckduckgo.com/?q=%s
 </details>
 <h2 id="65chatgpt使用token-nonebot_plugin_chatgpt_plus">65.ChatGPT(使用Token) <a href="https://github.com/AkashiCoin/nonebot-plugin-chatgpt-plus">nonebot_plugin_chatgpt_plus</a></h2>
 <details>
+<<<<<<< HEAD
 <summary>查看指令: </summary>
 <p>开始对话:</p>
 <p>chat1 + 任意内容</p>
+=======
+<summary><b>指令: </summary></b>
+<pre><p>
+chat+任意聊天内容
+（这个对话是记录上文的）
+艾特脑积水+刷新对话 来**刷新**本轮对话
+艾特脑积水+导出对话 来导出本轮对话id
+艾特脑积水+导入对话+对话id+父消息id(可选) 来导入对话
+</p></pre>
+</details>
+<h2 id="67命令别名-nonebot-plugin-alias">67.命令别名 <a href="https://github.com/noneplugin/nonebot-plugin-alias">nonebot-plugin-alias</a></h2>
+<details>
+<summary><b>指令: </summary></b>
+<pre><p>
+alias [别名]=[指令名称] 添加别名
+alias [别名] 查看别名
+alias -p 查看所有别名
+unalias [别名] 删除别名
+unalias -a 删除所有别名
+默认只在当前群聊/私聊中生效, 使用 -g 参数添加全局别名; 增删全局别名需要超级用户权限
+alias -g [别名]=[指令名称] 添加全局别名
+unalias -g [别名] 删除全局别名
+</p></pre>
+</details>
+<h2 id="68群友召唤术-nonebot_plugin_summon">68.群友召唤术 <a href="https://github.com/zhulinyv/nonebot_plugin_summon">nonebot_plugin_summon</a></h2>
+<details>
+<summary><b>指令: </summary></b>
+<pre><p>
+设置召唤术+昵称+QQ号
+召唤+昵称
+戳+昵称+数字
+<p>删除召唤术+昵称+QQ号<br>
+查看召唤术+昵称+QQ号</p>
+<p>超管指令: 切换召唤术</p>
+</p></pre>
+</details>
+<h2 id="69戒色打卡日记-nonebot_plugin_abstain_diary">69.戒色打卡日记 <a href="https://github.com/Ikaros-521/nonebot_plugin_abstain_diary">nonebot_plugin_abstain_diary</a></h2>
+<details>
+<summary><b>指令: </summary></b>
+<pre><p>
+戒色命令如下(【】中的才是命令哦, 记得加命令前缀): 
+<p>【戒色目标】【设置戒色目标】, 后面追加戒色目标天数。例如: /戒色目标 30<br>
+【戒色】【戒色打卡】, 每日打卡, 请勿中断喵。例如: /戒色<br>
+【群戒色】【戒色情况】【群友戒色情况】, 查看本群所有戒色情况。例如: /群戒色<br>
+【放弃戒色】【取消戒色】【不戒色了】, 删除戒色目标。例如: /放弃戒色<br>
+【群戒色】【戒色情况】【群友戒色情况】, 查看本群所有戒色情况</p>
+<p>财能使人贪, 色能使人嗜, 名能使人矜, 潜能使人倚, 四患既都去, 岂在浮尘里。</p>
+</p></pre>
+</details>
+<h2 id="70apex查询-nonebot-plugin-apex-api-query">70.Apex查询 <a href="https://github.com/H-xiaoH/nonebot-plugin-apex-api-query">nonebot-plugin-apex-api-query</a></h2>
+<details>
+<summary><b>指令: </summary></b>
+<pre><p>
+<b>查询玩家信息:</b>
+/bridge [玩家名称] 、 /玩家 [玩家名称]、 /uid [玩家UID]、 /UID [玩家UID]
+<b>查询大逃杀地图轮换</b>
+/maprotation 、 /地图
+<b>查询猎杀者信息</b>
+/predator 、 /猎杀
+<b>查询复制器轮换</b>
+/crafting 、 /制造
+</p></pre>
+</details>
+<h2 id="71chatgptopenai对话使用多api-nonebot-plugin-gpt3">71.ChatGPT(OpenAI)对话(使用多api) <a href="https://github.com/chrisyy2003/lingyin-bot/tree/main/plugins/gpt3">nonebot-plugin-gpt3</a></h2>
+<details>
+<summary><b>指令: </summary></b>
+<pre><p>
+<b>指令👈需要@👉描述</b>
+<p>刷新/重置对话👈是👉重置会话记录, 开始新的对话<br>
+重置人格👈是👉重置AI人格<br>
+设置人格👈是👉设置AI人格<br>
+导出会话/导出对话👈是👉导出历史会话<br>
+自定义的指令前缀👈自定义是否需要@👉基本的聊天对话<br>
+chat/聊天/开始聊天👈是👉开始连续对话<br>
+stop/结束/结束聊天👈否👉结束连续聊天模式</p>
+</p></pre>
+</details>
+<h2 id="72防撤回-nonebot-plugin-antirecall">72.防撤回 <a href="https://github.com/Jerry080801/nonebot-plugin-antirecall/">nonebot-plugin-antirecall</a></h2>
+<details>
+<summary><b>指令: </summary></b>
+<pre><p>
+开启/添加防撤回, enable + 群号1 群号2 ...
+关闭/删除防撤回, disable + 群号1 群号2 ...
+查看防撤回群聊
+开启/关闭绕过管理层
+防撤回菜单
+开启/关闭防撤回私聊gid uid
+查看防撤回私聊
+开启防撤回私聊 gid
+关闭防撤回私聊
+查看防撤回监听
+添加/删除防撤回监听 gid	
+</p></pre>
+</details>
+<h2 id="73原神前瞻直播兑换码-nonebot-plugin-gscode">73.原神前瞻直播兑换码 <a href="https://github.com/monsterxcn/nonebot-plugin-gscode">nonebot-plugin-gscode</a></h2>
+<details>
+<summary><b>指令: </summary></b>
+<pre><p>
+gscode / 兑换码
+</p></pre>
+</details>
+<h2 id="74签到-sign_in">74.签到 sign_in</h2>
+<details>
+<summary><b>指令: </summary></b>
+<pre><p>
+签到/盖章
+收集册(+QQ号或艾特)
+</p></pre>
+</details>
+<h2 id="75pinghttp-nonebot_plugin_ping">75.PING|HTTP <a href="https://github.com/zhulinyv/nonebot_plugin_ping">nonebot_plugin_ping</a></h2>
+<details>
+<summary><b>指令: </summary></b>
+<pre><p>
+ping  + url
+示例: ping www.baidu.com
+httpcat + HTTP状态码
+示例: httpcat404
+</p></pre>
+</details>
+<h2 id="76文字表情包制作-nonebot-plugin-memes">76.文字表情包制作 <a href="https://github.com/noneplugin/nonebot-plugin-memes">nonebot-plugin-memes</a></h2>
+<details>
+<summary><b>指令: </summary></b>
+<p dir="auto">发送“文字表情包”显示下图的列表: </p>
+<div align="left" dir="auto">
+  <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/027c5cc19e141cec8d1144530d1c066f2114e7d4d50a9c58a5edb584abb9b2cc/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f31312f32392f34393650414d6232354767547579712e6a7067" one-link-mark="yes"><img src="https://camo.githubusercontent.com/027c5cc19e141cec8d1144530d1c066f2114e7d4d50a9c58a5edb584abb9b2cc/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f31312f32392f34393650414d6232354767547579712e6a7067" width="500" data-canonical-src="https://s2.loli.net/2022/11/29/496PAMb25GgTuyq.jpg" style="max-width: 100%;"></a>
+</div>
+<b>超管指令: </b>
+<p dir="auto">发送 <code>启用文字表情/禁用文字表情 [表情名]</code>, 如: <code>禁用文字表情 鲁迅说</code></p>
+<p dir="auto">超级用户 可以设置某个表情包的管控模式（黑名单/白名单）</p>
+<p dir="auto">发送 <code>全局启用文字表情 [表情名]</code> 可将表情设为黑名单模式; </p>
+<p dir="auto">发送 <code>全局禁用文字表情 [表情名]</code> 可将表情设为白名单模式; </p>
+</details>
+<h2 id="77兽语译者-nonebot_plugin_animalvoice">77.兽语译者 <a href="https://github.com/ANGJustinl/nonebot_plugin_animalVoice/">nonebot_plugin_animalVoice</a></h2>
+<details>
+<summary><b>指令: </summary></b>
+>>>>>>> 919dfaea2eac17966745019575c7bdf739377cfc
 <table>
 <thead>
 <tr>
