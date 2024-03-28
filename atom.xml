@@ -2,14 +2,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhulinyv.github.io</id>
     <title>可爱的小丫头片子酱的肥宅快乐水妹汁加工厂股份无限公司</title>
-    <updated>2023-07-30T03:35:55.145Z</updated>
+    <updated>2024-03-28T03:33:38.539Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhulinyv.github.io"/>
     <link rel="self" href="https://zhulinyv.github.io/atom.xml"/>
     <subtitle>这里，我们不止生产妹汁；众多软件中总有一款适合你！</subtitle>
     <logo>https://zhulinyv.github.io/images/avatar.png</logo>
     <icon>https://zhulinyv.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2023, 可爱的小丫头片子酱的肥宅快乐水妹汁加工厂股份无限公司</rights>
+    <rights>All rights reserved 2024, 可爱的小丫头片子酱的肥宅快乐水妹汁加工厂股份无限公司</rights>
+    <entry>
+        <title type="html"><![CDATA[Nai3 画风串]]></title>
+        <id>https://zhulinyv.github.io/aLcTZgiMf/</id>
+        <link href="https://zhulinyv.github.io/aLcTZgiMf/">
+        </link>
+        <updated>2024-03-28T03:27:47.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[脑积水食用手册（用爱发电）]]></title>
         <id>https://zhulinyv.github.io/NJS/</id>
@@ -72,12 +79,5 @@
         <link href="https://zhulinyv.github.io/xWVscqnk3/">
         </link>
         <updated>2022-08-30T22:43:42.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[弹弹PLAY]]></title>
-        <id>https://zhulinyv.github.io/GQsKEuaeQ/</id>
-        <link href="https://zhulinyv.github.io/GQsKEuaeQ/">
-        </link>
-        <updated>2022-08-30T11:51:25.000Z</updated>
     </entry>
 </feed>
