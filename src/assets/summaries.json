@@ -1,0 +1,26 @@
+{
+  "getting-started": {
+    "title": "欢迎使用 astro-koharu",
+    "summary": "astro-koharu 是一个基于 Astro 5.x 构建的现代化博客主题，采用萌系粉蓝配色，具备高性能、响应式设计和丰富的功能如多级分类、标签、目录及搜索。支持快速配置与部署，推荐使用 Vercel 一键上线。"
+  },
+  "astro-koharu-guide": {
+    "title": "astro-koharu 使用指南",
+    "summary": "本文是一份详细的 astro-koharu 博客系统使用指南，介绍了基于 Astro 5.x 构建的现代化静态博客系统，支持 Markdown 增强、多级分类与标签、周刊系列、全站搜索、阅读进度条、主题切换、LQIP 图片占位等核心功能，并提供了从配置到文章创建、功能使用及最佳实践的完整说明。系统强调性能与用户体验，通过 AI 摘要、语义推荐和节日特效等功能提升内容可读性与互动性。"
+  },
+  "toc-no-numbering": {
+    "title": "关闭目录编号示例",
+    "summary": "本文介绍了如何通过设置 `tocNumbering: false` 关闭 Astro-Koharu 目录的自动编号功能。该功能默认使用 CSS 计数器实现，无运行时开销，适用于随笔、已有编号标题或结构松散的文章，可根据个人偏好或内容需求灵活使用。"
+  },
+  "markdown-features": {
+    "title": "Markdown 增强功能演示",
+    "summary": "astro-koharu 支持丰富的 Markdown 增强功能，包括自动嵌入 Twitter/X 链接和通用链接的 OG 预览、代码高亮、Mermaid 图表、多种文本样式、标题层级、列表与图片处理等。它通过简洁的语法和智能渲染，让博客创作更加高效和美观。"
+  },
+  "hello-world": {
+    "title": "Hello World",
+    "summary": "这是一篇关于写作建议的随笔，倡导保持更新、记录真实、享受写作过程。文章通过简单真挚的语言，传递了写作的初心与乐趣。"
+  },
+  "theme-customization": {
+    "title": "主题定制指南",
+    "summary": "本文详细介绍了如何自定义 astro-koharu 博客的外观和样式，包括通过嵌套分类设置层级结构、使用 CSS 变量定制配色、配置 Tailwind 主题和布局、调整响应式断点与动画效果，并支持圣诞特效等可选功能。用户可通过修改相关配置文件实现个性化博客风格。"
+  }
+}

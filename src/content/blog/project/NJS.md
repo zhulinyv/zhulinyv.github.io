@@ -1,0 +1,680 @@
+---
+title: '脑积水食用手册（用爱发电）'
+link: NJS
+date: 2023-01-24 00:00:00
+description: 'o(〃＾▽＾〃)o 你好! 这里是脑积水! 感谢大家陪脑积水走过的 400 多个日日夜夜, 也感谢项目有关的开发者们, 谢谢大佬萌的用爱发电, 由于风控以及大佬萌时间和精力有限, 所以且用且珍惜…… 脑积水基于 NoneBot 框架, 以及...'
+cover: '/post-images/NJS.png'
+tags:
+  - '脑积水'
+categories:
+  - 项目
+---
+
+# o(〃＾▽＾〃)o
+
+你好! 这里是脑积水!
+
+感谢大家陪[**脑积水**](https://github.com/zhulinyv/NJS)走过的 400 多个日日夜夜,
+
+也感谢项目有关的开发者们, 谢谢大佬萌的用爱发电,
+
+由于风控以及大佬萌时间和精力有限, 所以且用且珍惜……
+
+[**脑积水**](https://github.com/zhulinyv/NJS)基于 [NoneBot](https://v2.nonebot.dev/) 框架, 以及登录使用的 [go-cqhttp](https://docs.go-cqhttp.org/) 和 [unidbg-fetch-qsign](https://github.com/fuqiuluo/unidbg-fetch-qsign)。
+
+# 目前使用的插件:
+
+### **插件名称旁边即为插件仓库地址, 可以自行查看配置项。**
+
+<details><summary>发送 <code>njs帮助</code> 后得到的图片:</summary><figure data-type="image" tabindex="1"><img src="https://github.com/zhulinyv/NJS/assets/66541860/cbddbd79-3b36-4e05-b521-1164e0bb5f5e" alt="f29aca55a4b2bd6e496e7a5a506363d8" loading="lazy"></figure></details>
+
+## 1. 脑积水帮助 njs_help
+
+<details><summary>查看指令:</summary><p>njs帮助</p><p>njs菜单</p><p>njs列表</p><p>njs help</p></details>
+
+## 2. 涩图(bushi) [nonebot_plugin_setu4](https://github.com/Special-Week/nonebot_plugin_setu4)
+
+<details><summary>查看指令:</summary><h3 id="获取setu">获取setu</h3><pre><code>命令头: setu|色图|涩图|想色色|来份色色|来份色图|想涩涩|多来点|来点色图|来张setu|来张色图|来点色色|色色|涩涩  (任意一个)
+
+张数: 1 2 3 4 ... 张|个|份  (可不填, 默认1)
+
+r18: 不填则不会出现r18图片, 填了会根据r18模式管理中的数据判断是否可返回r18图片
+
+关键词: 任意, 多tag使用空格分开 (可不填)
+
+参考 (空格可去掉):   
+
+    setu 10张 r18 白丝
+    
+    setu 10张 白丝
+    
+    setu r18 白丝
+    
+    setu 白丝
+    
+    setu
+</code></pre><h3 id="权限管理">权限管理</h3><p>注意：</p><ol><li>全部群聊或私聊默认均未在白名单, 但可以通过设置 setu_enable_private = True 将私聊默认全部开启, 群聊还需通过白名单管理指令添加。</li><li>superuser在任意聊天或在设置 setu_enable_private = True 的情况下好友私聊中, 会话均不受cd和白名单本身的影响, 但会受 撤回时长, r18, 最大张数 的影响。</li><li>在群聊中默认以该群作为操作对象, 但在私聊需要用户提供操作对象。</li><li>此部分的事件响应器均为 on_command 生成的, 触发时需要带有<a href="https://v2.nonebot.dev/docs/api/config#Config-command_start">命令头</a>。</li></ol><p>白名单管理：</p><pre><code>setu_wl add  添加会话至白名单 eg: setu_wl add user_114514/group_1919810
+setu_wl del  移出会话自白名单 eg: setu_wl del user_114514/group_1919810
+</code></pre><p>黑名单管理：</p><pre><code>setu_ban add  添加会话至黑名单 eg: setu_ban add user_114514/group_1919810
+setu_ban del  移出会话自黑名单 eg: setu_ban del user_114514/group_1919810
+</code></pre><p>r18模式管理：</p><pre><code>setu_r18 on  开启会话的r18模式 eg: setu_r18 on group_1919810
+setu_r18 off 关闭会话的r18模式 eg: setu_r18 off group_1919810
+</code></pre><p>cd时间更新:</p><pre><code>setu_cd xxx  更新会话的冷却时间, xxx为int类型的参数 eg: setu_cd 10 group_1919810
+</code></pre><p>撤回时间更新:</p><pre><code>setu_wd xxx  撤回前等待的时间, xxx为int类型的参数 eg: setu_wd 10 group_1919810
+</code></pre><p>最大张数更新:</p><pre><code>setu_mn xxx  单次发送的最大图片数, xxx为int类型的参数   eg: setu_mn 10 group_1919810
+</code></pre><p>更换setu代理服务器:</p><pre><code>setu_proxy xxx   使用的代理服务器, xxx 为 string 类型的参数
+警告: 这部分带了一个ping代理服务器的操作, 这个响应器是superuser only, 用了os.popen().read()操作, 请不要尝试给自己电脑注入指令
+</code></pre><p>​</p><h3 id="其他指令">其他指令</h3><p>获取插件帮助信息:</p><pre><code>"setu_help" | "setu_帮助" | "色图_help" | "色图_帮助"
+</code></pre><p>查询黑白名单:</p><pre><code>"setu_roste" | "色图名单"
+</code></pre><p>数据库更新:</p><blockquote><p>此指令默认从 github.com[^2] 拉取数据库，如果无法访问可以考虑使用科学上网或更换镜像或者手动从仓库下载换上去。</p></blockquote><pre><code>setu_db      从指定的路径拉取 lolicon.db 数据库，默认为此仓库
+</code></pre></details>
+
+## 3.轮盘禁言 [nonebot_plugin_russian_ban](https://github.com/KarisAya/nonebot_plugin_russian_ban)
+
+<details><summary>查看指令:</summary><h3 id="开始游戏">开始游戏</h3><p><strong>指令</strong>：<code>无赌注轮盘</code> <code>自由轮盘</code></p><p>开启群内随机ban人游戏</p><p><strong>指令</strong>：<code>拨动滚轮</code> <code>重新装弹</code></p><p>重置子弹的位置。</p><p><strong>指令</strong>：<code>开枪</code></p><p>顾名思义，开枪。</p><p><strong>指令【管理员，群主，超管】</strong>：<code>开启自由轮盘</code> <code>关闭自由轮盘</code></p><p>控制当前群内可否发起自由轮盘游戏，【管理员，群主，超管】可无视此设定在群内发起轮盘。</p><h3 id="快捷禁言解禁">快捷禁言/解禁</h3><p>此项功能是为轮盘禁言打扫战场用。</p><p><strong>指令【管理员，群主，超管】</strong>：<code>@bot添加名单 代号 @name</code></p><p>在本群添加重点关照人群，以便通过代号快捷禁言，可以一次设置多人。</p><pre><code>示例：
+
+管理员：@bot添加名单 机器人@bot 文酱@本群喵喵怪文酱 小叶子@茶酱
+机器人：添加成功
+
+管理员：禁言小叶子
+系统提示：小叶子被禁言1天
+
+管理员：解封小叶子
+系统提示：小叶子被解除禁言
+</code></pre><p><strong>指令【管理员，群主，超管】</strong>：<code>禁言 代号/@name</code></p><p>给@的成员禁言5分钟，可@多人。如果给群友设置过代号，可以通过代号快捷禁言</p><p><strong>指令【管理员，群主，超管】</strong>：<code>禁言一小时 @name</code> <code>禁言10分钟 @name</code> <code>禁言一个月 @name</code></p><p>给@的成员相应的时间，可@多人</p><p><strong>指令【管理员，群主，超管】</strong>：<code>解封</code> <code>解封 代号/@name</code></p><p>给@的成员解除禁言。可@多人。如果给群友设置过代号，可以通过代号快捷解除禁言。</p><p>如果没有指定成员会返回当前被封成员列表。之后可以根据提示进一步设置。</p></details>
+
+## 4.缩写解释 [nonebot_plugin_abbrreply](https://github.com/anlen123/nonebot_plugin_abbrreply)
+
+<details><summary>查看指令:</summary><p>sx lsp</p><p>缩写 lsp</p><p>lsp</p><p>['老色批', '恋尸癖', '老山炮', 'Lovesick Puppies（游戏名称）']</p></details>
+
+## 5.肯德基查询 [nonebot_plugin_kfcrazy](https://github.com/Kaguya233qwq/nonebot_plugin_kfcrazy)
+
+<details><summary>查看指令:</summary><p>在有bot的群内发送/kfc开始查询肯德基的物品详情，流程：</p><p>1.输入/kfc以开始一个肯德基查询</p><p>2.输入[城市名]或[城市名] [地区（县）名]，注意用空格分开</p><p>3.输入店铺关键词匹配店铺，可发送空格来获取当前地区部分结果</p><p>4.输入店铺前对应序号查询店铺内所有在售食品主题分类</p><p>5.输入主题分类对应序号，可查询食品详情信息</p><p>6.结束（finish）</p><p>在任意一个阶段中发送“退出”来中断一个查询流程。</p></details>
+
+## 6.AI绘图(使用第三方API) [nonebot_plugin_aidraw](https://github.com/A-kirami/nonebot-plugin-aidraw)
+
+<details><summary>查看指令:</summary><h3 id="指令表">指令表</h3><table><thead><tr><th style="text-align:center">指令</th><th style="text-align:center">需要@</th><th style="text-align:center">范围</th><th style="text-align:center">说明</th></tr></thead><tbody><tr><td style="text-align:center">绘画/画画/画图/作图/绘图/约稿</td><td style="text-align:center">否</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">使用描述性文本生成图画, 可用参数见<a href="#%E6%96%87%E6%9C%AC%E7%94%9F%E6%88%90%E5%8F%82%E6%95%B0">文本生成参数</a>, 管理参数见<a href="#%E7%BB%98%E5%9B%BE%E7%AE%A1%E7%90%86%E5%8F%82%E6%95%B0">绘图管理参数</a></td></tr><tr><td style="text-align:center">以图绘图/以图生图/以图制图</td><td style="text-align:center">否</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">在基准图像上使用描述性文本生成图画, 支持回复图片消息使用,<br>可用参数见<a href="#%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90%E5%8F%82%E6%95%B0">图像生成参数</a></td></tr><tr><td style="text-align:center">个人标签排行/我的标签排行</td><td style="text-align:center">否</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">查看我的所有使用过的标签的排行</td></tr><tr><td style="text-align:center">群标签排行/本群标签排行</td><td style="text-align:center">否</td><td style="text-align:center">群聊</td><td style="text-align:center">查看本期所有使用过的标签的排行</td></tr></tbody></table><p>使用示例：</p><pre><code>/绘图 描述文本 -p l --scale 12
+</code></pre><p><strong>注意</strong></p><p>默认情况下, 您应该在指令前加上命令前缀, 通常是 /</p><h3 id="文本生成参数">文本生成参数</h3><table><thead><tr><th style="text-align:center">参数名</th><th style="text-align:center">简写</th><th style="text-align:center">全写</th><th style="text-align:center">默认值</th><th style="text-align:center">说明</th></tr></thead><tbody><tr><td style="text-align:center">shape</td><td style="text-align:center">-p</td><td style="text-align:center">--shape</td><td style="text-align:center">Portrait</td><td style="text-align:center">图像的形状, 可选 Portrait(纵向)、Landscape(横向)、Square(方形)<br>支持缩写为 p、l、s</td></tr><tr><td style="text-align:center">scale</td><td style="text-align:center">-c</td><td style="text-align:center">--scale</td><td style="text-align:center">11</td><td style="text-align:center">指示 AI 对提示的遵守程度，较大的值可以帮助 AI 更接近文本提示的整体意图</td></tr><tr><td style="text-align:center">seed</td><td style="text-align:center">-s</td><td style="text-align:center">--seed</td><td style="text-align:center">随机</td><td style="text-align:center">随机种子。在其他条件不变的情况下，相同的种子代表生成相同的图</td></tr><tr><td style="text-align:center">steps</td><td style="text-align:center">-t</td><td style="text-align:center">--steps</td><td style="text-align:center">28</td><td style="text-align:center">定义 AI 从最初创建时应优化的迭代次数</td></tr><tr><td style="text-align:center">ntags</td><td style="text-align:center">-n</td><td style="text-align:center">--ntags</td><td style="text-align:center">默认自带</td><td style="text-align:center">不需要的内容，可以列出希望 AI 避免的任何内容</td></tr></tbody></table><h3 id="图像生成参数">图像生成参数</h3><table><thead><tr><th style="text-align:center">参数名</th><th style="text-align:center">简写</th><th style="text-align:center">全写</th><th style="text-align:center">默认值</th><th style="text-align:center">说明</th></tr></thead><tbody><tr><td style="text-align:center">strength</td><td style="text-align:center">-e</td><td style="text-align:center">--strength</td><td style="text-align:center">0.6</td><td style="text-align:center">允许 AI 改变图像的构成, 降低该值会产生更接近原始图像的效果</td></tr></tbody></table><h3 id="绘图管理参数">绘图管理参数</h3><table><thead><tr><th style="text-align:center">参数名</th><th style="text-align:center">说明</th></tr></thead><tbody><tr><td style="text-align:center">查看白名单</td><td style="text-align:center">查看白名单模式下允许的群组</td></tr><tr><td style="text-align:center">查看黑名单</td><td style="text-align:center">查看黑名单模式下禁止的群组</td></tr><tr><td style="text-align:center">添加白名单 + 群号</td><td style="text-align:center">将群组添加到白名单中, 群号以逗号分隔</td></tr><tr><td style="text-align:center">添加黑名单 + 群号</td><td style="text-align:center">将群组添加到黑名单中, 群号以逗号分隔</td></tr><tr><td style="text-align:center">删除白名单 + 群号</td><td style="text-align:center">将群组从白名单中移除, 群号以逗号分隔</td></tr><tr><td style="text-align:center">删除黑名单 + 群号</td><td style="text-align:center">将群组从黑名单中移除, 群号以逗号分隔</td></tr><tr><td style="text-align:center">切换白名单</td><td style="text-align:center">切换到白名单模式, 只有白名单中的群组才允许使用</td></tr><tr><td style="text-align:center">切换黑名单</td><td style="text-align:center">切换到黑名单模式, 只有黑名单中的群组才禁止使用</td></tr><tr><td style="text-align:center">添加屏蔽词 + 屏蔽内容</td><td style="text-align:center">添加到屏蔽词过滤器中, 屏蔽词以逗号分隔</td></tr><tr><td style="text-align:center">删除屏蔽词 + 屏蔽内容</td><td style="text-align:center">从屏蔽词过滤器中删除, 屏蔽词以逗号分隔</td></tr><tr><td style="text-align:center">查看屏蔽词</td><td style="text-align:center">查看当前的屏蔽词</td></tr></tbody></table><p>使用示例：</p><pre><code>/绘图添加黑名单 123456
+</code></pre></details>
+
+## 7.二次元图像分析 [nonebot_plugin_savor](https://github.com/A-kirami/nonebot-plugin-savor)
+
+<details><summary>查看指令:</summary><p>鉴赏图片/分析图片 + 图片</p><p>分析发送的图片, 支持回复图片</p></details>
+
+## 8.娶群友 [nonebot_plugin_groupmate_waifu](https://github.com/KarisAya/nonebot_plugin_groupmate_waifu)
+
+<details><summary>查看指令:</summary><h2 id="功能介绍">功能介绍</h2><p><strong>指令</strong>：<code>娶群友</code></p><p>纯爱 <strong>双向奔赴版</strong>，每天刷新一次，两个人会互相抽到对方。</p><p><strong>指令</strong>：<code>娶群友@name</code></p><p>有机会娶到at的人。。。</p><p><strong>指令</strong>：<code>分手</code> <code>离婚</code></p><p>雪花飘飘北风萧萧，天地一片苍茫~</p><p><strong>指令</strong>：<code>本群cp</code></p><p>查看当前群内的cp</p><p><strong>指令</strong>：<code>群友卡池</code></p><p>查看当前群可以娶到的群友列表</p><p><strong>指令</strong>：<code>透</code></p><p>ntr <s>宫吧老哥狂喜版</s>，每次抽到的结果都不一样。</p><p><strong>指令</strong>：<code>群友记录</code></p><p>查看当前群的群友今日透群友次数和被透的次数，记录是跨群的。<s>也就是说群友在别的群挨透也会在记录里显示出来</s></p><p><s>群友背地里玩的挺花（bushi）</s></p></details>
+
+## 9.银趴 [nonebot_plugin_impact](https://github.com/Special-Week/nonebot_plugin_impact)
+
+<details><summary>查看指令:</summary><p>指令1: 嗦牛子 (给目标牛牛增加长度, 自己或者他人, 通过艾特选择对象, 没有at时目标是自己)</p><p>指令2: 打胶 | 开导 (给自己牛牛增加长度)</p><p>指令3: 牛子pk | 牛子对决 (普通的pk,单纯的random实现输赢, 胜利方获取败方随机数/2的牛牛长度)</p><p>指令4: 牛子查询 (目标牛牛长度, 自己或者他人, 通过艾特选择对象, 没有at时目标是自己)</p><p>指令5: jj排行榜 | jj排名 | jj榜单 | jjrank (字面意思, 输出倒数五位和前五位, 以及自己的排名)</p><p>指令6: 开启淫趴|禁止淫趴 (由管理员 | 群主 | SUPERUSERS开启或者关闭淫趴)</p><p>指令7: 日群友|透群友|日群主|透群主|日管理|透管理 (字面意思, 当使用透群友的时候如果at了人那么直接指定)</p><p>指令8: 注入查询 | 摄入查询 (查询目标被透注入的量，后接(历史|全部), 可查看总被摄入的量, 无艾特的时候是自己, 有at的时候是目标)</p><p>指令1: 扣 (给目标小学增加深度, 自己或者他人, 通过艾特选择对象, 没有at时目标是自己)</p><p>指令2: 扣扣 (给自己小学增加深度)</p><p>指令3:小学pk | 小学对决 (普通的pk,单纯的random实现输赢, 胜利方获取败方随机数/2的小学长度)</p><p>指令4: 小学查询 (目标小学长度, 自己或者他人, 通过艾特选择对象, 没有at时目标是自己)</p><p>指令5: xx排行榜 | xx排名 | xx榜单 | xxrank (字面意思, 输出倒数五位和前五位, 以及自己的排名)</p></details>
+
+## 10.漂流瓶 [nonebot_plugin_bottle](https://github.com/Todysheep/nonebot_plugin_bottle)
+
+<details><summary>查看指令:</summary><ul><li><h2 id="指令-前应带指令前缀">指令 (前应带指令前缀)</h2><ul><li><code>扔漂流瓶</code> [文本/图片]</li><li><code>寄漂流瓶</code> [文本/图片] （同<code>扔漂流瓶</code>，防止指令冲突用）</li><li><code>捡漂流瓶</code></li><li><code>评论漂流瓶</code> [漂流瓶编号] [文本]</li><li><code>举报漂流瓶</code> [漂流瓶编号]</li><li><code>查看漂流瓶</code> [漂流瓶编号]</li><li><code>删除漂流瓶</code> [漂流瓶编号]</li><li><code>我的漂流瓶</code></li><li>SUPERUSER指令：<ul><li><code>清空漂流瓶</code></li><li><code>恢复漂流瓶 [漂流瓶编号]</code></li><li><code>删除漂流瓶评论</code> [漂流瓶编号] [QQ号]</li><li><code>漂流瓶白名单</code> [QQ / 群聊] [QQ号 / 群号]</li><li><code>漂流瓶黑名单</code> [QQ / 群聊 / 举报] [QQ号 / 群号]</li><li><code>漂流瓶详情</code> [漂流瓶编号]</li></ul></li></ul></li><li>功能须知<ul><li>所有用户：<ul><li><code>扔漂流瓶</code>指令无字数限制，如需要可在代码中修改,<strong>单扔一张图片也应加上指令后的空格</strong></li><li><code>捡漂流瓶</code>若捡到的漂流瓶存在回复，则会显示最近三条(默认)，使用<code>查看漂流瓶</code>查看所有回复</li><li><code>查看漂流瓶</code>为保证随机性，无评论时不展示漂流瓶内容，可在代码中修改。漂流瓶的发送者可以通过本指令查看内容，无论有无评论。</li><li><code>评论漂流瓶</code>若机器人有被回复人好友，会发送被回复通知</li><li><code>举报漂流瓶</code>五次(默认)后将自动删除，举报成功后会私聊SUPERUSER漂流瓶详情内容</li><li><code>删除漂流瓶</code>漂流瓶发送者可以删除自己扔出的漂流瓶。二次确认会触发删除操作的指令为：<code>是/Y/Yes/y/yes</code>。其他的均取消操作。</li></ul></li><li>SUPERUSER:<ul><li><code>删除漂流瓶</code>可以删除任何一个漂流瓶</li><li><code>清空漂流瓶</code>无确认过程，使用需谨慎</li><li><code>恢复漂流瓶</code>可以恢复被删除的漂流瓶</li><li><code>删除漂流瓶评论</code>是删除该发送者在该瓶的所有评论</li><li><code>漂流瓶详情</code>将会发送漂流瓶发送者的QQ号和群号，所有回复人的QQ号</li><li><code>漂流瓶黑名单</code>中<code>举报</code>选项是指<code>举报漂流瓶</code>的使用权限</li><li><code>漂流瓶数据库</code>存放在<code>data/bottle/data.json</code>中</li><li><code>权限数据库</code> 存放在<code>data/bottle/permissionsList.json</code>中</li><li><code>漂流瓶屏蔽词</code> 存放在<code>data/bottle/curse.json</code>中，<strong>支持热更改</strong></li></ul></li></ul></li><li><h2 id="权限控制">权限控制</h2><ul><li>所有非SUPERUSER指令均受到权限控制</li><li><code>功能冷却开关</code>：插件默认开启，可在<code>data/bottle/permissionsList.json</code>中修改<code>enableCooldown</code>bool值(True/False)</li><li><code>功能冷却</code>：插件默认 30 秒冷却，可在<code>data/bottle/permissionsList.json</code>中修改<code>cooldownTime</code>值</li><li>白名单优先级高于黑名单和冷却名单</li></ul></li></ul></details>
+
+## 11.颜值评分 beauty_rate
+
+<details><summary>查看指令:</summary><p>颜值评分</p></details>
+
+## 12.今日运势 [nonebot_plugin_fortune](https://github.com/KafCoppelia/nonebot_plugin_fortune)
+
+<details><summary>查看指令:</summary><ol><li><p>一般抽签：今日运势、抽签、运势；</p></li><li><p>指定主题抽签：[xx抽签]，例如：pcr抽签、holo抽签、碧蓝抽签；</p></li><li><p>指定签底并抽签：指定[xxx]签，在 <code>resource/fortune_setting.json</code> 内手动配置；</p><p>⚠️ 将在 <code>v0.5.0</code> 弃用</p></li><li><p>[群管或群主或超管] 配置抽签主题：</p><ul><li><p>设置[原神/pcr/东方/vtb/方舟]签：设置群抽签主题；</p></li><li><p>重置（抽签）主题：设置群抽签主题为随机；</p></li></ul></li><li><p>抽签设置：查看当前群抽签主题的配置；</p></li><li><p>今日运势帮助：显示插件帮助文案；</p></li><li><p>查看（抽签）主题：显示当前已启用主题；</p></li></ol></details>
+
+## 13.今日人品(与上个插件类似) [nonebot_plugin_jrrp2](https://github.com/Rene8028/nonebot_plugin_jrrp2)
+
+<details><summary>查看指令:</summary><p>jrrp获取你的今日人品（命令别称："jp"，"今日人品"）</p><p>weekjrrp获取你的本周平均人品（命令别称："本周人品"，"周人品"）</p><p>monthjrrp获取你的本月平均人品（命令别称："本月人品"，"月人品"）</p><p>alljrrp获取你的历史平均人品（命令别称："总人品"，"平均人品"）</p></details>
+
+## 14.无聊趣味占卜 [nonebot_plugin_shindan](https://github.com/MeetWq/nonebot-plugin-shindan)
+
+<details><summary>查看指令:</summary><p>发送 “占卜指令 名字” 即可，如：人设生成 小Q</p><p>发送 “/占卜列表” 可以查看上述列表；</p><p>超级用户 可以发送 “/添加占卜 id 指令”、“/删除占卜 id” 增删占卜列表，可以发送 “/设置占卜 id image/text”设置输出形式</p><figure data-type="image" tabindex="2"><img src="https://github.com/zhulinyv/NJS/assets/66541860/2f5b3565-9970-44a1-9f7c-d52838ceaefe" alt="13706b94cc44014edad151fea619f2e5" loading="lazy"></figure></details>
+
+## 15.日韩中VITS模型拟声 [nonebot_plugin_moegoe](https://github.com/Yiyuiii/nonebot-plugin-moegoe)
+
+<details><summary>查看指令:</summary><p>● 让[派蒙|空|荧|阿贝多|枫原万叶|温迪|八重神子|纳西妲|钟离|诺艾尔|凝光|托马|北斗|莫娜|荒泷一斗|提纳里|芭芭拉|艾尔海森|雷电将军|赛诺|琴|班尼特|五郎|神里绫华|迪希雅|夜兰|辛焱|安柏|宵宫|云堇|妮露|烟绯|鹿野院平藏|凯亚|达达利亚|迪卢克|可莉|早柚|香菱|重云|刻晴|久岐忍|珊瑚宫心海|迪奥娜|戴因斯雷布|魈|神里绫人|丽莎|优菈|凯瑟琳|雷泽|菲谢尔|九条裟罗|甘雨|行秋|胡桃|迪娜泽黛|柯莱|申鹤|砂糖|萍姥姥|奥兹|罗莎莉亚|式大将|哲平|坎蒂丝|托克|留云借风真君|昆钧|塞琉斯|多莉|大肉丸|莱依拉|散兵|拉赫曼|杜拉夫|阿守|玛乔丽|纳比尔|海芭夏|九条镰治|阿娜耶|阿晃|阿扎尔|七七|博士|白术|埃洛伊|大慈树王|女士|丽塔|失落迷迭|缭乱星棘|伊甸|伏特加女孩|狂热蓝调|莉莉娅|萝莎莉娅|八重樱|八重霞|卡莲|第六夜想曲|卡萝尔|姬子|极地战刃|布洛妮娅|次生银翼|理之律者|迷城骇兔|希儿|魇夜星渊|黑希儿|帕朵菲莉丝|天元骑英|幽兰黛尔|德丽莎|月下初拥|朔夜观星|暮光骑士|明日香|李素裳|格蕾修|梅比乌斯|渡鸦|人之律者|爱莉希雅|爱衣|天穹游侠|琪亚娜|空之律者|薪炎之律者|云墨丹心|符华|识之律者|维尔薇|芽衣|雷之律者|阿波尼亚]说(中文)</p><p>● 让[宁宁|爱瑠|芳乃|茉子|丛雨|小春|七海|妃爱|华乃|亚澄|诗樱|天梨|里|广梦|莉莉子]说日语：(日语)</p><p>● 让[Sua|Mimiru|Arin|Yeonhwa|Yuhwa|Seonbae]说韩语：(韩语)</p><p>在聊天中输入: moegoe load 可以在线更新profile。</p></details>
+
+## 16.被动技能 passive_plugin
+
+<details><summary>查看指令:</summary><p>在配置的群聊中有效:</p><p>1、特定 QQ 表情触发回复。</p><p>2、群事件(管理员、群文件、进退群等)变化时提醒</p></details>
+
+## 17.早晚安 morning_and_night
+
+<details><summary>查看指令:</summary><p>早安/goodmorning</p><p>晚安/goodnight</p></details>
+
+## 18.塔罗牌 [nonebot_plugin_tarot](https://github.com/KafCoppelia/nonebot_plugin_tarot)
+
+<details><summary>查看指令:</summary><ol><li><p>启用牌阵进行占卜：[占卜]；</p></li><li><p>得到单张塔罗牌回应：[塔罗牌]；</p></li><li><p>[超管] 群聊转发模式全局开关：[开启|启用|关闭|禁用] 群聊转发模式，可降低风控风险。</p></li></ol></details>
+
+## 19.小派蒙 [LittlePaimon](https://github.com/CMHopeSunshine/LittlePaimon)
+
+<details><summary>查看指令:</summary><figure data-type="image" tabindex="3"><img src="https://github.com/zhulinyv/NJS/assets/66541860/b5915830-8834-4ca7-8699-38066c9335b1" alt="fcbdb1ea0544fd603e44168a4057950a" loading="lazy"></figure></details>
+
+## 20.国内新冠消息查询 [nonebot_plugin_covid_19_by](https://github.com/bingqiu456/nonebot-plugin-covid-19-by)
+
+<details><summary>查看指令:</summary><p>疫情菜单查询疫情(地区)</p><p>疫情资讯</p><p>境外输入排行榜</p><p>疫情现状</p><p>查风险(地区)</p><p>covid_19开启</p><p>covid_19关闭</p><p>疫情文转图开</p><p>疫情文转图关</p></details>
+
+## 21.每日发癫 Daily_epilepsy
+
+<details><summary>查看指令:</summary><p>发癫+任意名字(或艾特群友)</p></details>
+
+## 22.homo数学 [homo_mathematician](https://github.com/Special-Week/Hinata-Bot/tree/main/src/plugins/homo_mathematician)
+
+<details><summary>查看指令:</summary><p>命令头: {lag, 找规律} / {homonumber, 臭数字} eg: 找规律 1 2 3 4 5 6 7 114514 1919810 / homonumber 2749903559</p><figure data-type="image" tabindex="4"><img src="https://github.com/zhulinyv/NJS/assets/66541860/1b2b2e71-9c89-4e03-8eed-91294943e201" alt="692976f060cbb2649ede3497d6c7e965" loading="lazy"></figure></details>
+
+## 23.超分辨率重建 [nonebot_plugin_RealESRGAN](https://github.com/ppxxxg22/nonebot_plugin_RealESRGAN)
+
+<details><summary>查看指令:</summary><p>超分/重建/real-esrgan/超分辨率重建/esrgan/real_esrgan</p></details>
+
+## 24.明日方舟工具箱 [nonebot_plugin_arktools](https://github.com/NumberSir/nonebot_plugin_arktools)
+
+<details><summary>查看指令:</summary><h3 id="详细指令">详细指令</h3><p>使用以下指令触发，需加上指令前缀</p><pre><code class="language-text">格式：
+指令 =&gt; 含义
+[] 代表参数
+xxx/yyy 代表 xxx 或 yyy
+</code></pre><p>杂项</p><pre><code class="language-text">方舟帮助 / arkhelp   =&gt; 查看指令列表
+更新方舟素材          =&gt; 手动更新游戏数据(json)与图片
+更新方舟数据库        =&gt; 手动更新数据库
+更新方舟数据库 -D     =&gt; 删除原数据库各表并重新写入
+</code></pre><p>猜干员</p><pre><code class="language-text">猜干员    =&gt; 开始新游戏
+#[干员名] =&gt; 猜干员，如：#艾雅法拉
+提示      =&gt; 查看答案干员的信息
+结束      =&gt; 结束当前局游戏
+</code></pre><p>今日干员</p><pre><code class="language-text">今日干员 =&gt; 查看今天过生日的干员
+</code></pre><p>塞壬点歌</p><pre><code class="language-text">塞壬点歌 [关键字] =&gt; 网易云点歌，以卡片形式发到群内
+</code></pre><p>干员信息</p><pre><code class="language-text">干员 [干员名] =&gt; 查看干员的精英化、技能升级、技能专精、模组解锁需要的材料
+</code></pre><p>公开招募</p><pre><code class="language-text">公招 [公招界面截图]          =&gt; 查看标签组合及可能出现的干员
+回复截图：公招               =&gt; 同上
+公招 [标签1] [标签2] ...    =&gt; 同上
+</code></pre><p>理智提醒</p><pre><code class="language-text">理智提醒                    =&gt; 默认记当前理智为0，回满到135时提醒"
+理智提醒 [当前理智] [回满理智] =&gt; 同上，不过手动指定当前理智与回满理智"
+理智查看                    =&gt; 查看距离理智回满还有多久，以及当期理智为多少"
+</code></pre><p>公告推送</p><pre><code class="language-text">添加方舟推送群 / ADDGROUP   =&gt; 添加自动推送的群号
+删除方舟推送群 / DELGROUP   =&gt; 删除自动推送的群号
+查看方舟推送群 / GETGROUP   =&gt; 查看自动推送的群号
+</code></pre><p>MAA 作业站相关</p><pre><code class="language-text">maa添加订阅 / ADDMAA [关键词1 关键词2 ...]  =&gt; 添加自动推送的关键词
+maa删除订阅 / DELMAA [关键词1 关键词2 ...]  =&gt; 删除自动推送的关键词
+maa查看订阅 / GETMAA                      =&gt; 查看本群自动推送的关键词
+
+maa查作业 [关键词1 关键词2 ...]                   =&gt; 按关键词组合查作业，默认为最新发布的第一个作业
+maa查作业 [关键词1 关键词2 ...] | [热度/最新/访问]  =&gt; 同上，不过可以指定按什么顺序查询
+</code></pre></details>
+
+## 25.碧蓝档案wiki [nonebot_plugin_bawiki](https://github.com/lgc-NB2Dev/nonebot-plugin-bawiki/)
+
+<details><summary>查看指令:</summary><h3 id="日程表">日程表</h3><p><code>ba日程表</code>（GameKee源）</p><p><code>ba日程表 schaledb</code>（SchaleDB源，日服国际服一起发）</p><p><code>ba日程表 schale 国际服</code>（SchaleDB源，国际服）</p><h3 id="学生图鉴">学生图鉴</h3><p><code>ba学生图鉴 + 学生名</code> (支持部分学生别名)</p><h3 id="学生wiki">学生Wiki</h3><p><code>ba学生wiki + 学生名</code> (支持部分学生别名)</p><h3 id="羁绊查询">羁绊查询</h3><p><code>ba羁绊/ba好感度 + 学生名/等级级数</code> (支持部分学生别名)</p><h3 id="角色评价">角色评价</h3><p><code>ba角评 + 学生名</code> (支持部分学生别名, 当学生名为'总览'或'全部'时, 可查看全部学生角评)</p><h3 id="总力战一图流">总力战一图流</h3><p><code>ba总力战 [-h] [-s [SERVER ...]] [-t TERRAIN] [-w] [name]</code></p><p>name ---&gt; 总力战Boss名称，不指定默认取当前服务器总力战Boss</p><p>-h, --help ---&gt; 展示帮助用的参数, 单独使用</p><p>-s [SERVER ...], --server [SERVER ...] ---&gt; 服务器名称，<code>j</code>或<code>日</code>代表日服，<code>g</code>或<code>国</code>代表国际服，可指定个，默认全选</p><p>-t TERRAIN, --terrain TERRAIN ---&gt; 指定总力战环境，不指定默认全选，不带Boss名称该参数无效</p><p>-w, --wiki ---&gt; 发送该总力战Boss的技能机制而不是配队推荐</p><h3 id="活动一图流">活动一图流</h3><p><code>ba活动</code></p><p><code>ba活动 + 日/国</code></p><p><code>ba活动 + 活动名称</code></p><h3 id="综合战术考试一图流">综合战术考试一图流</h3><p><code>ba综合战术考试</code></p><h3 id="制造一图流">制造一图流</h3><p><code>ba制造</code></p><h3 id="国际服千里眼">国际服千里眼</h3><p><code>ba千里眼</code></p><p><code>ba千里眼 + (all) + 起止日期(例如: 11/15) + 列表个数(例如: 3)</code></p><h3 id="学生语音">学生语音</h3><p><code>ba语音</code></p><p><code>ba语音 + 学生名(可选) + 关键词(可选)</code></p><h3 id="互动家具总览">互动家具总览</h3><p><code>ba互动家具</code></p><h3 id="模拟抽卡">模拟抽卡</h3><p><code>ba抽卡</code></p><p><code>ba抽卡 + 数量(1~90)</code></p><h4 id="切换卡池">切换卡池</h4><p><code>ba切换卡池</code></p><p><code>ba切换卡池 + 常驻</code></p><p><code>ba切换卡池 + UP学生名(2星或3星)</code></p><h3 id="抽表情">抽表情</h3><p><code>ba表情</code></p><h3 id="随机漫画">随机漫画</h3><p><code>ba漫画</code></p><h3 id="清空缓存超级用户指令">清空缓存(超级用户指令)</h3><p><code>ba清空缓存</code></p></details>
+
+## 26.磁力搜索 [nonebot_plugin_BitTorrent](https://github.com/Special-Week/nonebot_plugin_BitTorrent)
+
+<details><summary>查看指令:</summary><p>磁力搜索 xxx / bt xxx (xxx为关键词)</p></details>
+
+## 27.人生重开模拟器 [nonebot_plugin_remake](https://github.com/MeetWq/nonebot-plugin-remake)
+
+<details><summary>查看指令:</summary><p>remake/liferestart/人生重开/人生重来</p></details>
+
+## 28.答案之书 [nonebot_plugin_answersbook](https://github.com/A-kirami/nonebot-plugin-answersbook)
+
+<details><summary>查看指令:</summary><p>翻看答案 + 问题</p><p>问题 + 翻看答案</p></details>
+
+## 29.点歌 [nonebot_plugin_simplemusic](https://github.com/MeetWq/nonebot-plugin-simplemusic)
+
+<details><summary>查看指令:</summary><p>点歌/qq点歌/网易点歌/酷我点歌/酷狗点歌/咪咕点歌/b站点歌 + 关键词</p></details>
+
+## 30.天气 [nonebot_plugin_heweather](https://github.com/kexue-z/nonebot-plugin-heweather)
+
+<details><summary>查看指令:</summary><p>天气 + 地区</p><p>地区 + 天气</p></details>
+
+## 31.在线运行代码 [nonebot_plugin_code](https://github.com/yzyyz1387/nonebot_plugin_code)
+
+<details><summary>查看指令:</summary><p>code [语言] [inputText(空格将被转换为回车)]</p><p>[代码]</p><p>运行代码示例(python)(无输入)：</p><pre><code>code py
+
+    print("你好")
+</code></pre><p>运行代码示例(python)(有输入)：</p><pre><code>code py 你好
+
+    print(input())
+</code></pre></details>
+
+## 32.emoji合成器 [nonebot_plugin_emojimix](https://github.com/MeetWq/nonebot-plugin-emojimix)
+
+<details><summary>查看指令:</summary><p>[emoji] + [emoji]</p></details>
+
+## 33.echo echo
+
+<details><summary>查看指令:</summary><p>@脑积水 echo + 任意文本内容</p></details>
+
+## 34.Epic限免游戏资讯 [nonebot_plugin_epicfree](https://github.com/monsterxcn/nonebot_plugin_epicfree)
+
+<details><summary>查看指令:</summary><p>● 发送「喜加一」查找限免游戏</p><p>● 发送「喜加一订阅」订阅游戏资讯</p><p>● 发送「喜加一订阅删除」取消订阅游戏资讯</p></details>
+
+## 35.图片翻译 [nonebot_plugin_manga_translator](https://github.com/maoxig/nonebot-plugin-manga-translator)
+
+<details><summary>查看指令:</summary><h3 id="命令">🎉命令</h3><ol><li><p>图片翻译 [图片]：单张图片翻译，也可以先发送/图片翻译再发送图片,可以如下组合</p><ol><li>文字+图片</li><li>先文字，后图片</li><li>文字回复图片</li></ol></li><li><p>多图片翻译 [图片]：n张图片翻译，将会以合并转发消息的形式发出,可以如下组合</p><ol><li>先文字，后多张图片</li><li>文字+图片*n</li></ol></li><li><p>切换翻译api [api]: 将该api优先级提到最高，目前有<code>youdao baidu huoshan offline</code></p></li></ol></details>
+
+## 36.随机唐可可 [nonebot_plugin_randomtkk](https://github.com/MinatoAquaCrews/nonebot_plugin_randomtkk)
+
+<details><summary>查看指令:</summary><p>[随机唐可可][空格][简单/普通/困难/地狱/自定义数量]</p><p>[随机唐可可][空格][帮助]</p></details>
+
+## 37.Github仓库卡片 [nonebot_plugin_githubcard](https://github.com/ElainaFanBoy/nonebot_plugin_githubcard)
+
+<details><summary>查看指令:</summary><p>(检测 GitHub 链接触发)</p></details>
+
+## 38.复读姬 [nonebot_plugin_repeater](https://github.com/ninthseason/nonebot-plugin-repeater)
+
+<details><summary>查看指令:</summary><p>(自动复读)</p></details>
+
+## 39.服务器状态 [nonebot_plugin_picstatus](https://github.com/lgc-NB2Dev/nonebot-plugin-picstatus)
+
+<details><summary>查看指令:</summary><p>运行状态（或者状态 / zt / yxzt / status）</p></details>
+
+## 40.谁艾特我 [nonebot_plugin_who_at_me](https://github.com/SEAFHMC/nonebot-plugin-who-at-me)
+
+<details><summary>查看指令:</summary><p>谁艾特我 查看到底是谁艾特了你</p><p>clear_db 清理当前用户的消息记录</p><p>clear_all 清理全部消息记录</p></details>
+
+## 41.撤回信息 [nonebot_plugin_withdraw](https://github.com/MeetWq/nonebot-plugin-withdraw)
+
+<details><summary>查看指令:</summary><p>@机器人 撤回 # 撤回倒数第一条消息</p><p>@机器人 撤回 1 # 撤回倒数第二条消息</p><p>@机器人 撤回 0-3 # 撤回倒数三条消息</p></details>
+
+## 42.智能聊天 [nonebot_plugin_smart_reply](https://github.com/zhulinyv/NJS/blob/Bot/src/plugins/nonebot_plugin_smart_reply/NoneBot2%E7%BC%9D%E5%90%88%E6%80%AA%E5%9B%9E%E5%A4%8D%E6%8F%92%E4%BB%B6.md)
+
+<details><summary>查看指令:</summary><p>@bot + rm_qq + QQ号 --&gt;提前解除被屏蔽用户</p><p>@bot + 切换图片api --&gt;切换图片api</p><p>@bot + 切换小爱同学模式1/模式2/青云客/ChatGPTapi模式1/ChatGPTapi模式2 --&gt;切换聊天api</p><p>响应戳一戳: 20% 概率掉落图片; 25% 概率回复语音; 20% 概率戳回去; 35% 概率回复文字</p></details>
+
+## 43.60s读世界 [news60s](https://github.com/CMHopeSunshine/LittlePaimon)
+
+<details><summary>查看指令:</summary><p>早报/今日早报/60s读世界</p><p>早报/今日早报/60s读世界 + on + xx:xx(推送时间)</p><p>早报/今日早报/60s读世界 + off</p></details>
+
+## 44.历史上的今天 [nonebot_plugin_today_in_history](https://github.com/AquamarineCyan/nonebot-plugin-today-in-history)
+
+<details><summary>查看指令:</summary><p>历史上的今天</p><p>历史上的今天+设置</p><p>历史上的今天+设置 小时:分钟</p><p>历史上的今天+状态</p><p>历史上的今天+禁用</p></details>
+
+## 45.游戏抽卡 [nonebot_plugin_gamedraw](https://github.com/HibiKier/nonebot_plugin_gamedraw)
+
+<details><summary>查看指令:</summary><h3 id="抽卡命令">抽卡命令</h3><p>1.<strong>原神</strong>（当武器和角色无UP池时，所有抽卡命令都指向 '常驻池'）</p><ul><li>原神N抽 （常驻池）</li><li>原神角色N抽 （角色UP池）</li><li>原神角色2池N抽 （角色UP 2池）</li><li>原神武器N抽 （武器UP池）</li></ul><p>2.<strong>赛马娘</strong></p><ul><li>赛马娘N抽 （抽马）</li><li>赛马娘卡N抽 （抽卡）</li></ul><p>3.<strong>坎公骑冠剑</strong></p><ul><li>坎公骑冠剑N抽 （抽角色）</li><li>坎公骑冠剑武器N抽 （抽武器）</li></ul><p>4.<strong>碧蓝航线</strong></p><ul><li>碧蓝轻型N抽 （轻型池）</li><li>碧蓝重型N抽 （重型池）</li><li>碧蓝特型N抽 （特型池）</li><li>碧蓝活动N抽 （活动池）</li></ul><h3 id="其他命令">其他命令</h3><p>'重置原神抽卡'（重置保底）<br>'重载原神卡池'<br>'重载方舟卡池'<br>'重载赛马娘卡池'<br>'重载坎公骑冠剑卡池'</p><h3 id="更新命令">更新命令</h3><p>'更新明日方舟信息'<br>'更新原神信息'<br>'更新赛马娘信息'<br>'更新坎公骑冠剑信息'<br>'更新pcr信息'<br>'更新碧蓝航线信息'<br>'更新fgo信息'<br>'更新阴阳师信息'</p></details>
+
+## 46.无数据库的轻量问答 [nonebot_plugin_word_bank2](https://github.com/kexue-z/nonebot-plugin-word-bank2)
+
+<details><summary>查看指令:</summary><h3 id="问答教学">问答教学</h3><ul><li><p>设置词条命令由<code>问句</code>和<code>答句</code>组成。设置之后, 收到<code>消息</code>时触发。并非所有人都可以设置词条, 详见<a href="#permission">权限</a></p></li><li><p>格式<code>[模糊|全局|正则|@]问...答...</code></p><ul><li><code>模糊|正则</code> 匹配模式中可任性一个或<code>不选</code>, <code>不选</code> 表示 <code>全匹配</code></li><li><code>全局</code>, <code>@</code> 可与以上匹配模式组合使用</li></ul></li><li><p>教学中可以使用换行</p><ul><li>例如<pre><code>问
+123
+答
+456
+</code></pre></li></ul></li><li><p>问答句中的首首尾空白字符会被自动忽略</p></li><li><p>私聊好友个人也可以建立属于自己的词库, 可以实现类似备忘录的功能</p></li></ul><h3 id="问句选项">问句选项</h3><ul><li><p><code>问...答...</code> 全匹配模式, 必须全等才能触发答</p></li><li><p><code>模糊问...答...</code> 当<code>问句</code>出现在<code>消息</code>里时则会触发</p></li><li><p><code>正则问...答...</code>, 当<code>问句</code>被<code>消息</code>正则捕获时则会匹配</p></li><li><p>例如: 正则问[他你]不理答你被屏蔽了</p><table><thead><tr><th>消息</th><th>回复</th></tr></thead><tbody><tr><td>他不理</td><td>你被屏蔽了</td></tr><tr><td>他不理我</td><td>你被屏蔽了</td></tr><tr><td>你不理我</td><td>你被屏蔽了</td></tr></tbody></table></li><li><p><code>全局问...答...</code>, 在所有群聊和私聊中都可以触发, 可以和以上几种组合使用</p><ul><li>例如: <code>全局模糊问 晚安 答 不准睡</code></li></ul></li><li><p><code>@问...答...</code>, 只有 <code>event.tome</code> 时才会触发，如被@、被回复时或在私聊中，可以和以上几种组合使用</p><ul><li>例如: <code>全局模糊@问 晚安 答 不准睡</code></li></ul></li><li><p>问句可包含<code>at</code> 即在 QQ 聊天中手动 at 群友</p><ul><li>建议只在<code>问...答...</code>中使用</li><li>例如: <code>问 @这是群名称 答 老婆!</code></li></ul></li></ul><h3 id="答句选项">答句选项</h3><ul><li><p><code>/at</code> + <code>qq号</code>, 当答句中包含<code>/at</code> + <code>qq号</code>时将会被替换为@某人</p><ul><li>例如: <code>问 群主在吗 答 /at 123456789在吗</code></li></ul></li><li><p><code>/self</code>, 当答句中包含<code>/self</code>时将会被替换为发送者的群昵称</p><ul><li>例如: <code>问 我是谁 答 你是/self</code> (群昵称为: 我老婆)</li></ul></li><li><p><code>/atself</code>, 当答句中包含<code>/atself</code>时将会被替换为@发送者</p><ul><li>例如: <code>问 谁是牛头人 答 @这是群昵称</code></li></ul></li></ul><h3 id="删除词条">删除词条</h3><ul><li><p><code>删除[模糊|全局|正则|@]词条</code> + 需要删除的<code>问句</code></p><ul><li>例如: <code>删除全局模糊@词条 你好</code></li></ul></li><li><p>以下指令需要结合自己的<code>COMMAND_START</code> 这里为 <code>/</code></p></li><li><p>删除词库: 删除当前群聊/私聊词库</p><ul><li>例如: <code>/删除词库</code></li></ul></li><li><p>删除全局词库</p><ul><li>例如: <code>/删除全局词库</code></li></ul></li><li><p>删除全部词库</p><ul><li>例如: <code>/删除全部词库</code></li></ul></li></ul><h3 id="查询词条">查询词条</h3><ul><li><p>超管查询指定词库</p><ul><li><code>查询[群|用户]{id}[全局][模糊|正则]词库</code></li><li>例如：<code>查询群123模糊词库</code> <code>查询用户114514词库</code> <code>查询全局词库</code></li></ul></li><li><p>查询指定词库</p><ul><li><code>查询[模糊|正则]词库</code></li><li>例如 <code>查询词库</code></li></ul></li><li><p><span id="permission">权限</span></p></li></ul><table><thead><tr><th></th><th>群主</th><th>群管理</th><th>私聊好友</th><th>超级用户</th></tr></thead><tbody><tr><td>增删词条</td><td>O</td><td>O</td><td>O</td><td>O</td></tr><tr><td>增删全局词条</td><td>X</td><td>X</td><td>X</td><td>O</td></tr><tr><td>删除词库</td><td>O</td><td>O</td><td>O</td><td>O</td></tr><tr><td>删除全局词库</td><td>X</td><td>X</td><td>X</td><td>O</td></tr><tr><td>删除全部词库</td><td>X</td><td>X</td><td>X</td><td>O</td></tr></tbody></table></details>
+
+## 47.以图搜图 [nonebot_plugin_hikarisearch](https://github.com/MeetWq/nonebot-plugin-hikarisearch)
+
+<details><summary>查看指令:</summary><p>搜图/saucenao搜图/iqdb搜图/ascii2d搜图/ehentai搜图/tracemoe搜图 + 图片</p></details>
+
+## 48.快速搜索 [nonebot_plugin_giyf](https://github.com/KoishiStudio/nonebot-plugin-giyf)
+
+<details><summary>查看指令:</summary><h3 id="使用说明">使用说明</h3><p>查询： <code>？前缀 关键词</code></p><p>添加（全局）搜索引擎： <code>search.add</code> <code>search.add.global</code></p><p>快速添加： <code>search.add(.global) [预置的搜索引擎名称] [自定义前缀（可选）]</code></p><p>删除（全局）搜索引擎： <code>search.delete</code> <code>search.delete.global</code></p><p>查看搜索引擎列表： <code>search.list</code> <code>search.list.global</code></p><p><strong>其中所有非全局指令均需要在目标群中进行，所有全局指令均只有Bot管理员能执行</strong></p><h3 id="参数说明">参数说明：</h3><h4 id="快速添加">快速添加</h4><ul><li>预置的搜索引擎名称：bot内置的引擎名称，目前有 <code>google</code> <code>bing</code> <code>baidu</code> <code>duckduckgo</code> <code>startpage</code> <code>zhwikipedia</code> <code>enwikipedia</code> <code>yahoo</code> <code>yandex</code></li><li>自定义前缀：你可以使用自己的前缀来代替bot预设的前缀；关于“前缀”的说明见下</li></ul><h4 id="前缀">前缀</h4><p>就是你给这个搜索引擎起的代号，好记就行，例如给谷歌娘叫<code>go</code>，给度娘叫<code>bd</code>，等等。<strong>只支持英文和数字</strong></p><h4 id="链接">链接：</h4><p>需要使用搜索引擎的搜索url，<strong>而非首页url</strong>；这类url的明显特征就是，其中带有<code>%s</code>，并且在搜索时<code>%s</code>会被替换成你的搜索关键字</p><p>例如：</p><pre><code class="language-plaintext">Google: https://www.google.com/search?q=%s
+Baidu: https://www.baidu.com/s?wd=%s
+Bing: https://www.bing.com/search?q=%s
+Duckduckgo: https://duckduckgo.com/?q=%s
+</code></pre><p>获取这类链接有三种方法：</p><ol><li>使用搜索引擎</li></ol><p>一般用<code>xxx search url</code>（xxx换成你要添加的引擎的名字）当关键词就能搜到</p><ol start="2"><li>查看浏览器设置</li></ol><p>打开浏览器的搜索引擎设置，这里会出现默认配置好的搜索引擎，以及一些你使用过的搜索引擎。点击“编辑”，在“查询URL”一栏通常就是我们要找的</p><pre><code class="language-plaintext">Tip：部分搜索引擎在此可能显示的有一些变量，例如 {google:baseURL}search?q=%s ，本插件无法识别这种，还请留意
+</code></pre><ol start="3"><li>人工智能（不是</li></ol><p>打开你要使用的搜索引擎，随便搜点什么（建议使用英文或数字，中文被编码后根本分不清……），把链接复制下来，把你原先输入的搜索关键字换成<code>%s</code>，大功告成！</p><pre><code class="language-plaintext">Tip：某些搜索引擎的链接可能包含你的一些个人信息，建议在隐私浏览窗口中进行上述操作。
+另外，搜索关键词后面的很多附加参数并不会影响搜索结果，因此一般可以去除，除非你明确知道它们被用于你想要的用途（例如开关安全搜索）
+例如： https://www.bing.com/search?q=%s&form=xxxx 其中的 &from=xxxx就可以去掉 
+</code></pre></details> 
+
+## 49.黑名单 [nonebot_plugin_blacklist](https://github.com/tkgs0/nonebot-plugin-blacklist)
+
+<details><summary>查看指令:</summary><h3 id="使用">🎉 使用</h3><p>拉黑:</p><pre><code>拉黑用户 qq qq1 qq2 (可艾特)
+拉黑群 qq qq1 qq2
+拉黑所有群
+拉黑所有好友
+</code></pre><p>解禁:</p><pre><code>解禁用户 qq qq1 qq2 (可艾特)
+解禁群 qq qq1 qq2
+解禁所有群
+解禁所有好友
+</code></pre><p>查看黑名单:</p><pre><code>查看用户黑名单
+查看群聊黑名单
+
+重置黑名单
+</code></pre><p>被禁言自动屏蔽该群:</p><pre><code>自觉静默开
+自觉静默关
+</code></pre><p>群内发送 <strong><code>/静默</code></strong>, <strong><code>/响应</code></strong> 可快捷拉黑/解禁当前群聊<br><code>拉黑/解禁所有</code> 只对已添加的群/好友生效</p></details>
+
+## 50.插件管理 [nonebot_plugin_manager](https://github.com/nonepkg/nonebot-plugin-manager)
+
+<details><summary>查看指令:</summary><h3 id="使用-2">使用</h3><h3 id="权限">权限</h3><p>权限与 UNIX 的权限类似，分为三种用户：超级用户、用户、群。</p><p>每种用户包含读、写、执行 3 个权限，分别对应数字 4、2、1，将 3 个权限对应的数字累加，最终得到的值即可作为每种用户所具有的权限。</p><p>关于会话中使用什么模式，可参照下表：</p><table><thead><tr><th>仅供参考</th><th>私聊读</th><th>群聊读</th><th>私聊写</th><th>群聊写</th><th>私聊执行</th><th>群聊执行</th></tr></thead><tbody><tr><td>超级用户</td><td>超级用户</td><td>群</td><td>超级用户</td><td>超级用户</td><td>超级用户</td><td>群</td></tr><tr><td>用户</td><td>用户</td><td>群</td><td>用户</td><td>无权限</td><td>用户</td><td>用户 & 群</td></tr><tr><td>群管理员</td><td>不存在</td><td>群</td><td>不存在</td><td>用户 & 群</td><td>不存在</td><td>用户 & 群</td></tr></tbody></table><p>包含 Matcher 的插件默认权限为<code>755</code>，不含 Matcher 的插件默认权限为<code>311</code>。</p><blockquote><p>例：<code>npm chmod 757 nonebot_plugin_nodice</code>命令可将 nonebot_plugin_nodice 的权限设置为<code>757</code><br>即超级用户可写可读可执行，用户可读可执行，群可写可读可执行。</p></blockquote><p>只有超级用户可以修改插件的权限，可以使用绝对模式（八进制数字模式）<s>，符号模式</s>指定文件的权限。</p><h3 id="命令-2">命令</h3><p><strong>使用前请先确保命令前缀为空，否则请在以下命令前加上命令前缀 (默认为<code>/</code>)。</strong></p><ul><li><p><code>npm ls</code>查看当前会话插件列表</p><ul><li><code>-s, --store</code>互斥参数，查看插件商店列表（仅超级用户可用）</li><li><code>-u &lt;user_id&gt;, --user &lt;user_id&gt;</code>互斥参数，查看指定用户插件列表（仅超级用户可用）</li><li><code>-g &lt;group_id&gt;, --group &lt;group_id&gt;</code>互斥参数，查看指定群插件列表（仅超级用户可用）</li><li><code>-a, --all</code>可选参数，查看所有插件（包括不含 Matcher 的插件）</li></ul></li><li><p><code>npm info &lt;插件名&gt;</code>查询插件信息 （仅超级用户可用）</p></li><li><p><code>npm chmod &lt;mode&gt; &lt;plugin ...&gt;</code>设置插件权限（仅超级用户可用）</p><ul><li><code>mode</code>必选参数，需要设置的权限，参考上文</li><li><code>plugin ...</code>必选参数，需要设置的插件名</li><li><code>-a, --all</code>可选参数，全选插件</li><li><code>-r, --reverse</code>可选参数，反选插件</li></ul></li><li><p><code>npm block &lt;plugin ...&gt;</code>禁用当前会话插件（需要权限）</p><ul><li><code>plugin ...</code>必选参数，需要禁用的插件名</li><li><code>-a, --all</code>可选参数，全选插件</li><li><code>-r, --reverse</code>可选参数，反选插件</li><li><code>-u &lt;user_id ...&gt;, --user &lt;user_id ...&gt;</code>可选参数，管理指定用户设置（仅超级用户可用）</li><li><code>-g &lt;group_id ...&gt;, --group &lt;group_id ...&gt;</code>可选参数，管理指定群设置（仅超级用户可用）</li></ul></li><li><p><code>npm unblock &lt;plugin ...&gt;</code>启用当前会话插件（需要权限）</p><ul><li><code>plugin ...</code>必选参数，需要禁用的插件名</li><li><code>-a, --all</code>可选参数，全选插件</li><li><code>-r, --reverse</code>可选参数，反选插件</li><li><code>-u &lt;user_id ...&gt;, --user &lt;user_id ...&gt;</code>可选参数，管理指定用户设置（仅超级用户可用）</li><li><code>-g &lt;group_id ...&gt;, --group &lt;group_id ...&gt;</code>可选参数，管理指定群设置（仅超级用户可用）</li></ul></li></ul></details>
+
+## 51.文本生成器 [nonebot_plugin_oddtext](https://github.com/noneplugin/nonebot-plugin-oddtext)
+
+<details><summary>查看指令:</summary><h3 id="使用-3">使用</h3><p><strong>以下命令需要加<a href="https://v2.nonebot.dev/docs/api/config#Config-command_start">命令前缀</a> (默认为<code>/</code>)，可自行设置为空</strong></p><pre><code>指令 + 文本
+</code></pre><h4 id="支持的指令">支持的指令</h4><ul><li>抽象话</li></ul><blockquote><p>抽象话 测试一下</p></blockquote><img src="https://s2.loli.net/2022/08/16/z3b2OKMstpumlgB.png" width="100"><ul><li>火星文</li></ul><blockquote><p>火星文 测试一下</p></blockquote><pre><code>測試①丅
+</code></pre><ul><li>蚂蚁文</li></ul><blockquote><p>蚂蚁文 测试一下</p></blockquote><img src="https://s2.loli.net/2022/08/16/WKrxAC95oUIgvYO.png" width="100"><ul><li>翻转文字（仅支持英文）</li></ul><blockquote><p>翻转文字 test</p></blockquote><pre><code>ʇsǝʇ
+</code></pre><ul><li>故障文字</li></ul><blockquote><p>故障文字 测试一下</p></blockquote><img src="https://s2.loli.net/2022/08/16/ITACcLfarNuF3GZ.png" width="100"><ul><li>古文码</li></ul><blockquote><p>古文码 测试一下</p></blockquote><pre><code>娴嬭瘯涓�涓�
+</code></pre><ul><li>口字码</li></ul><blockquote><p>口字码 测试一下</p></blockquote><pre><code>����һ��
+</code></pre><ul><li>符号码</li></ul><blockquote><p>符号码 测试一下</p></blockquote><img src="https://s2.loli.net/2022/10/30/dpxoaRSMmfk2l9y.png" width="100"><ul><li>拼音码</li></ul><blockquote><p>拼音码 测试一下</p></blockquote><pre><code>²âÊÔÒ»ÏÂ
+</code></pre><ul><li>还原符号码 / 解码符号码</li></ul><blockquote><img src="https://s2.loli.net/2022/10/30/Clr5nxufqPeGpWm.png" width="100"></blockquote><pre><code>测试一下
+</code></pre><ul><li>还原拼音码 / 解码拼音码</li></ul><blockquote><p>还原拼音码 ²âÊÔÒ»ÏÂ</p></blockquote><pre><code>测试一下
+</code></pre><ul><li>问句码</li></ul><blockquote><p>问句码 测试一下</p></blockquote><pre><code>测试??
+</code></pre><ul><li>锟拷码 / 锟斤拷</li></ul><blockquote><p>锟拷码 测试一下</p></blockquote><pre><code>锟斤拷锟斤拷一锟斤拷
+</code></pre><ul><li>rcnb</li></ul><blockquote><p>rcnb RCNB！</p></blockquote><pre><code>ȐĉņþƦȻƝƃÑƃȓƇnB
+</code></pre><ul><li>解码rcnb</li></ul><blockquote><p>解码rcnb ȐĉņþƦȻƝƃÑƃȓƇnB</p></blockquote><pre><code>RCNB！
+</code></pre></details>
+
+## 52.通用订阅推送 [nonebot_bison](https://github.com/felinae98/nonebot-bison)
+
+<details><summary>查看指令:</summary><p>超级用户:</p><p>@脑积水 添加订阅</p><p>@脑积水 删除订阅</p><p>@脑积水 查询订阅</p></details>
+
+## 53.随机壁纸/表情 random_ep_wp
+
+<details><summary>查看指令:</summary><h3 id="随机壁纸">随机壁纸:</h3><p>来(数量)份[二次元/必应(电脑/手机)壁纸/xxx...] --&gt; 发送相应壁纸</p><h3 id="图片相关">图片相关:</h3><p>PUID + P站画师ID --&gt; 发送随机该画师作品</p><p>关键词搜图 + 关键词 --&gt; 发送该关键词图片</p><h3 id="随机表情">随机表情:</h3><p>随机[丁真/坤坤/胡桃/柴郡/兽耳酱/白圣女/狗妈]</p></details>
+
+## 54.疯狂星期四文案 [nonebot_plugin_crazy_thursday](https://github.com/KafCoppelia/nonebot_plugin_crazy_thursday)
+
+<details><summary>查看指令:</summary><ol><li><p>疯狂星期[一|二|三|四|五|六|日|天]，输入疯狂星期八等不合法时间将提示；</p></li><li><p>支持日文触发：狂乱[月|火|水|木|金|土|日]曜日；</p></li></ol></details>
+
+## 55.动漫资源获取 [nonebot_plugin_animeres](https://github.com/Melodyknit/nonebot_plugin_animeres)
+
+<details><summary>查看指令:</summary><p>命令</p><pre><code>资源、动漫资源
+</code></pre><p>参数</p><pre><code>资源名称
+</code></pre></details>
+
+## 56.战地1、5战绩查询 [nonebot_plugin_bfchat](https://github.com/050644zf/nonebot-plugin-bfchat)
+
+<details><summary>查看指令:</summary><h3 id="命令列表">命令列表</h3><p>使用以下命令前均需要添加配置好的前缀</p><p>将 <code>[game]</code> 替换为 <code>bf1 </code>, <code>bfv </code>, <code>bf2042</code> 查询对应游戏。</p><table><thead><tr><th>命令</th><th>作用</th><th>备注</th></tr></thead><tbody><tr><td><code>bf help</code></td><td>返回本列表</td><td></td></tr><tr><td><code>bf init</code></td><td>初始化本群绑定功能，未初始化的群，群员不能使用绑定功能</td><td>仅SUPERUSER和群管理员有效</td></tr><tr><td><code>[game] [玩家id]</code></td><td>查询 <code>[玩家id]</code>的战绩信息<br>例如查询 <code>senpai</code>的 <code>bf1</code>信息：<code>bf1 senpai</code></td><td>如果查询玩家是me，则会将数据保存至本地<br>且一小时内再次查询不会再发起请求</td></tr><tr><td><code>[game] [玩家id] weapons</code></td><td>查询 <code>[玩家id]</code>的武器信息</td><td></td></tr><tr><td><code>[game] [玩家id] vehicles</code></td><td>查询 <code>[玩家id]</code>的载具信息</td><td></td></tr><tr><td><code>bf2042 [玩家id] classes</code></td><td>查询 <code>[玩家id]</code>的bf2042专家信息</td><td></td></tr><tr><td><code>[game] bind [玩家id]</code></td><td>将 对应游戏的 <code>[玩家id]</code>与命令发送人绑定，绑定后可使用 <code>me </code>代替 <code>[玩家id]</code><br>例如 <code>bfv me</code></td><td>游戏间绑定不互通</td></tr><tr><td><code>[game] list</code></td><td>列出该服务器所有已绑定的bf1/bfv玩家信息</td><td>使用本地数据，不会自动更新</td></tr><tr><td><code>[game] server [服务器名]</code></td><td>查询名字包含 <code>[服务器名]</code>的bf1/bfv服务器</td><td></td></tr></tbody></table></details>
+
+## 57.战舰世界水表BOT [hikari_bot](https://github.com/benx1n/HikariBot)
+
+<details><summary>查看指令: </summary>![8a6be3de675e8c66623cc71053754545](https://github.com/zhulinyv/NJS/assets/66541860/7af801bc-d6ef-4e19-81b6-2ec2d8e10e2d)</details>
+
+## 58.词云 [nonebot_plugin_wordcloud](https://github.com/he0119/nonebot-plugin-wordcloud)
+
+<details><summary>查看指令:</summary><h3 id="命令-3">命令</h3><ul><li>查看帮助</li></ul><p>待插件启动完成后，发送 <code>/词云</code> 可获取插件使用方法。</p><ul><li>查看词云</li></ul><table><thead><tr><th style="text-align:left">功能</th><th style="text-align:left">命令</th><th style="text-align:left">权限</th></tr></thead><tbody><tr><td style="text-align:left">查看今日词云</td><td style="text-align:left"><code>/今日词云</code></td><td style="text-align:left">所有人</td></tr><tr><td style="text-align:left">查看昨日词云</td><td style="text-align:left"><code>/昨日词云</code></td><td style="text-align:left">所有人</td></tr><tr><td style="text-align:left">查看本周词云</td><td style="text-align:left"><code>/本周词云</code></td><td style="text-align:left">所有人</td></tr><tr><td style="text-align:left">查看上周词云</td><td style="text-align:left"><code>/上周词云</code></td><td style="text-align:left">所有人</td></tr><tr><td style="text-align:left">查看本月词云</td><td style="text-align:left"><code>/本月词云</code></td><td style="text-align:left">所有人</td></tr><tr><td style="text-align:left">查看上月词云</td><td style="text-align:left"><code>/上月词云</code></td><td style="text-align:left">所有人</td></tr><tr><td style="text-align:left">查看年度词云</td><td style="text-align:left"><code>/年度词云</code></td><td style="text-align:left">所有人</td></tr><tr><td style="text-align:left">查看历史词云</td><td style="text-align:left"><code>/历史词云</code></td><td style="text-align:left">所有人</td></tr></tbody></table><blockquote><p>补充： 如果想获取自己的词云，可在上述命令前添加 <code>我的</code>，如 <code>/我的今日词云</code>。</p></blockquote><ul><li>管理词云</li></ul><table><thead><tr><th style="text-align:left">功能</th><th>命令</th><th style="text-align:left">权限</th><th style="text-align:left">说明</th></tr></thead><tbody><tr><td style="text-align:left">设置词云形状</td><td><code>/设置词云形状</code></td><td style="text-align:left">超级用户/群主/管理员</td><td style="text-align:left">发送一张图片作为当前群词云形状，每个群各自独立</td></tr><tr><td style="text-align:left">删除词云形状</td><td><code>/删除词云形状</code></td><td style="text-align:left">超级用户/群主/管理员</td><td style="text-align:left">删除本群词云形状</td></tr><tr><td style="text-align:left">设置词云默认形状</td><td><code>/设置词云默认形状</code></td><td style="text-align:left">超级用户</td><td style="text-align:left">发送一张图片作为所有词云的默认形状，每个群都会改变</td></tr><tr><td style="text-align:left">删除词云默认形状</td><td><code>/删除词云默认形状</code></td><td style="text-align:left">超级用户</td><td style="text-align:left">删除默认词云形状，继续使用词云默认的矩形</td></tr><tr><td style="text-align:left">开启词云每日定时发送</td><td><code>/开启词云每日定时发送</code> 或<br><code>/开启词云每日定时发送</code> + <code>[时间]</code></td><td style="text-align:left">超级用户/群主/管理员</td><td style="text-align:left">开启本群每日定时发送词云，默认将在每天 <code>wordcloud_default_schedule_time</code> 设置的时间发送今日词云，<br>如果时间没有包含时区信息，则根据 <code>wordcloud_timezone</code> 配置项确定时区。<br>时间的格式为 <a href="https://docs.python.org/zh-cn/3/library/datetime.html#datetime.time.fromisoformat">ISO 8601</a>，例如：<code>开启词云每日定时发送 23:59:59</code></td></tr><tr><td style="text-align:left">关闭词云每日定时发送</td><td><code>/关闭词云每日定时发送</code></td><td style="text-align:left">超级用户/群主/管理员</td><td style="text-align:left">关闭本群词云每日定时发送</td></tr><tr><td style="text-align:left">查看词云每日定时发送状态</td><td><code>/词云每日定时发送状态</code></td><td style="text-align:left">超级用户/群主/管理员</td><td style="text-align:left">查看定时发送状态</td></tr></tbody></table></details>
+
+## 59.二次元化图像 [nonebot_plugin_cartoon](https://github.com/A-kirami/nonebot-plugin-cartoon)
+
+<details><summary>查看指令:</summary><p>二次元化/动漫化/卡通化 + 图片</p></details>
+
+## 60.求生之路 [nonebot_plugin_l4d2_server](https://github.com/Agnes4m/nonebot_plugin_l4d2_server)
+
+<details><summary>查看指令:</summary><h3 id="功能-指令"><a href="#功能-指令" class="header-anchor" one-link-mark="yes">#</a> 功能（指令）</h3><h3 id="服务器"><a href="#服务器" class="header-anchor" one-link-mark="yes">#</a> 服务器</h3><p>（被动）上传地图：设置l4_master后，在群内发送压缩包zip/vpk/7z/rar，就可以直接上传地图到服务器了 如果设置了管理员，那么在群里也响应 [ip]格式为[127.0.0.1:20715]括号内</p><p>求生帮助：获取简单的帮助列表</p><table><thead><tr><th style="text-align:center;">指令</th><th style="text-align:center;">范围</th><th style="text-align:center;">用途</th><th style="text-align:center;">说明</th></tr></thead><tbody><tr><td style="text-align:center;">求生地图/查看求生地图</td><td style="text-align:center;">所有人</td><td style="text-align:center;">看图</td><td style="text-align:center;">获取当前路径下所有的vpk文件，并输出目录</td></tr><tr><td style="text-align:center;">(求生)地图删除[number]</td><td style="text-align:center;">群管/超管</td><td style="text-align:center;">删图</td><td style="text-align:center;">根据求生地图列出的序号，删除地图，[number]可以在第二条消息内输入</td></tr><tr><td style="text-align:center;">求生地图[number][改/改名][text]</td><td style="text-align:center;">群管/超管</td><td style="text-align:center;">改图名</td><td style="text-align:center;">[number]同上，text为更改后名称，如果没有.vpk后缀会自动加上</td></tr><tr><td style="text-align:center;">求生服务器指令[text]</td><td style="text-align:center;">群管/超管</td><td style="text-align:center;">rcon控制台</td><td style="text-align:center;">rcon连接求生服务器控制台，使用ip和passsword</td></tr><tr><td style="text-align:center;">求生路径</td><td style="text-align:center;">群管/超管</td><td style="text-align:center;">查看路径</td><td style="text-align:center;">查看当前服务器路径</td></tr><tr><td style="text-align:center;">求生路径切换[number]</td><td style="text-align:center;">群管/超管</td><td style="text-align:center;">切换路径</td><td style="text-align:center;">切换本地服务器路径</td></tr><tr><td style="text-align:center;">求生插件</td><td style="text-align:center;">群管/超管</td><td style="text-align:center;">查看求生插件</td><td style="text-align:center;">查看当前路径下求生插件smx文件</td></tr></tbody></table><h3 id="anne-电信服"><a href="#anne-电信服" class="header-anchor" one-link-mark="yes">#</a> anne(电信服)</h3><table><thead><tr><th style="text-align:center;">指令</th><th style="text-align:center;">范围</th><th style="text-align:center;">用途</th><th style="text-align:center;">说明</th></tr></thead><tbody><tr><td style="text-align:center;">探监/坐牢/开牢</td><td style="text-align:center;">所有人</td><td style="text-align:center;">随机抽一个目标云服</td><td style="text-align:center;">探监是得分超过160的队伍\n坐牢是缺人队伍\n开牢是空人房间</td></tr><tr><td style="text-align:center;">求生anne[text]/@/[None]</td><td style="text-align:center;">所有人</td><td style="text-align:center;">查anne成绩</td><td style="text-align:center;">[text]可以是:空白(则使用绑定信息)、昵称、steamid、@user</td></tr><tr><td style="text-align:center;">求生绑定/steam绑定/anne绑定[text]</td><td style="text-align:center;">所有人</td><td style="text-align:center;">绑定steam信息</td><td style="text-align:center;">[text]可以是:昵称、steamid</td></tr><tr><td style="text-align:center;">求生解绑/steam解绑/anne解绑</td><td style="text-align:center;">所有人</td><td style="text-align:center;">解绑steam信息</td><td style="text-align:center;">无</td></tr><tr><td style="text-align:center;">云[number]</td><td style="text-align:center;">所有人</td><td style="text-align:center;">云服信息</td><td style="text-align:center;">获取服务器状态和直连ip</td></tr></tbody></table><h3 id="ip-服务器查询"><a href="#ip-服务器查询" class="header-anchor" one-link-mark="yes">#</a> ip(服务器查询)</h3><table><thead><tr><th style="text-align:center;">指令</th><th style="text-align:center;">范围</th><th style="text-align:center;">用途</th><th style="text-align:center;">说明</th></tr></thead><tbody><tr><td style="text-align:center;">求生ip[ip]</td><td style="text-align:center;">所有人</td><td style="text-align:center;">查指定服务器</td><td style="text-align:center;">[text]格式为[127.0.0.1:20715]括号内，可以查询服务器玩家名字</td></tr><tr><td style="text-align:center;">求生订阅[ip]</td><td style="text-align:center;">所有人</td><td style="text-align:center;">查询订阅服务器状态</td><td style="text-align:center;">返回一个图片\n显示群所有订阅的服务器名字、状态、地图、玩家名字</td></tr><tr><td style="text-align:center;">求生加入[number]</td><td style="text-align:center;">所有人</td><td style="text-align:center;">获取进服直链</td><td style="text-align:center;">[number]为求生订阅所显示的开头序号</td></tr><tr><td style="text-align:center;">求生添加订阅[ip]</td><td style="text-align:center;">群管</td><td style="text-align:center;">群订阅添加</td><td style="text-align:center;">新增订阅ip，在下次订阅的时候可以显示</td></tr><tr><td style="text-align:center;">求生取消订阅[number]</td><td style="text-align:center;">所有人</td><td style="text-align:center;">群订阅取消</td><td style="text-align:center;">[number]为求生订阅所显示的开头序号</td></tr><tr><td style="text-align:center;">求生更新 添加 [tag] [ip] [text] ([number])</td><td style="text-align:center;">群管</td><td style="text-align:center;">全局订阅添加</td><td style="text-align:center;">可以使用tag(+text)(+number)快速索引服务</td></tr><tr><td style="text-align:center;">求生更新 删除 [tag] [number]</td><td style="text-align:center;">群管</td><td style="text-align:center;">全局订阅添加</td><td style="text-align:center;">[number]为求生订阅标记的默认序号</td></tr><tr><td style="text-align:center;">呆呆/呆呆1</td><td style="text-align:center;">所有人</td><td style="text-align:center;">读取服务器状态</td><td style="text-align:center;">为data/L4D2路径下记录的json文件中ip，不带数字默认读取全部</td></tr><tr><td style="text-align:center;">求生定时添加[text]</td><td style="text-align:center;">群管</td><td style="text-align:center;">定时推送状态</td><td style="text-align:center;">[text]内容同上，推送间隔和次数在配置yml中</td></tr></tbody></table><h3 id="其他功能"><a href="#其他功能" class="header-anchor" one-link-mark="yes">#</a> 其他功能</h3><table><thead><tr><th style="text-align:center;">指令</th><th style="text-align:center;">范围</th><th style="text-align:center;">用途</th><th style="text-align:center;">说明</th></tr></thead><tbody><tr><td style="text-align:center;">创意工坊下载[text]</td><td style="text-align:center;">所有人</td><td style="text-align:center;">下载创意工坊文件</td><td style="text-align:center;">[text]为id或者网页url</td></tr><tr><td style="text-align:center;">求生喷漆</td><td style="text-align:center;">所有人</td><td style="text-align:center;">制作一个喷漆</td><td style="text-align:center;">只支持图片暂不支持gif</td></tr><tr><td style="text-align:center;"><s>求生三方[text]</s></td><td style="text-align:center;">所有人</td><td style="text-align:center;">查询三方地图</td><td style="text-align:center;">可以通过中英文名搜索，并返回上传群文件</td></tr><tr><td style="text-align:center;">l4更新</td><td style="text-align:center;">超管</td><td style="text-align:center;">更新插件</td><td style="text-align:center;">用于git clone情况下更新插件</td></tr></tbody></table><h3 id="网页控制台"><a href="#网页控制台" class="header-anchor" one-link-mark="yes">#</a> 网页控制台</h3><p>如果<code>l4_web=True</code>(默认开启)，那么将在bot启动时启用web控制台</p><p>启用端口为机器人端口/l4d2，例如env里host为127.0.0.1，port为11451，那么控制台连接为</p><div class="language-bash extra-class"><pre class="language-bash"><code>http://127.0.0.1:11451/l4d2
+</code></pre></div><p>默认账号:l4d2<br>默认密码:admin</p><h3 id="配置"><a href="#配置" class="header-anchor" one-link-mark="yes">#</a> 配置</h3><p>位于路径文件l4d2.yml中，也可以通过网页控制台修改</p><h3 id="前置游戏操作"><a href="#前置游戏操作" class="header-anchor" one-link-mark="yes">#</a> 前置游戏操作</h3><ul><li><p>如果要操作求生服务器文件，机器人与求生服务器处于同一个服务器上</p></li><li><p>如果你按照以下步骤操作，env配置可以不填</p></li><li><p>创建一个steam求生服务器(预计需要储存14G)</p></li></ul></details>
+
+## 61.跟随撤回 [nonebot_plugin_follow_withdraw](https://github.com/CMHopeSunshine/nonebot-plugin-follow-withdraw)
+
+<details><summary>查看指令:</summary><p>被动技能:</p><p>当触发命令的消息被撤回时, 让Bot跟随撤回命令消息结果。</p><p>超管指令: 清除消息记录</p></details>
+
+## 62.今天吃/喝什么 what_to_eat_or_drink
+
+<details><summary>查看指令:</summary><p>(今?(天|晚)|早上|晚上|中午|夜宵)?吃什么</p><p>(今?(天|晚)|早上|晚上|中午|夜宵)?喝什么</p></details>
+
+## 63.翻译 translate_enhance
+
+<details><summary>查看指令:</summary><p>翻译 + 任意文本</p><p>x译x + 任意内容 (x为语种, 支持[中/繁/英/日/韩/法/俄/德])</p></details>
+
+## 64.记事本 [nonebot_plugin_note](https://github.com/Passerby-D/nonebot_plugin_note)
+
+<details><summary>查看指令:</summary><h3 id="命令-4">命令</h3><p><strong>注：使用命令时需要加命令前缀</strong>（举例中的命令前缀为 /，请根据情况替换）</p><ul><li><p><code>note/记事/记事本 [记事内容]</code> 进行记事<br>实例：<code>/记事 这里记录自己的一件事情，后期可以通过记事列表命令查看，记事删除命令删除</code></p></li><li><p><code>interval_note/间隔记事/间隔记事本 [记事内容] [时] [分] [秒]</code>，我将每隔[时][分][秒]提醒您一次<br>实例：<code>/间隔记事 后面是时分秒，时分秒之间有空格，每隔一个周期提醒，比如这个010就是每隔1分钟提醒一次 0 1 0</code></p></li><li><p><code>cron_note/定时记事/定时记事本 [记事内容] （日）/（mon/tue/wed/thu/fri/sat/sun） （[时]） （[分]） [秒]</code>，我将在每月的[日][时][分][秒]/每周的[星期x][时][分][秒]/每天的[时][分][秒]/每时的[分][秒]/每分的[秒]提醒您一次<br>实例：<br><code>/定时记事 每周的tue(星期二)日0时24分0秒提醒 tue 0 24 0</code><br><code>/定时记事 每月的29日0时26分0秒提醒 29 0 26 0</code><br><code>/定时记事 每时的26分50秒提醒 26 50</code><br><code>/定时记事 每分的26秒提醒 26</code></p></li><li><p><code>date_note/单次记事/单次记事本 [记事内容] [年] [月] [日]（或今天/明天/后天/大后天） [时] [分] [秒]</code>，我将在这个时刻提醒您<br>实例：<br><code>/单次记事 将在2022年11月29日0时31分0秒提醒 2022 11 29 0 31 00</code><br><code>/单次记事 将在2022年11月29日0时32分10秒提醒(今天就是这个日子) 今天 0 32 10</code></p></li><li><p><code>note_list/记事列表/记事本列表</code> 来查看记事列表<br>实例：<code>/记事列表</code></p></li><li><p><code>note_delete/记事删除/记事本删除 [记事内容]</code> 来删除一个记事项目<br>实例：<code>/记事删除 这里记录自己的一件事情，后期可以通过记事列表命令查看，记事删除命令删除</code></p></li></ul><p><strong>注：如果<code>[记事内容]</code>中需要有空格的话，可以分布使用命令(即直接使用指令不带参数)</strong></p><p>以下命令需要SUPERUSERS才能使用：</p><ul><li><p><code>note_check/记事查看/记事本查看 [QQ账号(QQ群在群号前加个0)]/all</code> 来查看某人/所有的记事项目<br>实例：<br><code>/记事查看 all</code><br><code>/记事查看 123456</code></p></li><li><p><code>note_remove/记事移除/记事本移除 [QQ账号(QQ群在群号前加个0)] [记事内容]</code> 来移除某人的某项记事内容<br>实例：<code>/记事移除 123456 记事内容</code></p></li><li><p><code>note_spy/记事监控/记事本监控 [QQ账号]</code> 来监控某人的记事记录<br>实例：<code>/note_spy 123456</code></p></li><li><p><code>note_spy_remove/记事监控移除/记事本监控移除 [QQ账号]</code> 来移除对某人的监控<br>实例：<code>/记事本监控移除 123456</code></p></li><li><p><code>note_ban/记事禁止/记事本禁止 1/2（word/user） [内容]</code> 来设置禁用词/黑名单<br>实例：<br><code>/记事禁止 1 1表示禁止的记事内容</code><br><code>/记事禁止 2 123456</code></p></li><li><p><code>note_ban_list/记事禁止列表/记事本禁止列表</code> 来查看禁用词和黑名单<br>实例：<code>/记事禁止列表</code></p></li><li><p><code>note_ban_remove/记事禁止移除/记事本禁止移除 1/2（word/user） [内容]</code> 来移除禁用词/黑名单<br>实例：<br><code>/记事禁止移除 1表示移除禁止的记事内容</code><br><code>/记事禁止移除 2 123456</code></p></li><li><p><code>interval_note_other/间隔记事他人/间隔记事本他人 [QQ账号] [记事内容] [时] [分] [秒]</code> 来给某人添加interval_note</p></li><li><p><code>cron_note_other/定时记事他人/定时记事本他人 [QQ账号] [记事内容] （日）/（mon/tue/wed/thu/fri/sat/sun） （[时]） （[分]） [秒]</code> 来给某人添加cron_note</p></li><li><p><code>date_note_other/单次记事他人/单次记事本他人 [QQ账号] [记事内容] [年] [月] [日]（或今天/明天/后天/大后天） [时] [分] [秒]</code> 来给某人添加date_note<br>（跟前面interval_note/cron_note/date_note的例子同理，只需要多输入一个QQ账号即可）</p></li><li><p><code>interval_note_group/群间隔记事/群间隔记事本 [QQ群号] [记事内容] [时] [分] [秒]</code> 来给某群添加interval_note</p></li><li><p><code>cron_note_group/群定时记事/群定时记事本 [QQ群号] [记事内容] （日）/（mon/tue/wed/thu/fri/sat/sun） （[时]） （[分]） [秒]</code> 来给某群添加cron_note</p></li><li><p><code>date_note_group/群单次记事/群单次记事本 [QQ群号] [记事内容] [年] [月] [日]（或今天/明天/后天/大后天） [时] [分] [秒]</code> 来给某群添加date_note</p></li></ul></details>
+
+## 65.ChatGPT(使用Token) [nonebot_plugin_chatgpt_plus](https://github.com/AkashiCoin/nonebot-plugin-chatgpt-plus)
+
+<details><summary>查看指令:</summary><p>开始对话:</p><p>chat1 + 任意内容</p><table><thead><tr><th style="text-align:center">指令</th><th style="text-align:center">需要@</th><th style="text-align:center">范围</th><th style="text-align:center">说明</th></tr></thead><tbody><tr><td style="text-align:center">刷新会话/刷新对话</td><td style="text-align:center">是</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">重置会话记录，开始新的对话</td></tr><tr><td style="text-align:center">导出会话/导出对话</td><td style="text-align:center">是</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">导出当前会话记录</td></tr><tr><td style="text-align:center">导入会话/导入对话 + 会话ID + 父消息ID(可选)</td><td style="text-align:center">是</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">将会话记录导入，这会替换当前的会话</td></tr><tr><td style="text-align:center">保存会话/保存对话 + 会话名称</td><td style="text-align:center">是</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">将当前会话保存</td></tr><tr><td style="text-align:center">查看会话/查看对话</td><td style="text-align:center">是</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">查看已保存的所有会话</td></tr><tr><td style="text-align:center">切换会话/切换对话 + 会话名称</td><td style="text-align:center">是</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">切换到指定的会话</td></tr><tr><td style="text-align:center">回滚会话/回滚对话</td><td style="text-align:center">是</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">返回到之前的会话，输入数字可以返回多个会话，但不可以超过最大支持数量</td></tr><tr><td style="text-align:center">刷新token</td><td style="text-align:center">是</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">用于session刷新测试（超级用户）</td></tr><tr><td style="text-align:center">清空会话/清空对话</td><td style="text-align:center">是</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">用于账号切换后，保存的会话不存在的情况（超级用户）</td></tr><tr><td style="text-align:center">人格设定/设置人格 + 名称</td><td style="text-align:center">是</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">使用人格预设</td></tr><tr><td style="text-align:center">人格设定/设置人格 + 名称 + 人格信息</td><td style="text-align:center">是</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">编辑人格信息（超级用户）</td></tr><tr><td style="text-align:center">查看人格/查询人格</td><td style="text-align:center">是</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">查看已有的人格预设（超级用户）</td></tr></tbody></table></details>
+
+## 66.命令别名 [nonebot_plugin_alias](https://github.com/MeetWq/nonebot-plugin-alias)
+
+<details><summary>查看指令:</summary><h3 id="使用-4">使用</h3><p><strong>以下命令需要加<a href="https://v2.nonebot.dev/docs/api/config#Config-command_start">命令前缀</a> (默认为<code>/</code>)，可自行设置为空</strong></p><ul><li><code>alias [别名]=[指令名称]</code> 添加别名</li><li><code>alias [别名]</code> 查看别名</li><li><code>alias -p</code> 查看所有别名</li><li><code>unalias [别名]</code> 删除别名</li><li><code>unalias -a</code> 删除所有别名</li></ul><p>默认只在当前群聊/私聊中生效，使用 <code>-g</code> 参数添加全局别名；增删全局别名需要超级用户权限</p><ul><li><code>alias -g [别名]=[指令名称]</code> 添加全局别名</li><li><code>unalias -g [别名]</code> 删除全局别名</li></ul></details>
+
+## 67.群友召唤术 [nonebot_plugin_summon](https://github.com/zhulinyv/nonebot_plugin_summon)
+
+<details><summary>查看指令:</summary><h3 id="指令">指令</h3><table><thead><tr><th>指令</th><th>需要@</th><th>示例</th><th>说明</th></tr></thead><tbody><tr><td>设置召唤+艾特(或qq号)+昵称</td><td>否</td><td>设置召唤 @xxx 女装哥</td><td>设置一个召唤群友</td></tr><tr><td>删除召唤+昵称</td><td>是</td><td>删除召唤 女装哥</td><td>删除一个召唤群友</td></tr><tr><td>召唤+昵称</td><td>否</td><td>召唤 女装哥</td><td>让机器人帮你叫群友</td></tr><tr><td>召唤列表</td><td>否</td><td>召唤列表</td><td>查看已设置的昵称</td></tr><tr><td>戳+昵称+次数(数字)</td><td>否</td><td>戳 女装哥 10</td><td>让机器人戳群友</td></tr></tbody></table><p>超管指令：<code>艾特bot 切换召唤术+普通/增强/强力</code></p><pre><code>普通模式为: 戳一戳
+增强模式为: 艾特
+强力模式为: 戳一戳 + 艾特
+</code></pre></details>
+
+## 68.戒色打卡日记 [nonebot_plugin_abstain_diary](https://github.com/Ikaros-521/nonebot_plugin_abstain_diary)
+
+<details><summary>查看指令:</summary><h3 id="命令-5">👉 命令</h3><p>以下命令使用时记得加上自己的命令前缀哦~（一般为/）<br>下面的xx表示自定义内容，可以自行替换成你想要戒的内容。</p><h3 id="1-戒帮助">1、戒帮助</h3><p>命令结构：<code>/戒帮助</code> 或 <code>/戒说明</code> 或 <code>/戒命令</code><br>例如：<code>/戒帮助</code><br>bot返回内容：</p><pre><code>戒命令如下(【】中的才是命令哦，记得加命令前缀)：
+【戒xx 目标】【戒xx 设置】，后面追加戒xx目标天数。例如：/戒氪金 目标 30
+
+【戒xx】，每日打卡，请勿中断喵。例如：/戒氪金
+
+【群戒】【戒情况】【群友戒情况】，查看本群所有戒情况。例如：/群戒
+
+【戒xx 放弃】【戒xx 取消】，删除戒xx目标。例如：/戒氪金 放弃
+
+财能使人贪，色能使人嗜，名能使人矜，潜能使人倚，四患既都去，岂在浮尘里。
+</code></pre><h3 id="2-戒xx-目标">2、戒xx 目标</h3><p>命令结构：<code>/戒xx 目标</code> 或 <code>/戒xx 设置</code> 后面追加 戒xx的目标天数<br>例如：<code>/戒色 目标 30</code><br>bot返回内容：</p><pre><code>戒色目标天数：30，设置成功！今天是打卡第一天，加油！你我都有美好的未来！
+</code></pre><h3 id="3-戒xx">3、戒xx</h3><p>命令结构：<code>/戒xx</code><br>例如：<code>/戒色</code><br>bot返回内容：</p><pre><code>戒色打卡成功！您已打卡1天！
+</code></pre><h3 id="4-群戒">4、群戒</h3><p>命令结构：<code>/群戒</code> 或 <code>/戒情况</code> 或 <code>/群友戒情况</code><br>例如：<code>/群戒</code><br>bot返回内容：</p><pre><code>🥵🥵🥵群戒信息
+打卡数  群昵称  目标数
+——————————————
+戒只因
+1  小  5
+1  黑  4
+——————————————
+戒霓
+1  子  5
+——————————————
+</code></pre><h3 id="4-戒xx-放弃">4、戒xx 放弃</h3><p>命令结构：<code>/戒xx 放弃</code> 或 <code>/戒xx 取消</code><br>例如：<code>/戒色 放弃</code><br>bot返回内容：</p><pre><code>戒色打卡已取消，您可以开冲啦！！！
+</code></pre></details>
+
+## 69.Apex查询 [nonebot_plugin_apex_api_query](https://github.com/H-xiaoH/nonebot-plugin-apex-api-query)
+
+<details><summary>查看指令:</summary><h3 id="指令表-2">指令表</h3><table><thead><tr><th style="text-align:center">指令</th><th style="text-align:center">权限</th><th style="text-align:center">需要@</th><th style="text-align:center">范围</th><th style="text-align:center">说明</th></tr></thead><tbody><tr><td style="text-align:center">玩家 [玩家名称]</td><td style="text-align:center">无</td><td style="text-align:center">否</td><td style="text-align:center">私聊/群聊/频道</td><td style="text-align:center">根据玩家名称查询信息 (暂仅支持查询 PC 平台玩家信息)</td></tr><tr><td style="text-align:center">UID [玩家UID]</td><td style="text-align:center">无</td><td style="text-align:center">否</td><td style="text-align:center">私聊/群聊/频道</td><td style="text-align:center">根据玩家 UID 查询信息 (暂仅支持查询 PC 平台玩家信息)</td></tr><tr><td style="text-align:center">自查</td><td style="text-align:center">无</td><td style="text-align:center">否</td><td style="text-align:center">私聊/群聊/频道</td><td style="text-align:center">根据玩家已绑定的 UID 自动查询玩家信息</td></tr><tr><td style="text-align:center">地图</td><td style="text-align:center">无</td><td style="text-align:center">否</td><td style="text-align:center">私聊/群聊/频道</td><td style="text-align:center">查询地图轮换</td></tr><tr><td style="text-align:center">猎杀</td><td style="text-align:center">无</td><td style="text-align:center">否</td><td style="text-align:center">私聊/群聊/频道</td><td style="text-align:center">查询各平台顶尖猎杀者信息</td></tr><tr><td style="text-align:center">制造</td><td style="text-align:center">无</td><td style="text-align:center">否</td><td style="text-align:center">私聊/群聊/频道</td><td style="text-align:center">查询复制器轮换</td></tr><tr><td style="text-align:center">服务</td><td style="text-align:center">无</td><td style="text-align:center">否</td><td style="text-align:center">私聊/群聊/频道</td><td style="text-align:center">查询服务器状态</td></tr><tr><td style="text-align:center">订阅地图</td><td style="text-align:center">管理员</td><td style="text-align:center">否</td><td style="text-align:center">群聊/频道</td><td style="text-align:center">每整点查询地图轮换</td></tr><tr><td style="text-align:center">取消订阅地图</td><td style="text-align:center">管理员</td><td style="text-align:center">否</td><td style="text-align:center">群聊/频道</td><td style="text-align:center">取消每整点查询地图轮换</td></tr><tr><td style="text-align:center">订阅制造</td><td style="text-align:center">管理员</td><td style="text-align:center">否</td><td style="text-align:center">群聊/频道</td><td style="text-align:center">每日 2 时查询复制器轮换</td></tr><tr><td style="text-align:center">取消订阅制造</td><td style="text-align:center">管理员</td><td style="text-align:center">否</td><td style="text-align:center">群聊/频道</td><td style="text-align:center">取消每日 2 时查询复制器轮换</td></tr><tr><td style="text-align:center">绑定 [玩家 UID]</td><td style="text-align:center">无</td><td style="text-align:center">否</td><td style="text-align:center">私聊/群聊/频道</td><td style="text-align:center">将 UID 与 QQ 账号绑定 (群聊 与 频道 信息不互通)</td></tr><tr><td style="text-align:center">解绑</td><td style="text-align:center">无</td><td style="text-align:center">否</td><td style="text-align:center">私聊/群聊/频道</td><td style="text-align:center">将 UID 与 QQ 账号解除绑定 (群聊 与 频道 信息不互通)</td></tr></tbody></table></details>
+
+## 70.ChatGPT(使用API) [nonebot_plugin_gpt3](https://github.com/chrisyy2003/nonebot-plugin-gpt3)
+
+<details><summary>查看指令:</summary><h3 id="如何使用">如何使用</h3><p>私聊中是直接发送消息，<strong>群聊中是以回复的方式发送。</strong></p><p>以下是功能列表</p><table><thead><tr><th style="text-align:center">功能</th><th style="text-align:center">指令</th></tr></thead><tbody><tr><td style="text-align:center"><strong>基本的聊天对话</strong></td><td style="text-align:center">基本会话（配置【chat2】触发）</td></tr><tr><td style="text-align:center"><strong>连续对话</strong></td><td style="text-align:center">chat/聊天/开始聊天</td></tr><tr><td style="text-align:center"><strong>结束聊天</strong></td><td style="text-align:center">stop/结束/结束聊天</td></tr><tr><td style="text-align:center"><strong>切换会话</strong></td><td style="text-align:center">切换群聊/切换会话/切换</td></tr><tr><td style="text-align:center">重置会话记录</td><td style="text-align:center">刷新/重置对话</td></tr><tr><td style="text-align:center">重置AI人格</td><td style="text-align:center">重置人格</td></tr><tr><td style="text-align:center">设置AI人格</td><td style="text-align:center">设置人格</td></tr><tr><td style="text-align:center">导出历史会话</td><td style="text-align:center">导出会话/导出对话</td></tr><tr><td style="text-align:center">回答渲染为图片</td><td style="text-align:center">图片渲染（默认关闭）</td></tr></tbody></table></details>
+
+## 71.防撤回 [nonebot_plugin_antirecall](https://github.com/Jerry080801/nonebot-plugin-antirecall/)
+
+<details><summary>查看指令:</summary><h3 id="指令表-3">指令表</h3><table><thead><tr><th style="text-align:center">指令</th><th style="text-align:center">说明</th></tr></thead><tbody><tr><td style="text-align:center">开启/添加防撤回, enable + 群号1 群号2 ...</td><td style="text-align:center">开启群的防撤回</td></tr><tr><td style="text-align:center">关闭/删除防撤回, disable + 群号1 群号2 ...</td><td style="text-align:center">关闭群的防撤回</td></tr><tr><td style="text-align:center">查看防撤回群聊</td><td style="text-align:center">查看防撤回群聊</td></tr><tr><td style="text-align:center">开启/关闭绕过管理层</td><td style="text-align:center">管理员/群主不会被防撤回,仅限群内</td></tr><tr><td style="text-align:center">防撤回菜单</td><td style="text-align:center">打开本插件菜单</td></tr><tr><td style="text-align:center">开启/关闭防撤回私聊gid uid</td><td style="text-align:center">超级管理员私聊使用,gid群号的群撤回消息会私聊给uid的用户,如果群没开启防撤回就不生效</td></tr><tr><td style="text-align:center">查看防撤回私聊</td><td style="text-align:center">查看私聊列表,私聊使用,会返回json数据.</td></tr><tr><td style="text-align:center">开启防撤回私聊 gid</td><td style="text-align:center">设置防撤回触发后监听的群,一个参数群号(ps.仅限一个群[建议是一个私人小群专门用来干这事]重新设置会覆盖)</td></tr><tr><td style="text-align:center">关闭防撤回私聊</td><td style="text-align:center">无参数,删除这个监听群,不监听</td></tr><tr><td style="text-align:center">查看防撤回监听</td><td style="text-align:center">查看监听的群和发送的群,一个json</td></tr><tr><td style="text-align:center">添加/删除防撤回监听 gid</td><td style="text-align:center">添加防撤回被监听的群,一次一个[不建议太多,会风控]</td></tr></tbody></table></details>
+
+## 72.原神/星铁前瞻兑换码 [nonebot_plugin_gscode](https://github.com/monsterxcn/nonebot-plugin-gscode)
+
+<details><summary>查看指令:</summary><p>gscode / 兑换码</p></details>
+
+## 73.签到 [nonebot_plugin_hoshino_sign](https://github.com/zhulinyv/nonebot_plugin_hoshino_sign)
+
+<details><summary>查看指令:</summary><p>签到/盖章/妈!</p><p>签到(获得好感和 pcr 的印章)</p><p>收集册(+QQ号/艾特)</p><p>查看自己或他人的收集进度</p></details>
+
+## 74.PING [nonebot_plugin_ping](https://github.com/zhulinyv/nonebot_plugin_ping)
+
+<details><summary>查看指令:</summary><h3 id="指令-2">指令</h3><table><thead><tr><th>名称</th><th>示例</th><th>说明</th></tr></thead><tbody><tr><td>ping + url</td><td>ping www.baidu.com</td><td>ping 一个网址</td></tr><tr><td>qrcode + url</td><td>qrcode www.baidu.com</td><td>给网址生成一个二维码</td></tr><tr><td>whois + url</td><td>whois www.baidu.com</td><td>查询一个网址的 whois 信息</td></tr></tbody></table></details>
+
+## 75.表情包制作 [nonebot_plugin_memes](https://github.com/MeetWq/nonebot-plugin-memes)
+
+<details><summary>查看指令:</summary><p>触发方式：“关键词 + 图片/文字”</p><p>发送 “表情详情 + 关键词” 查看表情参数和预览</p><p>目前支持的表情列表：</p><figure data-type="image" tabindex="5"><img src="https://github.com/zhulinyv/NJS/assets/66541860/4b9f6117-63ee-4670-b945-d74fcc8631e0" alt="2b529cdc3891982e031fedcdae2adbfe" loading="lazy"></figure></details>
+
+## 76.兽语译者 [nonebot_plugin_animalVoice](https://github.com/ANGJustinl/nonebot_plugin_animalVoice/)
+
+<details><summary>查看指令:</summary><p>[兽音加密]/[convert]</p><p>[兽音解密]/[deconvert]</p><p>[切噜一下]/[cherulize]</p><p>[切噜～]/[decherulize]</p></details>
+
+## 77.AI绘图(使用本地SDWebUI) [nonebot_plugin_stable_diffusion_diao](https://github.com/DiaoDaiaChan/nonebot-plugin-stable-diffusion-diao)
+
+<details><summary>查看指令:</summary><div style="background-color:rgba(255, 0, 0, 0.5);">&nbsp;</div><h3 id="我是群ai绘画nickname">我是群Ai绘画{nickname}</h3><h3 id="快速画图-绘画-白发红色眼睛">快速画图: 绘画 白发,红色眼睛</h3><div style="background-color:rgba(255, 0, 0, 0.5);">&nbsp;</div><h3 id="以下是功能捏-井号是备注请忽略它">以下是功能捏 "#"井号是备注!请忽略它!😡</h3><h3 id="群管理功能">群管理功能 🥰</h3><p>发送 绘画设置 四个字查看本群绘画设置, 只有管理员和群主能更改设置</p><div style="background-color:rgba(12, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">当前群的设置为
+novelai_cd:2 # 群聊画图cd, 单位为秒, 全局设置:{config.novelai_cd}, 当前群设置:{await config.get_value(event.group_id, "cd")}
+novelai_tags: # 本群自带的正面提示词
+novelai_on:True # 是否打开本群AI绘画功能
+novelai_ntags: # 本群自带的负面提示词
+novelai_revoke:0 # 自动撤回? 0 为不撤回, 其余为撤回的时间, 单位秒 全局设置:{config.novelai_revoke}, 当前群设置:{await config.get_value(event.group_id, "revoke")}
+novelai_h:0 # 是否允许色图 0为不允许, 1为删除屏蔽词, 2为允许 全局设置:{config.novelai_h}, 当前群设置:{await config.get_value(event.group_id, "h")}
+novelai_htype:2 # 发现色图后的处理办法, 1为返回图片到私聊, 2为返回图片url, 3为不发送色图 全局设置:{config.novelai_htype}, 当前群设置:{await config.get_value(event.group_id, "htype")}
+novelai_picaudit:3 # 是否打开图片审核功能 1为百度云图片审核, 2为本地审核功能, 3为关闭 全局设置:{config.novelai_picaudit}, 当前群设置:{await config.get_value(event.group_id, "picaudit")}
+novelai_pure:False # 纯净模式, 开启后只返回图片, 不返回其他信息 全局设置:{config.novelai_pure}, 当前群设置:{await config.get_value(event.group_id, "pure")}
+novelai_site:192.168.5.197:7860 # 使用的后端, 不清楚就不用改它
+如何设置
+示例 novelai_ 后面的是需要更改的名称 例如 novelai_cd 为 cd , novelai_revoke 为 revoke
+
+绘画设置 on False # 关闭本群ai绘画功能
+绘画设置 revoke 10 # 开启10秒后撤回图片功能
+绘画设置 tags loli, white_hair # 设置群自带的正面提示词
+</code></pre><h3 id="娱乐功能">娱乐功能</h3><pre><code class="language-text"># 第一个单词为功能的触发命令捏
+二次元的我
+# 随机返回拼凑词条的图片
+帮我画
+# 让chatgpt为你生成prompt吧, 帮我画夕阳下的少女
+</code></pre><h3 id="额外功能">额外功能 😋</h3><div style="background-color:rgba(12, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">模型列表 
+# 查看当前后端的所有模型, 以及他们的索引
+更换模型 
+# 更换绘画模型, 更换模型数字索引, 例如, 更换模型2
+以图绘图 
+# 调用controlnet以图绘图, 标准命令格式: 以图绘图 关键词 [图片], 例如: 以图绘图 miku [图片], 直接 以图绘图[图片] 也是可以的
+controlnet 
+# 返回control模块和模型, 如果带上图片则返回经过control模块处理后的图片, 例如  controlnet [图片]
+图片修复 
+# 图片超分功能, 图片修复 [图片], 或者 图片修复 [图片1] [图片2], 单张图片修复倍率是3倍, 多张是2倍
+后端 
+# 查看所有后端的工作状态
+emb 
+# 直接发送emb获取emb文件, 可以理解为小模型, embhutao, 返回名字里有hutao的emb文件, 绘画时使用emb就可以画出对应的角色了
+例如: 绘画 hutao 返回 原神胡桃的画面(如果有这个emb的话)
+lora
+# 同emb，直接发送lora获取所有的lora模型 使用 -lora 模型1编号_模型2权重,模型2编号_模型2权重，例如 -lora 341_1,233_0.9
+采样器
+# 获取当前后端可用采样器
+分析
+# 分析出图像的tags, 分析 [图片], [回复图片消息] 分析,都是可以的
+</code></pre><h3 id="绘画功能详解-️">绘画功能详解 🖼️</h3><h3 id="基础使用方法">基础使用方法 😊</h3><div style="background-color:rgba(12, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">基础使用方法, 使用.aidraw开头
+[{config.novelai_command_start}]也是可以的
+带上图片即可图生图, 带上 -cn 参数启动controlnet以图生图功能
+
+绘画 可爱的萝莉 
+约稿 可爱的萝莉 [图片] 
+.aidraw 可爱的萝莉 [图片] -cn
+</code></pre><h3 id="关键词-️">关键词 ✏️</h3><div style="background-color:rgba(12, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">使用关键词(tags, prompt)描述你想生成的图像
+绘画 白发, 红色眼睛, 萝莉
+使用负面关键词(ntags, negative prompt)排除掉不想生成的内容 -u --ntags
+绘画 绘画 白发, 红色眼睛, 萝莉 -u 多只手臂, 多只腿
+</code></pre><table><tbody><tr><td bgcolor="yellow">中文将会翻译成英文, 所以请尽量使用英文进行绘图, 多个关键词尽量用逗号分开</td></tr></tbody></table><h3 id="设置分辨率画幅">设置分辨率/画幅</h3><div style="background-color:rgba(12, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">随机画幅比例
+插件内置了几种画幅使用 -r 来指定
+----
+s 640x640 1:1方构图
+p 512x768 竖构图
+l 768x512 横构图
+uwp 450x900 1:2竖构图
+uw 900x450 2:1横构图
+----
+绘画 萝莉 -r l # 画一幅分辨率为768x512 横构图
+手动指定分辨率也是可以的, 例如
+绘画 超级可爱的萝莉 -r 640x960 # 画一幅分辨率为640x960的图
+</code></pre><table><tbody><tr><td bgcolor="pink">请注意, 如果开启了高清修复, 分辨率会再乘以高清修复的倍率, 所以不要太贪心,设置太高的分辨率!!!服务器可能会爆显存,导致生成失败, 建议使用默认预设即可</td></tr></tbody></table><h3 id="其它指令">其它指令</h3><div style="background-color:rgba(255, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">种子
+-s
+# 绘画 miku -s 114514
+</code></pre><div style="background-color:rgba(255, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">迭代步数
+-t
+# 绘画 miku -t 20
+</code></pre><div style="background-color:rgba(255, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">对输入的服从度, 当前默认值:{config.novelai_scale}
+-c
+# 绘画 miku -c 11
+</code></pre><table><tbody><tr><td bgcolor="yellow">服从度较低时cd AI 有较大的自由发挥空间，服从度较高时 AI 则更倾向于遵守你的输入。但如果太高的话可能会产生反效果 (比如让画面变得难看)。更高的值也需要更多计算。<p>有时，越低的 scale 会让画面有更柔和，更有笔触感，反之会越高则会增加画面的细节和锐度。</p></td></tr></tbody></table><p></p><div style="background-color:rgba(255, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">强度, 仅在以图生图生效取值范围0-1
+-e
+# 绘画 miku [图片] -e 0.7
+</code></pre><div style="background-color:rgba(255, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">噪声, 仅在以图生图生效取值范围0-1
+-n
+# 绘画 miku [图片] -n 0.7
+</code></pre><div style="background-color:rgba(255, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">去除默认预设
+-o
+# 绘画 miku -o 
+清除掉主人提前设置好的tags和ntags
+</code></pre><div style="background-color:rgba(255, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">使用选择的采样器进行绘图
+-sp
+# 绘画 miku -sp DDIM 
+使用DDIM采样器进行绘图, 可以提前通过 采样器 指令来获取支持的采样器 有空格的采样器记得使用 ""括起来,例如 "Euler a"
+</code></pre><div style="background-color:rgba(255, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">使用选择的后端进行绘图
+-sd
+# 绘画 miku -sd 0 
+使用1号后端进行绘图工作(索引从0开始), 可以提前通过 后端 指令来获取后端工作状态
+</code></pre><div style="background-color:rgba(255, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">不希望翻译的字符
+-nt
+# 绘画 -nt 芝士雪豹
+"芝士雪豹"将不会被翻译
+</code></pre><h3 id="最后-送你一个示例">最后, 送你一个示例</h3><div style="background-color:rgba(255, 0, 0, 0.5);">&nbsp;</div><pre><code class="language-text">绘画 plaid_skirt,looking back ，bare shoulders -t 20 -sd 0 -sp UniPC -c 8 -b 3 -u nsfw
+</code></pre><table><tbody><tr><td bgcolor="pink">画3张使用UniPC采样器, 步数20步, 服从度7, 不希望出现nsfw(不适宜内容)的图, 使用1号后端进行工作</td></tr></tbody></table></details>
+
+## 78.对对联 [nonebot_plugin_couplets](https://github.com/CMHopeSunshine/nonebot-plugin-couplets)
+
+<details><summary>查看指令:</summary><p>对联 &lt;上联内容&gt; (数量)</p><p>· 数量可选，默认为1</p></details>
+
+## 79.整点报时 [nonebot_plugin_nowtime](https://github.com/Cvandia/nonebot_plugin_nowtime)
+
+<details><summary>查看指令:</summary><p>北京时间</p><p>开启/关闭整点报时</p><p>查看整点报时列表</p></details>
+
+## 80.图片工具 [nonebot_plugin_imagetools](https://github.com/noneplugin/nonebot-plugin-imagetools)
+
+<details><summary>查看指令:</summary><p>操作名 + [图片] 或 回复图片</p><p>发送“图片操作”可显示支持的指令列表</p><p>支持的操作</p><p>水平翻转/左翻/右翻</p><p>竖直翻转/上翻/下翻</p><p>旋转 + 角度</p><p>缩放 + 尺寸或百分比，如：缩放 100x100；缩放 200x；缩放 150%</p><p>裁剪 + 尺寸或比例，如：裁剪 100x100；裁剪 2:1</p><p>反相/反色</p><p>灰度图/黑白</p><p>轮廓</p><p>浮雕</p><p>模糊</p><p>锐化</p><p>像素化 + 像素尺寸，默认为 8</p><p>颜色滤镜 + 16进制颜色代码 或 颜色名称，如：颜色滤镜 #66ccff；颜色滤镜 green</p><p>纯色图 + 16进制颜色代码 或 颜色名称</p><p>渐变图 [+ 角度] + 颜色列表，如：渐变图 红色 黄色；渐变图 45 红色 黄色</p><p>gif倒放/倒放</p><p>gif正放倒放/正放倒放</p><p>gif变速 + 倍率，如：gif变速 0.5x；gif变速 50%</p><p>gif分解 [+ 间隔时间] + 至少两张图片，间隔时间默认为100，单位为ms</p><p>gif合成 + 至少两张图片</p><p>四宫格</p><p>九宫格</p><p>横向拼接 + 至少两张图片</p><p>纵向拼接 + 至少两张图片</p><p>文字转图 + 文字，支持少量BBcode</p></details>
+
+## 81.心灵鸡汤 [nonebot_plugin_soup](https://github.com/Monarchdos/nonebot_plugin_soup)
+
+<details><summary>查看指令:</summary><p>鸡汤</p><p>获取一碗心灵鸡汤</p><p>毒鸡汤</p><p>获取一碗心灵毒鸡汤</p></details>
+
+## 82.原神公告 [nonebot_plugin_yuanshen_notice](https://github.com/mengxinyuan638/nonebot_plugin_yuanshen_notice)
+
+<details><summary>查看指令:</summary><p>原神公告</p><p>查看公告 + 公告序号</p></details>
+
+## 83.B站分享卡片 [nonebot_plugin_bilibili_viode](https://github.com/ASTWY/nonebot_plugin_bilibili_viode)
+
+<details><summary>查看指令:</summary><p>(自动识别B站链接并返回图片)</p></details>
+
+## 84.群聊反闪照 [nonebot_plugin_antiflash](https://github.com/KafCoppelia/nonebot_plugin_antiflash)
+
+<details><summary>查看指令:</summary><p>开启/启用/禁用反闪照</p></details>
+
+## 85.leetcode每日一题 [nonebot_plugin_leetcode2](nonebot_plugin_antiflash)
+
+<details><summary>查看指令:</summary><h3 id="目前已实现功能">目前已实现功能</h3><ul><li><p><strong>对指令<code>/每日一题</code>，<code>/lc</code>，<code>/leetcode</code>回复，发送今天的每日一题。</strong></p></li><li><p><strong>可搜索leetcode题目，指令<code>/lc搜索 XXXXX</code>，<code>/lc查找 XXXXX</code>，<code>/leetcode搜索 XXXXX</code>，将以关键词“XXXXX”进行leetcode搜索，发送搜索到的第一道题。</strong></p></li><li><p><strong>随机一题，指令<code>/lc随机</code>，<code>/lc随机一题</code>，<code>/leetcode随机</code>将请求leetcode随机一题，发送请求到的任意题目。</strong></p></li><li><p><strong>查询用户信息<code>/lc查询 XXXXX</code>，<code>/lc查询用户 XXXXX</code>，<code>/leetcode查询 XXXXX</code>，可查询用户基本信息，XXXXX为用户ID（不能用用户名）。</strong></p></li><li><p><strong>加入计划任务</strong> 每日在指定时间向指定群和好友发送当天的每日一题</p></li></ul></details>
+
+## 86.摩尔质量计算 [nonebot_plugin_molar_mass](https://github.com/kifuan/nonebot-plugin-molar-mass)
+
+<details><summary>查看指令:</summary><p>发送 摩尔质量 化学式 或 相对分子质量 化学式 或 mol 化学式</p></details>
+
+## 87.反向词典 [nonebot_plugin_wantwords](https://github.com/limnium/nonebot_plugin_wantwords)
+
+<details><summary>查看指令:</summary><h3 id="使用-5">使用</h3><pre><code>找词 &lt;模式&gt; &lt;描述&gt;
+</code></pre><p><code>找词</code>可用别名<code>反向词典</code> <code>wantwords</code>替代</p><table><thead><tr><th style="text-align:center"><em>&lt;模式&gt;</em></th><th style="text-align:center"><code>zhzh</code></th><th style="text-align:center"><code>zhen</code></th><th style="text-align:center"><code>enzh</code></th><th style="text-align:center"><code>enen</code></th></tr></thead><tbody><tr><td style="text-align:center"><em>解释</em></td><td style="text-align:center">中—&gt;中</td><td style="text-align:center">中—&gt;英</td><td style="text-align:center">英—&gt;中</td><td style="text-align:center">英—&gt;英</td></tr></tbody></table><p><code>&lt;描述&gt;</code>即对希望找到的词的描述</p></details>
+
+## 88.简易群管 [nonebot_plugin_easy_group_manager](https://github.com/zhulinyv/nonebot_plugin_easy_group_manager)
+
+<details><summary>查看指令:</summary><h3 id="指令-3">🎉 指令</h3><table><thead><tr><th>指令</th><th>权限</th><th>说明</th></tr></thead><tbody><tr><td>设置管理员 + @somebody</td><td>SUPERUSER/GROUP_OWNER</td><td>设置一个管理员</td></tr><tr><td>取消管理员 + @somebody</td><td>SUPERUSER/GROUP_OWNER</td><td>取消一个管理员</td></tr><tr><td>禁言/口球 + @somebody + 阿拉伯数字</td><td>SUPERUSER/GROUP_OWNER/GROUP_ADMIN</td><td>禁言某人，单位分钟，需要 BOT 为管理员</td></tr><tr><td>解禁 + @somebody</td><td>SUPERUSER/GROUP_OWNER/GROUP_ADMIN</td><td>解除某人禁言，需要 BOT 为管理员</td></tr><tr><td>移出 + @somebody</td><td>SUPERUSER/GROUP_OWNER/GROUP_ADMIN</td><td>移出某人，需要 BOT 为管理员</td></tr><tr><td>移出并拉黑 + @somebody</td><td>SUPERUSER/GROUP_OWNER/GROUP_ADMIN</td><td>移出并拉黑，需要 BOT 为管理员</td></tr></tbody></table></details>
+
+## 89.对话超管 [nonebot_plugin_report_manager](https://github.com/Hiroshi12138/nonebot_plugin_report_manager)
+
+<details><summary>查看指令:</summary><p>反馈开发者 + 内容</p></details>
+
+## 90.BingGPT(使用Cookies) [nonebot_plugin_bing_chat](nonebot_plugin_bing_chat)
+
+<details><summary>查看指令:</summary><p>chat3 + 任意内容</p><p>与Bing进行对话</p><p>chat-new</p><p>新建一个对话</p><p>chat-history</p><p>返回历史对话</p></details>
+
+## 91.P站图片查询 [nonebot_plugin_pixiv](https://github.com/anlen123/nonebot_plugin_pixiv)
+
+<details><summary>查看指令:</summary><p>pixiv pid</p><p>pixivRank 1 日榜</p><p>pixivRank 7 周榜</p><p>pixivRank 30 月榜</p><p>直接送连接也能直接识别并发送图片</p></details>
+
+## 92.多合一文案 saying_all_in_one
+
+<details><summary>查看指令:</summary><p>舔狗日记</p><p>讲个笑话</p><p>文案</p><p>土味情话</p><p>一言</p><p>网抑云/网易云热评</p><p>星座 + 想要查询的星座</p><p>超管指令:</p><p>开启文案/关闭文案</p></details>
+
+## 93.热搜 [nonebot_plugin_hotsearch](https://github.com/Astolfocat/nonebot_plugin_hotsearch)
+
+<details><summary>查看指令:</summary><p>微博热搜</p><p>百度热搜</p><p>贴吧热搜</p><p>知乎热搜</p><p>B站热搜</p></details>
+
+## 94.课表查询 [nonebot_plugin_course](https://github.com/InariInDream/nonebot_plugin_course)
+
+<details><summary>查看指令:</summary><p>本周课表：查看这周的课表</p><p>完整课表：查看完整的课表</p><p>下周课表：查看下周的课表</p><p>查看课表 + 周数：查询指定周的课表</p><p>设置周数 + 周数：设定当前是第几周</p><p>上课：查询当前是否有课，及今天的下一节课是什么，还有多久上</p><p>明日早八：查询明天是否有早八</p></details>
+
+## 95.通用指令阻断 [nonebot_plugin_matcher_block](https://github.com/KarisAya/nonebot_plugin_matcher_block)
+
+<details><summary>查看指令:</summary><h3 id="功能">功能</h3><p><code>添加阻断 指令 群</code></p><p>在本群屏蔽 <code>指令</code></p><p><code>添加阻断 指令 冷却 300</code></p><p>在本群把 <code>指令</code> 设置成每个用户 300 秒冷却。</p><p><code>解除阻断 指令 群</code></p><p>在本群取消屏蔽该指令。</p><p><code>解除阻断 指令 冷却</code></p><p>在本群取消该指令的冷却。</p><p><code>查看阻断</code></p><p>查看本群被阻断的指令。</p><h3 id="关于指令参数">关于指令参数</h3><h3 id="不同指令前缀视为不同指令">不同指令前缀视为不同指令：</h3><p>例如使用指令 <code>添加阻断 透群友 群</code> 在本群屏蔽了 <code>透群友</code> 指令。</p><p>但如果指令还可以用 <code>\透群友</code> 触发，那么 <code>\透群友</code> 事件并不会被屏蔽。</p><h3 id="使用正则匹配">使用正则匹配：</h3><p>如果指令以"^"开头，并以"$"结束，那么通用指令阻断将会认为本指令是一条正则匹配。</p><p>例如使用指令 <code>添加阻断 ^来.*张.+$ 冷却 300</code> 为 <code>来张xx色图</code> 添加阻断，</p><p>那么本条配置将会阻断诸如 <code>来张色图</code> <code>来三张白丝</code> 等 可以用 ^来.*张.+$ 匹配到的字符串。</p></details>
+
+## 96.OCR文本识别 ocr
+
+<details><summary>查看指令:</summary><p>ocr(本地 ocr, 占用狠高)</p><p>api ocr(使用 api)</p></details>
+
+## 97.推文订阅推送 [nonebot_plugin_twitter](https://github.com/nek0us/nonebot-plugin-twitter)
+
+<details><summary>查看指令:</summary><h3 id="指令表-4">指令表</h3><table><thead><tr><th style="text-align:center">指令</th><th style="text-align:center">权限</th><th style="text-align:center">需要@</th><th style="text-align:center">范围</th><th style="text-align:center">说明</th></tr></thead><tbody><tr><td style="text-align:center">关注推主</td><td style="text-align:center">无</td><td style="text-align:center">否</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">关注，指令格式：“关注推主 &lt;推主id&gt; [r18]” r18为可选参数，不开启和默认为不推送r18推文</td></tr><tr><td style="text-align:center">取关推主</td><td style="text-align:center">无</td><td style="text-align:center">否</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">取关切割</td></tr><tr><td style="text-align:center">推主列表</td><td style="text-align:center">无</td><td style="text-align:center">否</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">展示列表</td></tr><tr><td style="text-align:center">推特推送关闭</td><td style="text-align:center">群管</td><td style="text-align:center">否</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">关闭推送</td></tr><tr><td style="text-align:center">推特推送开启</td><td style="text-align:center">群管</td><td style="text-align:center">否</td><td style="text-align:center">群聊/私聊</td><td style="text-align:center">开启推送</td></tr></tbody></table></details>
+
+## 98.碧蓝航线攻略 [nonebot_plugin_al](https://github.com/Agnes4m/nonebot_plugin_AL)
+
+<details><summary>查看指令:</summary><h3 id="指令-4">指令</h3><h3 id="总碧蓝帮助-碧蓝指令">【总】碧蓝帮助 | 碧蓝指令</h3><ul><li>1、碧蓝+['强度榜','装备榜','金部件榜','萌新榜','兵器榜','专武榜',<br>'兑换榜','研发榜','改造榜','跨队榜','pt榜','氪金榜','打捞主线榜','打捞作战榜']</li><li>2、碧蓝角色【角色名称】</li><li>3、碧蓝装备【装备名称】</li></ul><h3 id="blhx_wiki强制检查空格">【blhx_wiki】（强制检查空格）</h3><p>0.帮助信息</p><p>命令示范：blhx 帮助</p><p>1.根据船名查舰船信息</p><p>命令示范： blhx 长门</p><p>2.根据船名和皮肤名查询皮肤立绘</p><p>命令示范：blhx 圣路易斯 Luxury_Handle</p><p>命令示范：blhx 长门 御狐的辉振袖</p><p>命令示范：blhx 长门 原皮</p><p>命令示范：blhx 长门 婚纱</p><p>3.随机返回游戏加载页面的插画</p><p>命令示范：blhx 过场</p><p>4.返回bwiki的PVE强度榜信息</p><p>命令示范：blhx 强度榜</p><p>7.强制更新(目前已使用代理更新api数据为离线模式所用，如果出问题及时issue)</p><p>命令示范：blhx 强制更新</p><p>8.获取最新活动信息(有问题及时issue)</p><p>命令示范：blhx 最新活动</p><p>9.为舰船取昵称(以后你就可以用昵称查询了)</p><p>命令示范：blhx 备注 光辉 太太</p><p>以后就可以用 blhx 太太 婚纱 这种昵称取代正式名称查询</p><p>10.删除舰船昵称</p><p>命令示范：blhx 移除备注 光辉 太太</p><p>11.舰船昵称快捷查询</p><p>命令示范：blhx 皮肤 光辉 0</p><p>12.建造模拟</p><p>命令示范：blhx 大建 轻型/重型/特型</p></details>
+
+## 99.自动过滤过期事件 [nonebot_plugin_eventexpiry](https://github.com/A-kirami/nonebot-plugin-eventexpiry)
+
+<details><summary>查看指令:</summary><p>检查每个事件的产生时间，如果超过设定的过期时间，那么这个事件会被忽略。</p></details>
+
+## 100.PJSK表情包制作 [nonebot_plugin_pjsk](https://github.com/Agnes4m/nonebot_plugin_pjsk)
+
+<details><summary>查看指令:</summary><p>pjsk + 任意文本</p></details>
+
+---
+
+![](https://count.getloli.com/get/@zhulinyv?theme=rule34)

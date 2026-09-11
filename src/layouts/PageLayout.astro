@@ -1,0 +1,39 @@
+---
+import CustomContent from '@components/common/CustomContent.astro';
+import HomeSider from '@components/layout/HomeSider.astro';
+import Cover from '@components/ui/cover/Cover.astro';
+import { CONTENT_PADDING } from '@constants/layout';
+import { seoConfig } from '@constants/site-config';
+import { Comment } from '@/components/comment';
+import Layout from './Layout.astro';
+import TwoColumnLayout from './TwoColumnLayout.astro';
+
+export interface Props {
+  frontmatter: {
+    title: string;
+    description?: string;
+    coverTitle?: string;
+    comments?: boolean;
+  };
+}
+
+const { frontmatter } = Astro.props;
+const showComments = frontmatter.comments ?? true;
+---
+
+<Layout title={`${frontmatter.title} | ${seoConfig.title}`}>
+  <TwoColumnLayout>
+    <Cover slot="cover" title={frontmatter.coverTitle ?? frontmatter.title} />
+    <HomeSider slot="sider" />
+    <div
+      class={`shadow-box bg-gradient-start mx-0 flex min-w-0 w-full max-w-full flex-col gap-8 overflow-x-clip ${CONTENT_PADDING.standard}`}
+    >
+      <div class="prose dark:prose-invert" data-pagefind-body>
+        <CustomContent>
+          <slot />
+        </CustomContent>
+      </div>
+      {showComments && <Comment />}
+    </div>
+  </TwoColumnLayout>
+</Layout>

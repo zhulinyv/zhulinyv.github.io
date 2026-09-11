@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>SVG pong</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+    
+  </head>
+
+  <body>
+
+    <!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Pong using SVG and JavaScript</title>
+    <script type="text/javascript" src="svgpong.js"></script>
+    <link rel="stylesheet" type="text/css" href="svgpong.css" />
+</head>
+<body onload="svgpong()">
+    <svg id="field" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid">
+        <rect id="background" width="800" height="600"></rect><!-- Workaround strange event behavior-->
+
+        <text class="score" id="playerScore" x="200" y="50">0</text>
+        <text class="score" x="400" y="50">-</text>
+        <text class="score" id="computerScore" x="600" y="50">0</text>
+
+        <rect id="paddleLeft" width="20" height="100" x="10" y="350"></rect>
+        <rect id="paddleRight" width="20" height="100" x="770" y="350"></rect>
+        <circle id="ball" r="5" cx="400" cy="300"></circle>
+    </svg>
+</body>
+</html>
+    
+        <script src="js/index.js"></script>
+
+    
+    
+  </body>
+</html>

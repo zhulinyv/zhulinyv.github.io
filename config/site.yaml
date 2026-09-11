@@ -1,0 +1,329 @@
+# yaml-language-server: $schema=https://json-schema.org/draft-07/schema
+# =============================================================================
+# Site Configuration — zhulinyv.github.io
+# 由 Gridea 迁移至 astro-koharu 模板 (https://github.com/cosZone/astro-koharu)
+# =============================================================================
+
+# =============================================================================
+# Site Basic Information
+# =============================================================================
+site:
+  title: 可爱的小丫头片子酱的肥宅快乐水妹汁加工厂股份无限公司 # 网站名称
+  alternate: zhulinyv # 网站英文名称 用于页脚、Logo、@ handle 等
+  subtitle: 这里，我们不止生产妹汁；众多软件中总有一款适合你！ # 网站副标题
+  name: 小丫头片子酱 # 作者名称
+  description: 这里，我们不止生产妹汁；众多软件中总有一款适合你！ # 网站描述
+  avatar: /img/avatar.png # 网站头像（原站 images/avatar.png）
+  showLogo: true # 是否显示 Logo
+  author: 小丫头片子酱 # 作者名称
+  url: https://zhulinyv.github.io # 站点 URL 用于 RSS 和 SEO
+  defaultOgImage: /img/avatar.png # 默认 Open Graph 图片
+  startYear: 2020 # 建站年份（最早文章 2020-12-31）
+  timezone: Asia/Shanghai # 时区配置 (IANA 格式)，用于日期显示和处理
+  keywords: # SEO 关键词 (全局)
+    - 佳软推荐
+    - Windows 美化
+    - 软件
+    - ACG
+    - 二次元
+    - 教程
+
+# =============================================================================
+# Internationalization (i18n)
+# 老站为纯中文站点，仅保留 zh
+# =============================================================================
+i18n:
+  defaultLocale: zh
+  locales:
+    - code: zh
+      label: 中文
+
+# =============================================================================
+# Category Map
+# Maps Chinese category names to URL-friendly English slugs
+# =============================================================================
+categoryMap:
+  软件: software
+  教程: tutorial
+  项目: project
+  随笔: essay
+
+# =============================================================================
+# Featured Categories (Homepage)
+# 首页精选分类 - 在首页以卡片形式展示的分类入口
+# =============================================================================
+featuredCategories:
+  - link: software # 对应 categoryMap 中 软件: software
+    label: 软件
+    image: /img/cover/11.webp
+    description: 佳软推荐，总有一款适合你！
+  - link: tutorial # 对应 categoryMap 中 教程: tutorial
+    label: 教程
+    image: /img/cover/4.webp
+    description: 冷知识、使用技巧与美化教程
+  - link: project # 对应 categoryMap 中 项目: project
+    label: 项目
+    image: /img/cover/2.webp
+    description: 自己维护的小项目
+  - link: essay # 对应 categoryMap 中 随笔: essay
+    label: 随笔
+    image: /img/cover/1.webp
+    description: 生活随想与碎碎念
+
+# =============================================================================
+# Featured Series
+# 暂无系列文章，未启用
+# =============================================================================
+
+# =============================================================================
+# Social Links
+# 社交链接 - 显示在页脚和个人信息区域
+# =============================================================================
+social:
+  github:
+    url: https://github.com/zhulinyv
+    icon: ri:github-fill
+    color: '#191717'
+  email:
+    url: mailto:zhulinyv2005@outlook.com
+    icon: ri:mail-line
+    color: '#55acd5'
+  rss:
+    url: /rss.xml # 站内 RSS 订阅地址
+    icon: ri:rss-line
+    color: '#ff6600'
+  qq:
+    url: https://qm.qq.com/cgi-bin/qm/qr?k=D1VG3GxDTrzKdeQBoN3q4flEA9CZrP0s&noverify=0
+    icon: ri:qq-fill
+    color: '#12b7f5'
+  telegram:
+    url: https://t.me/xytpz
+    icon: ri:telegram-fill
+    color: '#29a9eb'
+  twitter:
+    url: https://twitter.com/xytpz050805
+    icon: ri:twitter-fill
+    color: '#4b9ae4'
+  weibo:
+    url: https://weibo.com/u/7541542675/
+    icon: ri:weibo-fill
+    color: '#e6162d'
+  zhihu:
+    url: https://www.zhihu.com/people/xiao-ya-tou-pian-zi-15-39
+    icon: ri:zhihu-fill
+    color: '#1e88e5'
+  facebook:
+    url: https://www.facebook.com/profile.php?id=100088416888456
+    icon: ri:facebook-fill
+    color: '#1877f2'
+
+# =============================================================================
+# Friends Links
+# 友情链接页面配置 - 展示友链列表和申请说明
+# =============================================================================
+friends:
+  intro:
+    title: 友情链接
+    subtitle: 欢迎交换友链！
+    applyTitle: 申请友链
+    applyDesc: 交换友链嘛？请在本页评论区按以下格式留言
+    exampleYaml: |
+      - site: 你的博客名称 # 站点名称
+        url: https://your-blog.com/ # 站点网址
+        owner: 你的昵称 # 昵称
+        desc: 站点简介 # 站点简介
+        image: https://your-blog.com/avatar.jpg # 头像链接
+        color: "#ffc0cb" # 主题色（可选）
+  data: # 友链列表（自老站 friends 页迁移）
+    - site: 团子的航海日志
+      url: http://www.mikuchan.top/
+      owner: 团子
+      desc: 不定期更新，欢迎捕捉。
+      image: https://i.loli.net/2021/01/10/jTGpXcLEfNsY7VC.png
+      color: '#aedffd'
+    - site: storm-1614
+      url: https://storm-1614.github.io/
+      owner: storm-1614
+      desc: 一个菜鸟
+      image: https://s2.loli.net/2022/08/26/o7FKePVNYlHjLQG.jpg
+      color: '#BEDCFF'
+    - site: iven233的博客
+      url: http://blog.iven233.com
+      owner: iven233
+      desc: iven233的博客
+      image: https://s2.loli.net/2022/08/26/peyaVi3RPOIrqwf.jpg
+      color: '#FBC1CC'
+    - site: MC_DALIU
+      url: http://mcdaliu.freeee.ml/
+      owner: MC_DALIU
+      desc: 一个啥都玩但啥也不会的屑
+      image: https://s2.loli.net/2022/08/26/9oMwqduWyTz1igs.jpg
+      color: '#ABDCFF'
+
+# =============================================================================
+# Announcements
+# 公告系统 - 在页面顶部显示重要通知
+# =============================================================================
+announcements:
+  - id: site-migrated-2026 # 唯一标识符
+    title: 网站搬家啦～ # 公告标题
+    content: 博客已使用 astro-koharu 模板重构上线！学业繁忙，不定期更新，欢迎捕捉！
+    type: success # 类型: info/success/warning/error
+    priority: 10 # 优先级，数值越大越靠前
+    publishDate: '2026-09-11' # 发布日期
+    link: # (可选) 相关链接
+      url: /about
+      text: 关于本站
+      external: false
+
+# =============================================================================
+# Content Processing Options
+# =============================================================================
+content:
+  addBlankTarget: true # 外部链接新窗口打开
+  smoothScroll: true # 平滑滚动
+  addHeadingLevel: true # 标题锚点
+  enhanceCodeBlock: true # 增强代码块
+  enableCodeCopy: true # 代码复制按钮
+  enableCodeFullscreen: true # 代码全屏按钮
+  enableLinkEmbed: true # 链接卡片预览
+  enableCodePenEmbed: true # CodePen 嵌入
+  enableTweetEmbed: true # 推文嵌入
+  enableOGPreview: true # OG 预览卡片
+  previewCacheTime: 30 # 预览缓存时间(天)
+  lazyLoadEmbeds: true # 延迟加载嵌入
+  postCardImagePosition: alternating # 文章卡片封面图位置 (alternating/left/right)
+  # Shoka 兼容功能（默认全部启用，设为 false 可关闭）
+  enableShokaContainers: true   # :::提醒块 ;;;标签卡 +++折叠块
+  enableShokaAttrs: true        # [text]{.class} 属性语法
+  enableShokaEffects: true      # ++下划线++ ==高亮== ~下标~ ^上标^
+  enableShokaSpoiler: true      # !!隐藏文字!!
+  enableShokaRuby: true         # {文字^注音} 注音标注
+  enableShokaHexoTags: true     # {% links %} {% media %} Hexo标签
+  enableMath: true              # $数学公式$ KaTeX渲染
+  enableCodeMeta: true          # 代码块增强 (title, mark, command)
+  enableQuiz: true              # 练习题交互功能
+  enableEncryptedBlock: true    # :::encrypted{password="..."} 加密内容块
+
+# =============================================================================
+# Moments Archive (optional) — 未启用
+# =============================================================================
+moments:
+  enabled: false
+
+# =============================================================================
+# Navigation Routes
+# 导航菜单配置 - 对应老站导航：首页 / 归档 / 标签 / 友链 / 游戏 / 赞赏 / 关于
+# =============================================================================
+navigation:
+  - name: 首页
+    nameKey: nav.home
+    path: /
+    icon: ri:home-heart-fill
+  - name: 文章
+    nameKey: nav.posts
+    icon: ri:quill-pen-ai-fill
+    children:
+      - name: 分类
+        nameKey: nav.categories
+        path: /categories
+        icon: ri:grid-fill
+      - name: 标签
+        nameKey: nav.tags
+        path: /tags
+        icon: fa6-solid:tags
+      - name: 归档
+        nameKey: nav.archives
+        path: /archives
+        icon: ri:archive-2-fill
+  - name: 番剧
+    path: /anime
+    icon: ri:tv-2-fill
+  - name: 游戏
+    path: /game
+    icon: ri:gamepad-fill
+  - name: 赞赏
+    path: /donate
+    icon: ri:hand-heart-fill
+  - name: 友链
+    nameKey: nav.friends
+    path: /friends
+    icon: ri:links-line
+  - name: 关于
+    nameKey: nav.about
+    path: /about
+    icon: fa6-regular:circle-user
+
+# =============================================================================
+# Comment System — 暂未配置评论系统，可按需启用 giscus / waline / twikoo / remark42
+# =============================================================================
+comment:
+  provider: none # 'remark42' | 'giscus' | 'waline' | 'twikoo' | 'none'
+  # giscus:
+  #   repo: zhulinyv/zhulinyv.github.io
+  #   repoId: R_kgDOxxxxxx
+  #   category: Announcements
+  #   categoryId: DIC_kwDOxxxxxx
+  #   mapping: pathname
+  #   reactionsEnabled: '1'
+  #   emitMetadata: '0'
+  #   inputPosition: top
+  #   lang: zh-CN
+
+# =============================================================================
+# Analytics (Umami) — 未配置统计
+# =============================================================================
+analytics:
+  umami:
+    enabled: false
+
+# =============================================================================
+# SEO Configuration
+# =============================================================================
+seo:
+  robots:
+    policy:
+      - userAgent: '*'
+        allow: '/'
+        disallow:
+          - '/games/'
+          - '/donate/'
+
+# =============================================================================
+# 背景音乐（BGM）— 老站页脚自动播放的网易云歌曲
+# =============================================================================
+bgm:
+  enabled: true # (有 audio 时自动启用，显式 false 可禁用)
+  # metingApi: https://163.hyc.moe/  # Meting API 地址，默认为 https://163.hyc.moe/
+  audio:
+    - title: 老站主题曲
+      list:
+        - https://music.163.com/song?id=492390949
+
+# =============================================================================
+# Christmas/Seasonal Features — 关闭节日特效
+# =============================================================================
+christmas:
+  enabled: false
+
+# 追番页面（Bangumi API）未启用；番剧页为老站迁移的自定义页面 /anime
+
+# =============================================================================
+# Development Tools (Dev Only)
+# =============================================================================
+dev:
+  localProjectPath: 'D:/Document/DSH/ELSE/gh-rebuild/astro-koharu' # 本地项目的绝对路径（仅开发环境生效）
+  contentRelativePath: 'src/content/blog'
+  editors:
+    - id: vscode
+      name: VS Code
+      icon: devicon-plain:vscode
+      urlTemplate: 'vscode://file/{path}'
+    - id: cursor
+      name: Cursor
+      icon: simple-icons:cursor
+      urlTemplate: 'cursor://file/{path}'
+    - id: zed
+      name: Zed
+      icon: simple-icons:zedindustries
+      urlTemplate: 'zed://file/{path}'

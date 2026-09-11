@@ -1,0 +1,228 @@
+---
+import { displayDate } from '@lib/date';
+import { Icon } from 'astro-icon/components';
+import MediaGallery from './MediaGallery.astro';
+import MessageBody from './MessageBody.astro';
+import type { MomentMessageViewModel } from './types';
+
+interface Labels {
+  updated: string;
+  permalink: string;
+  copyLink: string;
+  copied: string;
+  copyFailed: string;
+  viewSource: string;
+  emptyMessage: string;
+  expand: string;
+  collapse: string;
+  revealSpoiler: string;
+  mediaProcessing: string;
+  mediaUnavailable: string;
+  image: string;
+  video: string;
+  audio: string;
+  document: string;
+  openDocument: string;
+  mediaMore: string;
+  tags: string;
+}
+
+interface Props {
+  message: MomentMessageViewModel;
+  detail?: boolean;
+  labels: Labels;
+}
+
+const { message, detail = false, labels } = Astro.props;
+const [publishedDate, publishedTimeOfDay] = message.publishedLabel.split(' ');
+const currentYear = displayDate.date(new Date()).slice(0, 4);
+const railDate = publishedDate?.slice(0, 4) === currentYear ? publishedDate.slice(5) : publishedDate;
+---
+
+<article
+  class:list={[
+    'moments-message-card min-w-0',
+    !detail && '-m-2 cursor-pointer rounded-xl p-2 transition-colors hover:bg-muted/45',
+  ]}
+  data-message-href={!detail ? message.permalink : undefined}
+>
+  {!detail && (
+    <a
+      href={message.permalink}
+      aria-label={labels.permalink}
+      class="moments-timeline-time text-muted-foreground hover:text-primary tabular-nums text-xs leading-5 transition-colors"
+    >
+      <time datetime={message.publishedAt}>
+        <span class="block">{railDate}</span>
+        <span class="block">{publishedTimeOfDay}</span>
+      </time>
+    </a>
+  )}
+  <header class="mb-2 flex items-center gap-x-2">
+    <span aria-hidden="true" class="bg-primary/12 text-primary inline-flex size-6 shrink-0 items-center justify-center rounded-full text-[0.6875rem] font-bold">
+      {Array.from(message.channel.title.trim())[0] ?? '#'}
+    </span>
+    <div class="text-muted-foreground flex min-w-0 items-baseline gap-1.5">
+      <a href={message.channel.href} class="hover:text-primary truncate text-xs leading-snug font-medium transition-colors">{message.channel.title}</a>
+      {message.channel.username && <span class="truncate text-xs tablet:hidden">@{message.channel.username}</span>}
+      {message.revision > 1 && <span class="bg-muted/70 text-muted-foreground inline-flex min-h-5 shrink-0 items-center self-center rounded-full px-1.5 text-[0.6875rem]">{labels.updated}</span>}
+    </div>
+    <div class="ms-auto flex shrink-0 items-center gap-2">
+      <a
+        href={message.permalink}
+        class:list={[
+          'text-muted-foreground hover:text-primary inline-flex min-h-7 items-center transition-colors',
+          !detail && 'moments-inline-time',
+        ]}
+        aria-label={labels.permalink}
+      >
+        <time datetime={message.publishedAt} class="tabular-nums text-xs">{message.publishedLabel}</time>
+      </a>
+    </div>
+  </header>
+
+  {(message.html || message.media.length === 0) && (
+    <MessageBody
+      html={message.html}
+      contentId={`moments-message-${message.id}-content`}
+      collapsible={!detail}
+      emptyLabel={labels.emptyMessage}
+      expandLabel={labels.expand}
+      collapseLabel={labels.collapse}
+      spoilerRevealLabel={labels.revealSpoiler}
+    />
+  )}
+
+  {message.media.length > 0 && (
+    <div class="mt-2.5">
+      <MediaGallery
+        media={message.media}
+        detail={detail}
+        showAll={message.showAllMedia}
+        labels={{
+          processing: labels.mediaProcessing,
+          unavailable: labels.mediaUnavailable,
+          image: labels.image,
+          video: labels.video,
+          audio: labels.audio,
+          document: labels.document,
+          openDocument: labels.openDocument,
+          viewSource: labels.viewSource,
+          more: labels.mediaMore,
+        }}
+      />
+    </div>
+  )}
+
+  {message.tags.length > 0 && (
+    <nav aria-label={labels.tags} class="mt-2.5 flex flex-wrap items-center gap-1.5">
+      <Icon name="ri:hashtag" class="text-muted-foreground size-3.5 shrink-0" aria-hidden="true" />
+      {message.tags.map((tag) => (
+        <a
+          href={tag.href}
+          class="bg-muted/50 text-muted-foreground hover:bg-primary/10 hover:text-primary focus-visible:ring-primary inline-flex min-h-6 items-center rounded-full px-2 text-xs transition-[background-color,color] focus-visible:ring-2 focus-visible:outline-none"
+        >
+          {tag.label}
+        </a>
+      ))}
+    </nav>
+  )}
+
+  <footer class="text-muted-foreground mt-2.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs">
+    <a
+      href={message.permalink}
+      aria-label={labels.permalink}
+      class="hover:bg-muted/60 hover:text-primary inline-flex min-h-7 items-center gap-1.5 rounded-lg px-1.5 transition-[background-color,color]"
+    >
+      <Icon name="ri:links-line" class="size-3.5" aria-hidden="true" />
+      <span class="tablet:hidden">{labels.permalink}</span>
+    </a>
+    <button
+      type="button"
+      class="moments-copy-link hover:bg-muted/60 hover:text-primary focus-visible:ring-primary inline-flex min-h-7 touch-manipulation items-center gap-1.5 rounded-lg px-1.5 transition-[background-color,color,scale] active:scale-[0.96] focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:outline-none"
+      data-copy-value={message.permalink}
+      data-copy-label={labels.copyLink}
+      data-copied-label={labels.copied}
+      data-copy-failed-label={labels.copyFailed}
+      aria-label={labels.copyLink}
+    >
+      <Icon name="ri:file-copy-line" class="size-3.5" aria-hidden="true" />
+      <span class="tablet:hidden" data-copy-text>{labels.copyLink}</span>
+      <span class="sr-only" aria-live="polite" data-copy-status></span>
+    </button>
+    {message.sourceUrl && (
+      <a
+        href={message.sourceUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={labels.viewSource}
+        class="hover:bg-muted/60 hover:text-primary inline-flex min-h-7 items-center gap-1.5 rounded-lg px-1.5 transition-[background-color,color]"
+      >
+        <Icon name="ri:external-link-line" class="size-3.5" aria-hidden="true" />
+        <span class="tablet:hidden">{labels.viewSource}</span>
+      </a>
+    )}
+  </footer>
+</article>
+
+<script>
+  const cardInteractiveSelector =
+    'a, button, input, select, textarea, summary, video, audio, spoiler-span, [role="button"], [contenteditable="true"]';
+
+  function installMomentCardLinks(root: ParentNode = document) {
+    root.querySelectorAll<HTMLElement>('.moments-message-card[data-message-href]:not([data-card-link-ready])').forEach((card) => {
+      card.dataset.cardLinkReady = 'true';
+      card.addEventListener('click', (event) => {
+        if (event.defaultPrevented || event.button !== 0) return;
+        if (!(event.target instanceof Element) || event.target.closest(cardInteractiveSelector)) return;
+        const selection = window.getSelection();
+        if (selection && !selection.isCollapsed) return;
+
+        const href = card.dataset.messageHref;
+        if (!href) return;
+        const url = new URL(href, window.location.href).href;
+        if (event.metaKey || event.ctrlKey) {
+          window.open(url, '_blank', 'noopener');
+          return;
+        }
+        window.location.assign(url);
+      });
+    });
+  }
+
+  function installMomentCopyButtons(root: ParentNode = document) {
+    root.querySelectorAll<HTMLButtonElement>('.moments-copy-link:not([data-copy-ready])').forEach((button) => {
+      button.dataset.copyReady = 'true';
+      button.addEventListener('click', async () => {
+        const text = button.querySelector<HTMLElement>('[data-copy-text]');
+        const status = button.querySelector<HTMLElement>('[data-copy-status]');
+        const value = button.dataset.copyValue ?? window.location.href;
+        let succeeded = false;
+        try {
+          await navigator.clipboard.writeText(new URL(value, window.location.href).href);
+          succeeded = true;
+        } catch {
+          window.prompt(button.dataset.copyFailedLabel ?? '', new URL(value, window.location.href).href);
+        }
+
+        const result = succeeded ? button.dataset.copiedLabel : button.dataset.copyFailedLabel;
+        if (text) text.textContent = result ?? '';
+        if (status) status.textContent = result ?? '';
+        window.setTimeout(() => {
+          if (text) text.textContent = button.dataset.copyLabel ?? '';
+          if (status) status.textContent = '';
+        }, 1800);
+      });
+    });
+  }
+
+  installMomentCardLinks();
+  installMomentCopyButtons();
+  document.addEventListener('astro:page-load', () => installMomentCardLinks());
+  document.addEventListener('astro:page-load', () => installMomentCopyButtons());
+  document.addEventListener('moments:content-appended', (event) => {
+    const root = event instanceof CustomEvent && event.detail?.root instanceof Element ? event.detail.root : document;
+    installMomentCardLinks(root);
+    installMomentCopyButtons(root);
+  });
+</script>

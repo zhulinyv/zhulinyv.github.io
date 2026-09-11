@@ -1,0 +1,456 @@
+/**
+ * 日本語 (ja) — UI 文字列
+ *
+ * ここに存在しないキーは、デフォルトのロケール (zh) にフォールバックします。
+ */
+
+import type { UIStrings } from '../types';
+
+export const uiStrings: UIStrings = {
+  // ── ナビゲーション ──────────────────────────────────────────────
+  'nav.home': 'ホーム',
+  'nav.posts': '投稿',
+  'nav.categories': 'カテゴリー',
+  'nav.tags': 'タグ',
+  'nav.archives': 'アーカイブ',
+  'nav.friends': '友達',
+  'nav.about': 'ブログについて',
+  'nav.music': '音楽',
+  'nav.weekly': '週刊',
+  'nav.bangumi': 'オタ活の記録',
+
+  // ── 一般 ──────────────────────────────────────────────────
+  'common.search': '検索',
+  'common.close': '閉じる',
+  'common.copy': 'コピー',
+  'common.copied': 'コピーしました',
+  'common.copyFailed': '自動コピーに失敗しました。リンクを手動でコピーしてください。',
+  'common.loading': '読み込み中...',
+  'common.noResults': '結果が見つかりません',
+  'common.backToTop': 'トップに戻る',
+  'common.darkMode': 'ダークモード',
+  'common.lightMode': 'ライトモード',
+  'common.toggleTheme': 'テーマを切り替え',
+  'common.language': '言語',
+  'common.toc': '目次',
+  'common.expand': '展開する',
+  'common.collapse': '折りたたむ',
+  'common.menuLabel': '{name}メニュー',
+
+  // ── 投稿 ────────────────────────────────────────────────────
+  'post.readMore': '詳細を読む',
+  'post.totalPosts': '{count}件の投稿',
+  'post.stickyPosts': '固定された投稿',
+  'post.postList': '投稿',
+  'post.featuredCategories': 'おすすめのカテゴリー',
+  'post.yearPosts': '{count}件の投稿',
+  'post.readingTime': '{time}分で読み終えます',
+  'post.wordCount': '{count}文字',
+  'post.publishedAt': '公開日: {date}',
+  'post.updatedAt': '更新日: {date}',
+  'post.prevPost': '前へ',
+  'post.nextPost': '次へ',
+  'post.relatedPosts': '関連した記事',
+  'post.seriesNavigation': 'シリーズナビゲーション',
+  'post.seriesPrev': '前へ',
+  'post.seriesNext': '次へ',
+  'post.fallbackNotice': 'この投稿は「{lang}」では表示できません。元の投稿を表示しています。',
+  'post.draft': '下書き',
+  'post.pinned': '固定済み',
+  'post.noPostsFound': '投稿が見つかりません',
+
+  // ── カテゴリーとタグ ───────────────────────────────────────
+  'category.allCategories': 'すべてのカテゴリー',
+  'category.postsInCategory': '{name}の投稿',
+  'category.totalCategories': '{count}件のカテゴリー',
+  'category.categoryLabel': 'カテゴリー',
+  'tag.allTags': 'すべてのタグ',
+  'tag.postsWithTag': '「{name}」のタグが付けられた投稿',
+  'tag.totalTags': '{count}個のタグ',
+  'tag.all': 'すべて',
+  'tag.postCount': '{count}件の投稿',
+
+  // ── アーカイブ ────────────────────────────────────────────────
+  'archives.title': 'アーカイブ',
+  'archives.totalPosts': '{count}件の投稿',
+
+  // ── 検索 ──────────────────────────────────────────────────
+  'search.placeholder': 'キーワードで検索',
+  'search.label': 'このサイトを検索',
+  'search.clear': 'クリア',
+  'search.loadMore': 'さらに検索結果を読み込み',
+  'search.filters': '絞り込み',
+  'search.noResults': '検索結果は見つかりません',
+  'search.manyResults': '[COUNT]件の検索結果',
+  'search.oneResult': '[COUNT]件の検索結果',
+  'search.altSearch': '結果が見つかりません。[DIFFERENT_TERM]の結果を表示しています。',
+  'search.suggestion': '検索結果が見つかりません。 こちらの検索をお試しください:',
+  'search.searching': '[SEARCH_TERM]を検索中...',
+  'search.dialogTitle': '投稿を検索',
+  'search.dialogHint': 'キーワードを入力して投稿を検索します',
+  'search.dialogClose': '閉じる',
+  'search.dialogSelect': '選択',
+  'search.dialogOpen': '開く',
+
+  // ── 友達 ─────────────────────────────────────────────────
+  'friends.title': '友達',
+  'friends.applyTitle': '友達のリンクに適用',
+  'friends.siteName': 'サイト名',
+  'friends.siteUrl': 'サイトのURL',
+  'friends.ownerName': '名前',
+  'friends.siteDesc': '説明',
+  'friends.avatarUrl': 'アバターのURL',
+  'friends.themeColor': 'テーマの色',
+  'friends.submit': '送信',
+  'friends.copySuccess': 'クリップボードにコピーしました',
+  'friends.copyFail': 'コピーに失敗、手動でコピーしてください',
+  'friends.generateFormat': 'フォーマットを生成',
+  'friends.copyFormat': 'フォーマットをコピー',
+  'friends.sitePlaceholder': 'マイブログ',
+  'friends.ownerPlaceholder': 'あなたの名前',
+  'friends.urlPlaceholder': 'https://your-site.com',
+  'friends.descPlaceholder': '簡単な説明...',
+  'friends.imagePlaceholder': 'https://...',
+  'friends.previewTitle': '構成のプレビュー',
+  'friends.copyConfig': '構成をコピー',
+  'friends.copiedConfig': 'コピーしました!',
+  'friends.hint': '説明: 上記のコードをコピーして、下のコメントセクションに貼り付けてください。',
+
+  // ── コードブロック ──────────────────────────────────────────────
+  'code.copy': 'コードをコピー',
+  'code.copied': 'コピーしました!',
+  'code.fullscreen': 'フルスクリーン',
+  'code.exitFullscreen': 'フルスクリーンを終了',
+  'code.wrapLines': '文字の折り返し',
+  'code.viewSource': 'ソースを表示',
+  'code.viewRendered': 'レンダリングされた表示',
+  'code.collapse': 'コードを折りたたむ',
+  'code.expand': 'コードを展開',
+
+  // ── 図表 / インフォグラフィック ───────────────────────────────────
+  'diagram.fullscreen': 'フルスクリーン',
+  'diagram.exitFullscreen': 'フルスクリーンを終了',
+  'diagram.viewSource': 'ソースを表示',
+  'diagram.zoomIn': '拡大',
+  'diagram.zoomOut': '縮小',
+  'diagram.resetZoom': 'リセット',
+  'diagram.fitToScreen': '画面に合わせる',
+  'diagram.download': '画像をダウンロード',
+
+  // ── Lightboxでの画像表示 ──────────────────────────────────────────
+  'image.zoomIn': '拡大',
+  'image.zoomOut': '縮小',
+  'image.resetZoom': 'リセット',
+  'image.resetZoomRotate': '回転と拡大をリセット',
+  'image.rotate': '90度に回転',
+  'image.close': '閉じる',
+  'image.prev': '前へ',
+  'image.next': '次へ',
+  'image.counter': '{current} / {total}',
+  'image.hintDesktop': 'ダブルクリックで拡大、スクロール/ピンチで大きさを変更',
+  'image.hintMobile': 'ダブルタップで拡大、ピンチで大きさを変更',
+
+  // ── メディアコントロール ──────────────────────────────────────────
+  'media.play': '再生',
+  'media.pause': '一時停止',
+  'media.mute': 'ミュート',
+  'media.unmute': 'ミュートを解除',
+  'media.fullscreen': 'フルスクリーン',
+  'media.exitFullscreen': 'フルスクリーンを終了',
+  'media.pictureInPicture': 'ピクチャーインピクチャー',
+  'media.playbackSpeed': '再生速度',
+  'media.download': 'ダウンロード',
+  'media.prevTrack': '前のトラック',
+  'media.nextTrack': '次のトラック',
+  'media.volume': '音量: {percent}%',
+  'media.progress': '再生の進捗',
+  'media.playModeOrder': '順番',
+  'media.playModeRandom': 'シャッフル',
+  'media.playModeLoop': '1回のみリピート',
+
+  // ── フッター ──────────────────────────────────────────────────
+  'footer.poweredBy': 'Powered by {name}',
+  'footer.totalPosts': '{count}件の投稿',
+  'footer.totalWords': '{count}文字',
+  'footer.totalWordsTitle': '合計の文字数',
+  'footer.readingTimeTitle': '合計の読書時間',
+  'footer.postCountTitle': '合計の投稿数',
+  'footer.runningDays': '稼働して{days}日が経過',
+  'footer.wordUnit': '文字',
+  'footer.postUnit': '投稿',
+
+  // ── 解析の統計 ─────────────────────────────────────────
+  'stats.pageviews': 'ページビュー',
+
+  // ── ページ付け ──────────────────────────────────────────────
+  'pagination.prev': '前へ',
+  'pagination.next': '次へ',
+  'pagination.page': 'ページ: {page}',
+  'pagination.currentPage': '現在は{page}ページです',
+  'pagination.of': '{total}ページの内、',
+
+  // ── パンくず ──────────────────────────────────────────────
+  'breadcrumb.home': 'ホーム',
+  'breadcrumb.goToCategory': '{name}のカテゴリーに移動',
+
+  // ── フローティンググループ ──────────────────────────────────────────
+  'floating.backToTop': 'トップに戻る',
+  'floating.scrollToBottom': '下にスクロール',
+  'floating.toggleTheme': 'テーマを切り替え',
+  'floating.christmas': 'クリスマスエフェクトに切り替え',
+  'floating.bgm': 'BGM',
+  'floating.toggleToolbar': 'ツールバーを切り替え',
+  'floating.settings': '設定',
+
+  // ── Settings Panel ────────────────────────────────────────
+  'settings.title': '設定',
+  'settings.reader': '読書',
+  'settings.general': '一般',
+  'settings.closePanel': '設定パネルを閉じる',
+  'settings.fontPreset': 'フォント',
+  'settings.fontPreset.round': '丸ゴシック',
+  'settings.fontPreset.system': 'システム',
+  'settings.fontPreset.serif': 'セリフ',
+  'settings.fontPreset.wenkai': '文楷',
+  'settings.fontPreset.local': 'ローカルフォント',
+  'settings.localFont.title': 'ローカルフォントを選択',
+  'settings.localFont.description': 'この端末にインストールされているフォントを本文に使用します',
+  'settings.localFont.permission':
+    'ブラウザーがローカルフォント一覧へのアクセスを求めます。フォントデータはプレビューと選択にのみ使用され、アップロードされません。',
+  'settings.localFont.requestAccess': 'ローカルフォントを読み込む',
+  'settings.localFont.loading': 'フォントを読み込み中…',
+  'settings.localFont.search': 'フォントを検索',
+  'settings.localFont.preview': '春風が川辺を緑にする Aa 123',
+  'settings.localFont.empty': '一致するフォントがありません',
+  'settings.localFont.unsupported':
+    'このブラウザーではローカルフォントを一覧表示できませんが、正確なフォント名を入力できます。',
+  'settings.localFont.denied': 'ローカルフォントへのアクセスが許可されませんでした。フォント名を手動で入力できます。',
+  'settings.localFont.error': 'ローカルフォントを読み込めませんでした。フォント名を手動で入力できます。',
+  'settings.localFont.manualLabel': 'フォント名',
+  'settings.localFont.manualPlaceholder': '例：ヒラギノ角ゴシック',
+  'settings.localFont.useFont': '使用',
+  'settings.localFont.change': 'ローカルフォントを変更',
+  'settings.fontSize': '文字サイズ',
+  'settings.lineHeight': '行間',
+  'settings.measure': '行幅',
+  'settings.auto': '自動',
+  'settings.justify': '両端揃え',
+  'settings.scrollProgress': 'スクロール進捗バー',
+  'settings.christmas': 'クリスマスエフェクト',
+  'settings.bgmWidget': 'BGM ウィジェット',
+  'settings.masterMotion': 'アニメーションを減らす',
+  'settings.wave': 'カバーの波',
+  'settings.reset': 'デフォルトにリセット',
+  'settings.waveDisabledByMasterMotion': '「アニメーションを減らす」がオンの間は使用できません',
+  'settings.invalidNumber': '正の数を入力してください',
+
+  // ── お知らせ ────────────────────────────────────────────
+  'announcement.title': 'お知らせ',
+  'announcement.new': '新着',
+  'announcement.count': '{count}件のお知らせ',
+  'announcement.unreadCount': '{count}件が未読',
+  'announcement.markAllRead': 'すべて既読にする',
+  'announcement.dismiss': '無視',
+  'announcement.learnMore': '詳細を読む',
+  'announcement.empty': 'お知らせは見つかりません',
+  'announcement.emptyHint': '新しいお知らせはこちらに表示されます',
+
+  // ── クイズ ────────────────────────────────────────────────────
+  'quiz.check': 'チェック',
+  'quiz.correct': '正解です!',
+  'quiz.incorrect': '不正解、再度お試しください。',
+  'quiz.incorrectAnswer': '不正解、答えは「{answer}」です。',
+  'quiz.submitAnswer': '送信 ({count}個が選択済み)',
+  'quiz.commonMistakes': 'よくある間違い:',
+  'quiz.parseFailed': 'クイズの解析に失敗しました',
+  'quiz.showAnswer': '答えを表示',
+  'quiz.hideAnswer': '答えを隠す',
+  'quiz.reset': 'リセット',
+  'quiz.score': '得点: {score}/{total}',
+  'quiz.completed': 'すべて完了しました!',
+  'quiz.fillBlank': '回答を入力してください...',
+  'quiz.selectOption': 'オプションを選択',
+  'quiz.single': '単一で選択',
+  'quiz.multi': '複数で選択',
+  'quiz.trueFalse': '○か×か',
+  'quiz.fill': '空欄を埋めてください',
+  'quiz.optionTrue': '○',
+  'quiz.optionFalse': '×',
+  'quiz.clickToReveal': 'クリックで答えを表示',
+  'quiz.quizOptions': '{type}個のオプション',
+  'quiz.trueFalseCorrect': '正解です!',
+  'quiz.trueFalseIncorrect': '不正解、答えは「{answer}」です。',
+
+  // ── 暗号化されたブロック ─────────────────────────────────────────
+  'encrypted.locked': '暗号化されたコンテンツ',
+  'encrypted.placeholder': 'パスワードを入力で解除',
+  'encrypted.submit': '解除',
+  'encrypted.incorrect': 'パスワードが間違っています',
+
+  // ── 暗号化された投稿 ─────────────────────────────────────────
+  'encrypted.post.title': 'この記事は暗号化されています',
+  'encrypted.post.description': 'パスワードを入力して内容をご覧ください',
+  'encrypted.post.rssNotice': 'この記事は暗号化されています。ウェブサイトでご覧ください。',
+
+  // ── 404 ─────────────────────────────────────────────────────
+  'notFound.title': 'ページは見つかりません',
+  'notFound.description': 'お探しのページは見つかりません',
+  'notFound.backHome': 'ホームに戻る',
+  'notFound.browseArchives': 'アーカイブを参照',
+  'notFound.message': 'んにゃー? ページは食べられちゃったよ〜',
+
+  // ── カテゴリーの統計 ────────────────────────────────────────
+  'category.subCategoryCount': '{count}件のサブカテゴリー',
+  'category.postCount': '{count}件の投稿',
+
+  // ── 投稿カード ─────────────────────────────────────────────
+  'post.readingTimeTooltip': '読み終える推定時間: {time}',
+
+  // ── おすすめのシリーズ ─────────────────────────────────────────
+  'series.latestPost': '最新',
+  'series.viewAll': 'すべて表示',
+  'series.postCount': '{count}件の投稿',
+  'series.noPosts': 'このシリーズには投稿がありません',
+  'series.rss': 'RSSフィード',
+  'series.chromeExtension': 'Chrome拡張機能',
+  'series.docs': 'ドキュメント',
+
+  // ── ホーム情報 ───────────────────────────────────────────────
+  'homeInfo.articles': '記事',
+  'homeInfo.categories': 'カテゴリー',
+  'homeInfo.tags': 'タグ',
+
+  // ── ドロワー ──────────────────────────────────────────────────
+  'drawer.navMenu': 'ナビゲーションメニュー',
+  'drawer.close': 'メニューを閉じる',
+  'drawer.openMenu': 'メニューを開く',
+
+  // ── 概要パネル ───────────────────────────────────────────
+  'summary.description': '概要',
+  'summary.ai': 'AIの概要',
+  'summary.auto': '概要',
+
+  // ── ランダムな投稿 ────────────────────────────────────────────
+  'post.randomPosts': '投稿をランダムに表示',
+
+  // ── タグコンポーネント ───────────────────────────────────────────
+  'tag.expandAll': 'すべて表示',
+  'tag.viewTagPosts': '「{tag}」のタグの付いた投稿を{count}件表示',
+
+  // ── オーディオプレーヤー ────────────────────────────────────────────
+  'audio.loading': 'プレイリストを読み込み中...',
+  'audio.loadError': '読み込みに失敗: {error}',
+  'audio.retry': '再試行',
+  'audio.empty': 'トラックが見つかりません',
+  'audio.listTab': '{index}の一覧',
+  'audio.closePanel': 'パネルを閉じる',
+
+  // ── 目次のコンテンツ ───────────────────────────────────────
+  'toc.title': '目次',
+  'toc.expand': '目次のコンテンツを展開',
+  'toc.empty': '見出しはありません',
+
+  // ── 埋め込み ─────────────────────────────────────────────────
+  'embed.loadingTweet': 'ポストを読み込み中',
+
+  // ── Content ───────────────────────────────────────────────
+  'content.revealSpoiler': '隠された内容を表示',
+
+  // ── 検索ショートカット ───────────────────────────────────────
+  'search.searchShortcut': '検索 ({shortcut})',
+
+  // ── Sider のセグメント ─────────────────────────────────────────
+  'sider.overview': '概要',
+  'sider.toc': 'コンテンツ',
+  'sider.series': 'シリーズ',
+
+  // ── リンクをコピー ───────────────────────────────────────────────
+  'cover.copyLink': 'リンクをコピー',
+
+  // ── コメント ────────────────────────────────────────────────
+  'comment.prompt': '気に入ったならばコメントを残してくださいね～',
+  'comment.error': 'コメントの読み込みに失敗しました。ページを再読み込みしてください。',
+  'comment.retry': '再読み込み',
+
+  // ── Bangumi (Bangumiは日本語で提供されてないのでざっくりとした内容にしています) ──────
+  'bangumi.title': 'オタ活の記録',
+  'bangumi.description': '私のメディアコレクションです',
+  'bangumi.anime': 'アニメ',
+  'bangumi.book': '書籍',
+  'bangumi.music': '音楽',
+  'bangumi.game': 'ゲーム',
+  'bangumi.real': 'リアル',
+  'bangumi.all': 'すべて',
+  'bangumi.wish': '検討中',
+  'bangumi.collected': '完了',
+  'bangumi.watching': '視聴中',
+  'bangumi.onHold': '保留中',
+  'bangumi.dropped': '見逃した',
+  'bangumi.noImage': '画像がありません',
+  'bangumi.noItems': 'コレクションがありません',
+  'bangumi.error': '読み込みに失敗しました。もう一度お試しください。',
+  'bangumi.retry': '再試行',
+
+  // ── Moments ────────────────────────────────────────────────
+  'nav.moments': 'つぶやき',
+  'moments.title': 'つぶやき',
+  'moments.description': '公開チャンネルの日々のメッセージ',
+  'moments.channels': 'つぶやきチャンネル',
+  'moments.search': 'つぶやきを検索',
+  'moments.searchForm': 'つぶやきの内容を検索',
+  'moments.searchQuery': '検索キーワード',
+  'moments.searchPlaceholder': '3文字以上入力してください',
+  'moments.searchEmpty': 'キーワードを入力して、公開チャンネルのメッセージを検索',
+  'moments.searchHint': 'Unicode文字を3文字以上入力してください',
+  'moments.searchTooLong': '検索キーワードはUnicode文字で200文字以内にしてください',
+  'moments.channel': 'チャンネル',
+  'moments.allChannels': 'すべてのチャンネル',
+  'moments.sort': '並び順',
+  'moments.relevance': '関連度',
+  'moments.newest': '新着順',
+  'moments.searchResults': '検索結果',
+  'moments.noResults': '一致するつぶやきはありません',
+  'moments.clearSearch': '検索条件をクリア',
+  'moments.updated': '更新済み',
+  'moments.permalink': '固定リンク',
+  'moments.copyLink': 'リンクをコピー',
+  'moments.copyFailed': 'コピーできませんでした。URLを手動でコピーしてください。',
+  'moments.viewSource': '元のメッセージを見る',
+  'moments.emptyMessage': '空のメッセージ',
+  'moments.mediaMessage': 'メディアメッセージ',
+  'moments.expand': '全文を表示',
+  'moments.collapse': '折りたたむ',
+  'moments.mediaProcessing': 'メディアを処理中',
+  'moments.mediaUnavailable': 'メディアを利用できません',
+  'moments.image': '画像',
+  'moments.video': '動画',
+  'moments.audio': '音声',
+  'moments.document': 'ファイル',
+  'moments.openDocument': 'ファイルを開く',
+  'moments.mediaMore': 'ほかに{count}件のメディア',
+  'moments.loadEarlier': '以前の内容を読み込む',
+  'moments.loadingEarlier': '以前の内容を読み込んでいます',
+  'moments.loadedEarlier': '以前の内容を読み込みました',
+  'moments.allLoaded': 'すべての内容を読み込みました',
+  'moments.loadEarlierFailed': '読み込めませんでした。もう一度お試しください。',
+  'moments.back': '戻る',
+  'moments.pagination': 'つぶやきのページ移動',
+  'moments.newer': '新しいつぶやき',
+  'moments.older': '以前のつぶやき',
+  'moments.contextNavigation': '前後のつぶやき',
+  'moments.tags': 'タグ',
+  'moments.emptyChannels': '表示できるチャンネルがありません',
+  'moments.emptyChannel': 'このチャンネルにはまだメッセージがありません',
+  'moments.notFound': 'つぶやきが見つかりません',
+  'moments.notFoundDescription': 'リンクが古いか、このチャンネルのメッセージではありません。',
+  'moments.rateLimited': 'リクエストが多すぎます',
+  'moments.rateLimitedDescription': 'サービスが一時的にリクエストを制限しています。しばらくしてから再試行してください。',
+  'moments.unavailable': 'つぶやきを一時的に利用できません',
+  'moments.unavailableDescription': '動的コンテンツサービスに接続できません。ブログ記事は引き続き閲覧できます。',
+  'moments.retry': '再試行',
+  'moments.backToIndex': 'つぶやきに戻る',
+  'moments.cacheNotice': '内容は最大5分遅れる場合があります',
+  'moments.rss': 'RSSフィード',
+  'moments.globalRss': 'すべてのつぶやきを購読',
+  'moments.channelRss': 'このチャンネルを購読',
+};

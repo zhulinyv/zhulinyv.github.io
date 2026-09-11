@@ -1,0 +1,22 @@
+{
+	"description" : "我是有多无聊，做出了这个东西！！！\n但是感觉挺好玩~~~",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"tags" : [ "CGI" ],
+	"title" : "3D滑稽 滑天下之大稽",
+	"type" : "web",
+	"visibility" : "friends"
+}

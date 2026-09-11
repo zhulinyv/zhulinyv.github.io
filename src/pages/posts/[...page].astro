@@ -1,0 +1,38 @@
+---
+import HomeSider from '@components/layout/HomeSider.astro';
+import PostList from '@components/post/PostList.astro';
+import Cover from '@components/ui/cover/Cover.astro';
+import { CONTENT_PADDING } from '@constants/layout';
+import { seoConfig } from '@constants/site-config';
+import Layout from '@layouts/Layout.astro';
+import TwoColumnLayout from '@layouts/TwoColumnLayout.astro';
+import { toPostCardDataList } from '@lib/content/transforms';
+import type { Page } from 'astro';
+import type { BlogPost } from 'types/blog';
+import Divider from '@/components/ui/divider';
+import { t } from '@/i18n';
+import { postListRoute } from '../_shared/routes';
+
+export const getStaticPaths = postListRoute.root;
+
+interface Props {
+  page: Page<BlogPost>;
+  locale: string;
+}
+
+const { page, locale } = Astro.props;
+const postCardData = toPostCardDataList(page.data, locale);
+---
+
+<Layout locale={locale} title={seoConfig.title}>
+  <TwoColumnLayout>
+    <Cover slot="cover" />
+    <HomeSider slot="sider" />
+    <div
+      class={`shadow-box bg-gradient-start tablet:shadow-none flex flex-col gap-4 overflow-hidden ${CONTENT_PADDING.standard}`}
+    >
+      <Divider>{t(locale, 'post.postList')}</Divider>
+      <PostList posts={postCardData} page={page} />
+    </div>
+  </TwoColumnLayout>
+</Layout>

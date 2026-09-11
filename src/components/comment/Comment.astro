@@ -1,0 +1,35 @@
+---
+/**
+ * Comment Router Component
+ *
+ * Selects the appropriate comment provider based on site configuration.
+ * Supports: remark42, giscus, waline, twikoo, none
+ */
+import { commentConfig } from '@/constants/site-config';
+import { getLocaleFromUrl, t } from '@/i18n';
+import { cn } from '@/lib/utils';
+import { christmasEnabled } from '@/store/christmas';
+
+const provider = commentConfig.provider ?? 'none';
+const locale = getLocaleFromUrl(Astro.url.pathname);
+let Provider = null;
+
+if (provider === 'remark42') {
+  Provider = (await import('./providers/Remark42.astro')).default;
+} else if (provider === 'giscus') {
+  Provider = (await import('./providers/GiscusClient.astro')).default;
+} else if (provider === 'waline') {
+  Provider = (await import('./providers/WalineClient.astro')).default;
+} else if (provider === 'twikoo') {
+  Provider = (await import('./providers/TwikooClient.astro')).default;
+}
+---
+
+{
+  provider !== 'none' && Provider && (
+    <div class={cn('comments w-full', { 'z-5': christmasEnabled.get() })}>
+      <p class="text-muted-foreground mb-4 text-center text-sm">{t(locale, 'comment.prompt')}</p>
+      <Provider />
+    </div>
+  )
+}

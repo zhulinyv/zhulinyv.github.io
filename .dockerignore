@@ -1,0 +1,26 @@
+# Prevent huge contexts and host-specific artifacts
+node_modules/
+dist/
+.astro/
+# Keep .cache/og-data.json for build acceleration (OG metadata cache)
+.cache/transformers/
+.cache/summaries-cache/
+.git/
+.gitignore
+.husky/
+.vscode/
+docs/
+docker/rebuild.sh
+docker/nginx/*.md
+
+# Local configuration and secrets
+.env*
+*.local
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Build tooling outputs
+stats.html
+coverage/

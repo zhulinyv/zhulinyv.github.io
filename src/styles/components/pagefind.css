@@ -1,0 +1,66 @@
+/* Pagefind Component UI theme overrides */
+
+:root {
+  --pf-text: #393939;
+  --pf-text-secondary: #666;
+  --pf-text-muted: #767676;
+  --pf-background: var(--gradient-bg-start);
+  --pf-border: #e5e5e5;
+  --pf-border-focus: hsl(var(--primary));
+  --pf-hover: hsl(var(--accent));
+  --pf-mark: hsl(var(--primary));
+  --pf-outline-focus: hsl(var(--primary));
+  --pf-font: inherit;
+  --pf-input-height: 2.5rem;
+  --pf-input-font-size: 1rem;
+  --pf-border-radius: 0.5rem;
+  --pf-searchbox-max-width: 100%;
+  --pf-searchbox-dropdown-max-height: calc(80dvh - 13rem);
+}
+
+.dark {
+  --pf-text: #e5e5e5;
+  --pf-text-secondary: #b7b7b7;
+  --pf-text-muted: #a0a0a0;
+  --pf-border: rgba(255, 255, 255, 0.15);
+  --pf-border-focus: hsl(var(--primary));
+  --pf-hover: rgba(255, 255, 255, 0.08);
+  --pf-mark: hsl(var(--primary));
+}
+
+#search-for-dialog,
+#search-for-dialog pagefind-searchbox {
+  display: block;
+  width: 100%;
+}
+
+.search-dialog:has(.pf-searchbox.open) .search-empty-hint {
+  display: none;
+}
+
+.search-dialog .pf-searchbox-input {
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+:is(*, #\#):is(*, #\#):is(*, #\#) .search-dialog .pf-searchbox-result-title {
+  color: hsl(var(--primary));
+  font-size: 0.95rem;
+}
+
+:is(*, #\#):is(*, #\#):is(*, #\#) .search-dialog .pf-searchbox-result-excerpt {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+  text-overflow: clip;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --pf-input-font-size: 0.875rem;
+    --pf-searchbox-dropdown-max-height: calc(80dvh - 11rem);
+  }
+}

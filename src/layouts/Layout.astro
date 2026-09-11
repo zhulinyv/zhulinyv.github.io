@@ -1,0 +1,90 @@
+---
+import type { HomeSiderType } from '@constants/enum';
+import type { BlogPost } from 'types/blog';
+import type { PageMeta, PageMetaProps } from './page-meta';
+
+interface Props extends PageMetaProps {
+  title?: string;
+  description?: string;
+  /**
+   * Locale of the rendered page. Pages resolve it in `getStaticPaths` and pass it down;
+   * callers that don't (e.g. Markdown pages rendered via `PageLayout`) fall back to the URL.
+   */
+  locale?: string;
+  // TODO: siderType should be custom in router file, not in layout
+  siderType?: HomeSiderType;
+  post?: BlogPost;
+}
+
+import { ClientRouter } from 'astro:transitions';
+import UmamiAnalytics from '@components/analytics/UmamiAnalytics.astro';
+import { seoConfig } from '@constants/site-config';
+import LoadingIndicator from 'astro-loading-indicator/component';
+import { Tooltips } from 'astro-tooltips';
+import { getHtmlLang, getLocaleFromUrl, stripLocaleFromPath } from '@/i18n';
+import AppShell from './AppShell.astro';
+import BootScripts from './BootScripts.astro';
+import HeadMeta from './HeadMeta.astro';
+
+import '@styles/index.css';
+
+const {
+  title = seoConfig.title,
+  description = seoConfig.description,
+  locale = getLocaleFromUrl(Astro.url.pathname),
+  siderType,
+  post,
+  ...metaProps
+} = Astro.props;
+
+const meta: PageMeta = { ...metaProps, locale, title, description, coverImage: post?.data.cover };
+
+// Detect if current page is a post page for mobile header (locale-prefix safe)
+const isPostPage = stripLocaleFromPath(Astro.url.pathname).startsWith('/post/');
+---
+
+<!doctype html>
+<html transition:name="root" lang={getHtmlLang(locale)} class="vertical-scrollbar">
+  <head>
+    <HeadMeta meta={meta} />
+
+    <ClientRouter />
+    <UmamiAnalytics />
+    <LoadingIndicator color="#e9536a" />
+    <Tooltips />
+
+    <BootScripts />
+
+    <!-- 子页面可通过 slot="head" 注入额外的 head 内容（如 JSON-LD） -->
+    <slot name="head" />
+  </head>
+  <body>
+    <AppShell post={post} siderType={siderType} isPostPage={isPostPage}>
+      <slot />
+    </AppShell>
+  </body>
+</html>
+
+<style is:global>
+  /* Progressive enhancement: scroll-state is experimental, browsers that don't support it will just not show the feather mask */
+  @supports (container-type: scroll-state) {
+    .scroll-feather-mask {
+      container-type: scroll-state;
+    }
+
+  @container scroll-state(scrollable: bottom) {
+      .scroll-feather-mask::after {
+        content: '';
+        background: linear-gradient(to bottom, transparent 0%, var(--gradient-bg-start) var(--mask-end-percent, 50%), var(--gradient-bg-start) var(--mask-start-percent, 100%));
+        position: absolute;
+        top: var(--mask-top, auto);
+        left: var(--mask-left, 0);
+        right: var(--mask-right, 0);
+        bottom: var(--mask-bottom, 0);
+        z-index: 10;
+        display: block;
+        height: var(--mask-height, 5rem);
+      }
+    }
+  }
+</style>

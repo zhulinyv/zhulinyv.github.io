@@ -1,0 +1,39 @@
+---
+import FriendRequestForm from '@components/friends/FriendRequestForm';
+import FriendsGrid from '@components/friends/FriendsGrid';
+import HomeSider from '@components/layout/HomeSider.astro';
+import Cover from '@components/ui/cover/Cover.astro';
+import { CONTENT_PADDING } from '@constants/layout';
+import { siteConfig } from '@constants/site-config';
+import Layout from '@layouts/Layout.astro';
+import TwoColumnLayout from '@layouts/TwoColumnLayout.astro';
+import { Comment } from '@/components/comment';
+import { defaultLocale, t } from '@/i18n';
+
+interface Props {
+  locale?: string;
+}
+
+// Root pages render the default locale; `[lang]/` mirrors pass their locale in explicitly.
+const { locale = defaultLocale } = Astro.props;
+const title = `${t(locale, 'friends.title')} | ${siteConfig.title}`;
+const description = t(locale, 'friends.title');
+---
+
+<Layout locale={locale} title={title} description={description}>
+  <TwoColumnLayout>
+    <Cover slot="cover" title={t(locale, 'friends.title')} />
+    <HomeSider slot="sider" />
+    <div
+      class={`bg-gradient-start shadow-box tablet:shadow-none flex flex-col gap-10 overflow-hidden ${CONTENT_PADDING.standard}`}
+    >
+      <div class="mt-4">
+        <FriendsGrid client:load />
+      </div>
+      <div class="mb-4">
+        <FriendRequestForm client:visible />
+        <Comment />
+      </div>
+    </div>
+  </TwoColumnLayout>
+</Layout>
