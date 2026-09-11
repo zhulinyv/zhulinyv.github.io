@@ -134,31 +134,13 @@ friends:
         desc: 站点简介 # 站点简介
         image: https://your-blog.com/avatar.jpg # 头像链接
         color: "#ffc0cb" # 主题色（可选）
-  data: # 友链列表（自老站 friends 页迁移）
-    - site: 团子的航海日志
-      url: http://www.mikuchan.top/
-      owner: 团子
-      desc: 不定期更新，欢迎捕捉。
-      image: https://i.loli.net/2021/01/10/jTGpXcLEfNsY7VC.png
-      color: '#aedffd'
+  data: # 友链列表（自老站 friends 页迁移，失效链接已于 2026-09 移除）
     - site: storm-1614
       url: https://storm-1614.github.io/
       owner: storm-1614
       desc: 一个菜鸟
       image: https://s2.loli.net/2022/08/26/o7FKePVNYlHjLQG.jpg
       color: '#BEDCFF'
-    - site: iven233的博客
-      url: http://blog.iven233.com
-      owner: iven233
-      desc: iven233的博客
-      image: https://s2.loli.net/2022/08/26/peyaVi3RPOIrqwf.jpg
-      color: '#FBC1CC'
-    - site: MC_DALIU
-      url: http://mcdaliu.freeee.ml/
-      owner: MC_DALIU
-      desc: 一个啥都玩但啥也不会的屑
-      image: https://s2.loli.net/2022/08/26/9oMwqduWyTz1igs.jpg
-      color: '#ABDCFF'
 
 # =============================================================================
 # Announcements
