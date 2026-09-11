@@ -1,0 +1,88 @@
+---
+import { Icon } from 'astro-icon/components';
+import PageLayout from '../layouts/PageLayout.astro';
+
+const payChannels = [
+  { name: '微信收款', icon: 'ri:wechat-fill', color: 'text-green-500', img: '/img/sponsor/wechat.png', alt: '微信收款码' },
+  { name: '支付宝收款', icon: 'ri:alipay-fill', color: 'text-blue-500', img: '/img/sponsor/alipay.png', alt: '支付宝收款码' },
+  { name: 'QQ 收款', icon: 'ri:qq-fill', color: 'text-sky-500', img: '/img/sponsor/qq.png', alt: 'QQ 收款码' },
+];
+const joinGroup = {
+  img: '/img/sponsor/qq_group.png',
+  alt: 'QQ 交流群二维码',
+  link: 'https://qm.qq.com/cgi-bin/qm/qr?k=704064019',
+};
+---
+
+<PageLayout
+  frontmatter={{
+    title: '赞赏',
+    coverTitle: '请作者喝杯奶茶 ~',
+    description: '如果这个站对你有帮助，欢迎请作者喝杯奶茶',
+    comments: false,
+  }}
+>
+  <div class="flex flex-col gap-10">
+    <section>
+      <div class="mb-1 flex items-center gap-2">
+        <Icon name="ri:cup-fill" class="text-lg text-pink-400" />
+        <h2 class="text-xl font-semibold">赞助一下</h2>
+      </div>
+      <p class="mb-6 text-sm opacity-70">
+        如果这个站推荐的内容对你有帮助，欢迎请作者喝杯奶茶 ~ 扫码时请备注昵称，非常感谢每一份支持 💕
+      </p>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+        {
+          payChannels.map((ch) => (
+            <figure class="group flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <img
+                src={ch.img}
+                alt={ch.alt}
+                width="240"
+                height="240"
+                loading="lazy"
+                class="w-full max-w-60 rounded-lg bg-white p-1"
+              />
+              <figcaption class={`flex items-center gap-1.5 text-sm font-semibold ${ch.color}`}>
+                <Icon name={ch.icon} class="text-base" />
+                {ch.name}
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </section>
+
+    <section>
+      <div class="mb-1 flex items-center gap-2">
+        <Icon name="ri:team-fill" class="text-lg text-cyan-400" />
+        <h2 class="text-xl font-semibold">加群交流</h2>
+      </div>
+      <p class="mb-6 text-sm opacity-70">欢迎加入 QQ 交流群：一起玩转 AI 绘图，交流使用心得、反馈问题与建议 ~</p>
+      <div class="flex flex-col items-center gap-5 rounded-xl border border-border bg-card p-5 shadow-sm sm:flex-row">
+        <a href={joinGroup.link} target="_blank" rel="noopener" class="shrink-0" title="点击打开加群链接">
+          <img
+            src={joinGroup.img}
+            alt={joinGroup.alt}
+            width="180"
+            height="180"
+            loading="lazy"
+            class="w-40 rounded-lg bg-white p-1 transition-transform duration-300 hover:scale-105"
+          />
+        </a>
+        <div class="flex flex-col items-center gap-3 text-center sm:items-start sm:text-left">
+          <p class="text-sm opacity-80">点击二维码或下方按钮即可一键加群 💬</p>
+          <a
+            href={joinGroup.link}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-2 rounded-full bg-pink-400 px-5 py-2 text-sm font-semibold text-white shadow transition hover:bg-pink-500"
+          >
+            <Icon name="ri:rocket-fill" class="text-base" />
+            一键加群
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</PageLayout>

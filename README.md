@@ -11,7 +11,7 @@
 - **45 篇文章** 全部迁移至 `src/content/blog/`，按内容分为 4 个分类：软件 / 教程 / 项目 / 随笔；原 Gridea 标签与发布日期完整保留
 - **旧链接保持可用**：老站文章地址 `/<slug>/`（如 `/NJS/`）通过 `config/redirects.json` 自动 301 到新地址 `/post/<slug>/`
 - **本地图片**：`post-images/`、`images/` 已迁移到 `public/`
-- **自定义页面**：番剧（`/anime`）、游戏导航（`/game`）、关于（`/about`）迁移为自定义页面；游戏本体（`/games/*`）与赞赏页（`/donate`）为纯静态资源，原样放在 `public/`
+- **自定义页面**：番剧（`/anime`）、游戏导航（`/game`）、关于（`/about`）迁移为自定义页面；游戏本体（`/games/*`）保留在 `public/`；赞赏页（`/donate`）已重写为卡片式页面，收款码取自 [Auto-NovelAI-Refactor](https://github.com/zhulinyv/Auto-NovelAI-Refactor) 项目的 `web/assets/sponsor/`
 - **友链**：迁移至 `config/site.yaml` 的 `friends` 配置
 - **未迁移**：`MaN/`（早晚安图片生成，PHP + MySQL 应用，GitHub Pages 无法运行）与 Gridea 的页脚自动播放音乐 iframe（已改用模板自带的 BGM 播放器，播放同一首网易云歌曲）
 
